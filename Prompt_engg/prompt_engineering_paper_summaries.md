@@ -17,8 +17,9 @@ i-th output. These tokens are then followed by the main answer $a_i$ in the end 
 * Alternatively, we can also weight each ($r_i$, $a_i$) pair by their conditional probability – P( $r_i$, $a_i$ | prompt, question)
 This conditional probability can be obtained from log probabilities during generation of each token in the model response.
 
+Paper link - [Self consistency](https://arxiv.org/pdf/2203.11171)
 
-## Chain of thought prompting elicits reasoning in LLMs, 2023
+## Chain of thought prompting elicits reasoning in LLMs, 2022
 Wei et al.
 
 **Gist** -
@@ -44,3 +45,4 @@ Wei et al.
   - Involves an LLM as the task solver
   - The scaling curve is relatively flat
 
+Paper link - [Chain of thought prompting](https://openreview.net/pdf?id=_VjQlMeSB_J)
