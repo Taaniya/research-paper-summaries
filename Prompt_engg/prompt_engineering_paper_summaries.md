@@ -38,7 +38,7 @@ Wei et al.
 * The paper aims to incorporate this ability in an LLM while solving complex problems reasonably.
 
 **Few more takeaways** – 
-* Model scale matter. CoT works well for LLMs with > 10B parameters and may hurt performance of models smaller than that
+* Model's scale matters. CoT works well for LLMs with > 10B parameters and may hurt performance of models smaller than that
 * It helps the most when 3 conditions are met –
   - Task is challenging that requires multiple reasoning steps
   - Involves an LLM as the task solver
