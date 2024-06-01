@@ -2,14 +2,14 @@
 Wang et al, 2024
 
 #### Gist 
-•	Provide a unified definition of tools as external programs used by LLMs across a broad range of scenarios
-•	Perform a systematic review of LM tooling scenarios & approaches
-•	Analyze cost efficiency of tooling methods – give practical guidance on when & how one can use tools
-•	Offer concrete suggestions for evaluations
+* Provide a unified definition of tools as external programs used by LLMs across a broad range of scenarios
+* Perform a systematic review of LM tooling scenarios & approaches
+* Analyze cost efficiency of tooling methods – give practical guidance on when & how one can use tools
+* Offer concrete suggestions for evaluations
 
 #### Limitations of LLMs that tools aim to solve –
-•	LLMs struggle to perform tasks that require complex skills – math, complex reasoning 
-•	Fundamentally unable to solve tasks that require access to facts or information not included in their training data (e.g., current weather, latest events, current date etc)
+* LLMs struggle to perform tasks that require complex skills – math, complex reasoning
+* Fundamentally unable to solve tasks that require access to facts or information not included in their training data (e.g., current weather, latest events, current date etc)
 
 Tools have been adopted to solve above limitations by facilitating a LM with capabilities it lacks.
 
