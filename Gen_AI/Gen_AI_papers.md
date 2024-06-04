@@ -1,5 +1,5 @@
-## What are tools anyway? A survey from Language Model Perspective (WIP)
-Wang et al, 2024
+## What are tools anyway? A survey from Language Model Perspective 
+Wang et al, March 2024
 
 #### Gist 
 * Provide a unified definition of tools as external programs used by LLMs across a broad range of scenarios
@@ -27,6 +27,37 @@ Many tools can fall into multiple categories as well. E.g., search engine can pe
 According to [Norvig & Peter (2010)](https://people.engr.tamu.edu/guni/csce421/files/AI_Russell_Norvig.pdf), **agents are defined as** anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.
 
 Paper link - [What are tools anyway](https://zorazrw.github.io/files/WhatAreToolsAnyway.pdf)
+
+## ToolLLM: Facilitating LLMs to use 1600 real world APIs, ICLR 2024
+Qin et al
+
+### Gist – 
+* This paper presents a general tool-use framework ToolLLM that includes dataset construction, model training & evaluation
+* Presents ToolBench – instruction tuning dataset for tool use. This is prepared automatically using ChatGPT
+* Developed ToolEval – Automatic evaluator
+* ToolLLama – This model is obtained by fine-tuning Llama on ToolBench dataset
+
+### Motivation – 
+To tackle limitations of current open source LLMs in tool-use capabilities since the existing instruction set are focused more on language tasks rather than tool-use domain
+
+### Approach –
+**3 stages of dataset construction** –
+* APIs collection – collect APIs from RapidAPI hub
+* Instruction generation – Prompting ChatGPT to generate diverse instructions involving these APIs, covering both single tool and multi-tool scenarios
+* Solution path annotation – 
+  o	Using ChatGPT to search for valid solution path 
+  o	Implemented with a novel depth-first search-based decision tree (DFSDT) algorithm
+  o	In contrast to CoT & ReACT, which explore only 1 possible direction & may suffer from error propagation, DFSDT enhances reasoning capabilities by enabling LLM to evaluate multiple reasoning traces and expand the search space and make deliberate decisions to either back track or proceed with an ongoing path
+
+
+Git repo – https://github.com/OpenBMB/ToolBench  
+
+Paper link – https://arxiv.org/pdf/2307.16789
+
+Tool Eval - https://github.com/OpenBMB/ToolBench/tree/master/toolbench/tooleval
+
+ToolLama - https://huggingface.co/ToolBench/ToolLLaMA-7b-v1 
+
 
 ## Toolformer, 2023
 Schick et al
