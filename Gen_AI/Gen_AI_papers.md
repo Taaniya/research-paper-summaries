@@ -55,12 +55,12 @@ Schick et al
 * As the format of C* (annotated dataset) & original C dataset, the model learns to decide when & how to use which API call / tool
 
 ### Inference -
-* Performs regular decoding until the model generates ‘->’ token indicating that model expects the API call response before generating next token. So, the relevant API call is made, and the response is fed back to the LLM followed by </API> special token.
+* Performs regular decoding until the model generates ‘->’ token indicating that model expects the API call response before generating next token. So, the relevant API call is made, and the response is fed back to the LLM followed by `</API>` special token.
 * Subsequently, decoding is resumed.
 
 ### Experiment –
 * Performed under zero-shot setting (no in-context learning examples provided)
-* Standard greedy decoding process adopted with slight variation where the API call is generated in the output not only when <API> special token is most likely, but even if it’s among top K most likely tokens
+* Standard greedy decoding process adopted with slight variation where the API call is generated in the output not only when `<API>` special token is most likely, but even if it’s among top K most likely tokens
 * Evaluation performed on WikiText & held out CCNet dataset to monitor perplexity of different approach variations
 * Experimented with 4 tools – calculator, search engine, Q & A, Calendar, Machine translation
 
