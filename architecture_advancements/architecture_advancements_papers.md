@@ -14,7 +14,7 @@ Tackles following limitations –
 * Above aspects are achieved by -
 * Tiling - Restructuring the attention computation by splitting the input into blocks and making multiple passes over input blocks. This way it performs softmax reduction incrementally.
 * Further, the approach involves storing the softmax normalization factor obtained during forward pass and uses it to quickly recompute the attention on-chip (SRAM) during backward pass. This step is faster than the standard approach of reading an intermediate attention matrix from HBM
-* Additionally, this is implemented in CUDA to gain fine-grained control over memory access & maintain all attention operations into a single GPU kernel.
+* This is implemented in CUDA to gain fine-grained control over memory access & maintain all attention operations into a single GPU kernel.
 
 #### Advantages –
 * Despite the increase in FLOPs due to recomputation, this speeds up training compared to existing baselines and uses less memory
