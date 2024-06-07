@@ -20,3 +20,5 @@ Tackles following limitations –
 #### Advantages –
 * Despite the increase in FLOPs due to recomputation, this speeds up training compared to existing baselines and uses less memory (reducing its memory complexity from quadratic to linear)
 * Enables longer context for sequence length yielding higher quality models
+
+  Paper link - [FlashAttention, Dao et al, 2022](https://arxiv.org/pdf/2205.14135)
