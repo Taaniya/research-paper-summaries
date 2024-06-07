@@ -6,6 +6,7 @@ Dao et al, 2022
 * Achieves it by reducing memory reads & writes between GPU’s fast on-chip SRAM and its relatively slower high bandwidth memory (HBM) & using a technique called tiling
 
 Tackles following limitations –
+
 •	Due to higher compute speed than memory access, transformer models face bottleneck by memory access since their time and memory complexity is quadratic in sequence length, hindering the increase in context length as models and applications scale.
 
 **What is tiling and how does it help?**
