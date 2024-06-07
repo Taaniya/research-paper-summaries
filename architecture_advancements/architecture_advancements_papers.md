@@ -3,7 +3,7 @@ Dao et al, June 2022
 
 #### Gist - 
 * Propose an IO aware exact attention mechanism to speed up attention on hardware accelerators such as GPU
-* Achieves it by reducing memory reads & writes between GPU’s fast on-chip SRAM and its relatively slower high bandwidth memory (HBM) & using a technique called tiling
+* Achieves it by reducing memory reads & writes between GPU’s fast on-chip SRAM and its relatively slower high bandwidth memory (HBM) using a technique called tiling
 
 Tackles following limitations –
 
