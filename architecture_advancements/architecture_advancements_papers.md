@@ -1,5 +1,5 @@
-## FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness, 2022
-Dao et al, 2022
+## FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness, June 2022
+Dao et al, June 2022
 
 #### Gist - 
 * Propose an IO aware exact attention mechanism to speed up attention on hardware accelerators such as GPU
