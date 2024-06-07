@@ -22,3 +22,4 @@ Tackles following limitations –
 * Enables longer context for sequence length yielding higher quality models
 
   Paper link - [FlashAttention, Dao et al, 2022](https://arxiv.org/pdf/2205.14135)
+  Git repo - https://github.com/Dao-AILab/flash-attention 
