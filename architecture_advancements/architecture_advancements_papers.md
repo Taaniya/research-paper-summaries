@@ -17,5 +17,5 @@ Tackles following limitations –
 * This is implemented in CUDA to gain fine-grained control over memory access & maintain all attention operations into a single GPU kernel.
 
 #### Advantages –
-* Despite the increase in FLOPs due to recomputation, this speeds up training compared to existing baselines and uses less memory
+* Despite the increase in FLOPs due to recomputation, this speeds up training compared to existing baselines and uses less memory (reducing its memory complexity from quadratic to linear)
 * Enables longer context for sequence length yielding higher quality models
