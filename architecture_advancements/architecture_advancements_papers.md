@@ -43,3 +43,52 @@ Tackles following limitations –
   Paper link - [FlashAttention, Dao et al, 2022](https://arxiv.org/pdf/2205.14135)
   
   Git repo - https://github.com/Dao-AILab/flash-attention 
+
+
+## LoRA: Low rank adaptation of Large Language Models – 2021
+Hu et al, 2021
+
+#### Gist –
+* This paper introduces LoRA - Low Rank Adaptation, a storage and compute efficient approach for adapting Large Language Models to new tasks.
+* Approach involves freezing of pre-trained model weights and injecting trainable rank decomposition matrices into each layer of transformers architecture, significantly reducing trainable parameters for downstream tasks
+* This approach performs on-par or better than fine-tuning in model quality – RoBERTa, DeBERTa, GPT2, GPT3.
+* Paper also provides empirical investigation into rank-deficiency in Language model adaptation
+
+
+#### Hypothesis & approach - 
+* Dense layers in neural networks undergo matrix multiplication
+* The weight matrices in the layers are typically represented as full-rank
+* However, pre-trained models show that during adaptation to a specific task that they have a low ‘intrinsic dimension ‘ i.e., these learned over-parameterized models reside on low intrinsic dimensions & can still learn efficiently with a random projection in a smaller subspace - Li et al (https://openreview.net/pdf?id=ryup8-WCW) , Aghajanyan et al (https://aclanthology.org/2021.acl-long.568.pdf ).
+* The paper hypothesize that the change in weights during model adaptation also has low ‘intrinsic rank’, thereby allowing training of some dense layers in a neural network indirectly by optimizing rank decomposition matrices of the dense layers’ change during adaptation instead, while keeping the pre-trained weights frozen.
+* This is achieved by constraining the weight update by representing the weight matrix $W_0$ with a low rank decomposition $W_0 + \delta W = W_0 + BA $
+
+Where $W_0  \in R^{d\times{k}}$ , $B \in R^{d\times{r}}$ , $A \in R^{r\times{k}}$ and the rank $r << min(d, k)$
+
+* During training, $W_0$ is frozen and doesn’t receive any gradient updates, while A & B contain trainable parameters.
+
+#### Applying LoRA to transformers – 
+* Out of the 6 weight matrices in transformers, this paper focuses on 4 attention weight matrices – $W_q, W_k, W_v, W_o$ and keep the other 2 MLP weight matrices as frozen for the experiment.
+
+
+#### Advantages - 
+* Leads to efficient training and reduces hardware constraints especially due to reduction in memory and storage usage as it doesn’t involve calculating gradients or maintain optimizer states for most of the parameters (as they are frozen) and need only do so for optimization of injected smaller rank matrices
+•	Observe VRAM usage by 2/3 for transformer using Adam optimizer
+
+#### Some background  readings and references – 
+**Intrinsic dimension** - 
+The intrinsic dimension for a data set can be thought of as the number of variables needed in a minimal representation of the data. 
+
+**Rank of a matrix** - 
+In linear algebra, the rank of a matrix A is the dimension of the vector space generated (or spanned) by its columns. This corresponds to the maximal number of linearly independent columns of A. This, in turn, is identical to the dimension of the vector space spanned by its rows. 
+
+A matrix is low-rank if it has many fewer linearly independent columns than columns. Such matrices can be efficiently represented using rank-factorizations, which can be used to perform various computations rapidly. Many matrices appearing in applications which are not genuinely low-rank can be well-approximated by low-rank matrices; the best possible such approximation is given by the truncated singular value decomposition.  
+
+Src - https://www.ethanepperly.com/index.php/2021/10/26/big-ideas-in-applied-math-low-rank-matrices/#:~:text=Upshot%3A%20A%20matrix%20is%20low,to%20perform%20various%20computations%20rapidly. 
+
+**Low-rank approximation** - 
+The problem of low-rank approximation of a matrix is usually studied as approximating a given matrix by a matrix of low rank so that the Frobenius norm of the error in the approximation is minimized. 
+Src - https://www.cs.cmu.edu/afs/cs/user/dwoodruf/www/cgklpw17.pdf 
+
+LoRA explained - https://medium.com/@Shrishml/lora-low-rank-adaptation-from-the-first-principle-7e1adec71541 
+
+Paper link - https://arxiv.org/pdf/2106.09685
