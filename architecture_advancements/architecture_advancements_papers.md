@@ -92,3 +92,22 @@ Src - https://www.cs.cmu.edu/afs/cs/user/dwoodruf/www/cgklpw17.pdf
 LoRA explained - https://medium.com/@Shrishml/lora-low-rank-adaptation-from-the-first-principle-7e1adec71541 
 
 Paper link - https://arxiv.org/pdf/2106.09685
+
+
+## Distilling knowledge in neural network – 2015 – 
+
+Hinton et al, 2015.
+
+#### Gist-
+* Usual training requires large language models to learn structures from huge data but deployment requires models with low latency & be relatively light weight to use relatively low computational resources
+* This paper introduces a method referred as Distilling knowledge from an ensemble into a single model
+* We can train a very large & cumbersome model if that makes it easier to extract structure from the data. And once it has been trained, 'distillation' training technique can be used to transfer knowledge from the cumbersome model to a small model that is more suitable for deployment
+
+#### Approach -
+In distillation, knowledge is transferred to the distilled model by training it on transfer set and using a soft target distribution for each case in the transfer set that is produced by the cumbersome model with a high temperature in its softmax. The same high temperature is used when training a distilled model, and once it is trained, the temperature is set back to 1.
+
+* Training objective during knowledge distillation – Weighted average of 2 objective functions
+* Cross entropy with soft targets distribution, while using the same high temperature used by teacher model
+* Cross entropy with correct labels, using logits in softmax by student, but using temperature of 1
+
+Paper link - https://arxiv.org/pdf/1503.02531
