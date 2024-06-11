@@ -1,3 +1,9 @@
+# Papers
+* [Flash Attention 2, 2023](flash-attention-2faster-attention-with-better-parallelism-and-Work-partitioning)
+* [Flash Attention 1, 2022](flashAttentionfast-and-memory-efficient-exact-attention-with-IO-Awareness)
+* [LoRA, 2021](LoRALow-rank-adaptation-of-Large-Language-Models–2021)
+* [Distilling knowledge in neural network – 2015](Distilling-knowledge-in-neural-network–2015)
+
 ## Flash attention 2: Faster Attention with Better Parallelism and Work Partitioning
 Tri Dao, July 2023
 
@@ -17,7 +23,7 @@ Tri Dao, July 2023
 Paper link - [FlashAttention2](https://tridao.me/publications/flash2/flash2.pdf)
 
 
-## FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness, June 2022
+## FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
 Dao et al, June 2022
 
 #### Gist - 
@@ -94,7 +100,7 @@ LoRA explained - https://medium.com/@Shrishml/lora-low-rank-adaptation-from-the-
 Paper link - https://arxiv.org/pdf/2106.09685
 
 
-## Distilling knowledge in neural network – 2015 – 
+## Distilling knowledge in neural network – 2015 
 
 Hinton et al, 2015.
 
