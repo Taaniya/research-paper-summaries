@@ -1,6 +1,6 @@
 # Papers
 * [Flash Attention 2, 2023](#flash-attention-2faster-attention-with-better-parallelism-and-work-partitioning)
-* [Flash Attention 1, 2022](#flash-attention-fast-and-memory-efficient-exact-attention-with-io--awareness)
+* [Flash Attention 1, 2022](#flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness)
 * [LoRA, 2021](#lora-low-rank-adaptation-of-large-language-models--2021)
 * [Distilling knowledge in neural network – 2015](#distilling-knowledge-in-neural-network--2015)
 
