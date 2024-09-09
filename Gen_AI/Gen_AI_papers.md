@@ -25,6 +25,9 @@
    *   Traditional systems that fine tune small LMs for CQR (e.g., T5-base)
    *   systems that fine-tune an LLM-based retriever
    *   systems that directly obtain the rewritten query by prompting LLMs
+  
+Paper link - [CHIQ: Contextual History Enhancement for Improving Query Rewriting
+in Conversational Search](https://arxiv.org/pdf/2406.05013)
 
 ## What are tools anyway? A survey from Language Model Perspective 
 Wang et al, March 2024
