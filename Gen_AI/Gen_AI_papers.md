@@ -7,7 +7,7 @@
  * LLM used – LLaMa-2 7B
  * Aim is to provide a clearer and less noisy version of history to be used instead of directly using it to generate/rewrite a search query.
 
-#### Methods propose for history enhancement –
+#### Methods proposed for history enhancement –
  * Question disambiguation – Tackle ambiguous words, acronyms and coreference substitutes by prompting LLM to generate self-contained & unambiguous version of new user question based on conversation history
  * Response expansion – Enrich LLM’s previous response to make it self-contained using conversation history to achieve better retrieval of search query in subsequent steps.
  * Pseudo response -
