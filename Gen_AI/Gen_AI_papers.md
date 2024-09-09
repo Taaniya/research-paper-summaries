@@ -1,3 +1,31 @@
+## CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search - June 2024
+
+#### Gist –
+ * This paper proposes a 2-step method to enhance quality of contextual history to improve query rewriting
+ * Based on using open source LLMs and leveraging their capabilities to resolve ambiguities in conversation history before query rewriting
+ * Demonstrate competitive results in comparison to systems with close source LLMs
+ * LLM used – LLaMa-2 7B
+ * Aim is to provide a clearer and less noisy version of history to be used instead of directly using it to generate/rewrite a search query.
+
+#### Methods propose for history enhancement –
+ * Question disambiguation – Tackle ambiguous words, acronyms and coreference substitutes by prompting LLM to generate self-contained & unambiguous version of new user question based on conversation history
+ * Response expansion – Enrich LLM’s previous response to make it self-contained using conversation history to achieve better retrieval of search query in subsequent steps.
+ * Pseudo response -
+ * Topic switch – LLM prompt to identify when topic switches between a user question and history and accordingly only include relevant parts of history. If topic is continued, conversation history is included as usual. If topic changes, only the last conversation is included to provide conversation and other irrelevant past chats are excluded from history to avoid LLM from rewriting query in subsequent steps.
+ * History summary - Generate summary of history with relevant context only
+
+#### Conversational search benchmark datasets used In experiments –
+ * TopiOCQA – focuses on challenge of topic switch (https://aclanthology.org/2022.tacl-1.27.pdf )
+ * QReCC – focuses on query rewriting – (https://aclanthology.org/2021.naacl-main.44.pdf )
+ * CAsT – only used as test set - https://www.cs.cmu.edu/afs/cs.cmu.edu/Web/People/callan/Papers/trec2021-dalton.pdf
+
+#### Evaluation –
+ * Evaluation metrics -MRR, NDCG@3, Recall@10
+ * Compared with systems –
+   *   Traditional systems that fine tune small LMs for CQR (e.g., T5-base)
+   *   systems that fine-tune an LLM-based retriever
+   *   systems that directly obtain the rewritten query by prompting LLMs
+
 ## What are tools anyway? A survey from Language Model Perspective 
 Wang et al, March 2024
 
