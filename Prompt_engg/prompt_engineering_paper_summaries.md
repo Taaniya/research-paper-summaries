@@ -14,13 +14,13 @@ For an agent to interact with environment to solve a task, ReAct paradigm augmen
 
 To enable LLMs to follow this approach of problem solving while combines reasoning, actions & observations, the prompting strategy includes few-shot in-context examplars where each example is a human trajectory of thoughts , actions, and environment observations to solve a task instance, prompting the LLMs to generate both domain-specific actions and free-form language thoughts while solving a new task
 
-ReAct approach, if used alone suffers from limitations like –
+ReAct approach, if used alone, suffers from limitations like –
 * Reduced flexibility to formulate reasoning steps, likely due to structural constraint to perform interleaving thoughts, actions and observations steps
 * Relies on retrieving informative knowledge via search
 
 Similarly, CoT, if used alone, still continues to suffer the most due to Hallucinations – based on error analysis of this approach on benchmarks
 
-** Methods experimented & results (section 3)** –
+**Methods experimented & results (section 3)** –
 * Based on comparison with baselines including only reasoning – CoT and only acting.
 * Comparing ReAct vs Cot vs combining internal and external knowledge, incorporating both ReAct and CoT-SC together works best and letting the model decide when to switch to the other based on the provided heuristics – switch from ReAct to CoT-SC when it's unable to solve the task within defined no. of steps (unable to recover by valid reasoning to act next) and switch from CoT-SC to ReAct when the outcome is not very consistent (i.e. internal knowledge might not support the task confidently ) since ReAct's problem solving process is more grounded and factual.
 * In this paper, no ad-hoc format choice, thought design or example selection was performed while providing annotated human trajectories for few shot examples. * * ReAct shows robustness to prompt selections to generalize well on new task instance while learning only from 5-6 trajectory examples provided in context.
