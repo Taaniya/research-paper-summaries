@@ -1,3 +1,7 @@
+# Papers
+* [Self-Refine: Iterative Refinement with Self-Feedback, 2023](#self-refine-iterative-refinement-with-self-feedback)
+* [ReAct: Synergizing Reasoning and Acting in Language Models, ICLR 2023](#react-synergizing-reasoning-and-acting-in-language-models)
+
 ## Self-Refine: Iterative Refinement with Self-Feedback
 
 Madaan et al, May 2023
