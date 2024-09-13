@@ -1,3 +1,38 @@
+## ReAct: Synergizing Reasoning and Acting in Language Models
+Yao et al, ICLR 2023
+
+**Gist** –
+* Paper introduces use of LLMs by prompt engg strategy that prompts LLMs to generate both verbal reasoning traces and actions specific to the task in an interleaved manner, while also interacting with external environments (e.g. Wikipedia) to incorporate additional information into reasoning
+
+**Approach** –
+For an agent to interact with environment to solve a task, ReAct paradigm augments the agent's action space with auxiliary actions from language space, referred as a thought or reasoning trace. A thought doesn't affect the external environment and rather aims to compose useful information by reasoning over current context. Thoughts could of various types for solving complex tasks for e.g.,
+* Decomposing task goals and create action plans
+* Injecting commonsense knowledge relevant to task solving
+* Extracting important parts from observations
+* Track progress and transit action plans
+* Handle exceptions and adjust action plans
+
+To enable LLMs to follow this approach of problem solving while combines reasoning, actions & observations, the prompting strategy includes few-shot in-context examplars where each example is a human trajectory of thoughts , actions, and environment observations to solve a task instance, prompting the LLMs to generate both domain-specific actions and free-form language thoughts while solving a new task
+
+ReAct approach, if used alone suffers from limitations like –
+* Reduced flexibility to formulate reasoning steps, likely due to structural constraint to perform interleaving thoughts, actions and observations steps
+* Relies on retrieving informative knowledge via search
+
+Similarly, CoT, if used alone, still continues to suffer the most due to Hallucinations – based on error analysis of this approach on benchmarks
+
+** Methods experimented & results (section 3)** –
+* Based on comparison with baselines including only reasoning – CoT and only acting.
+* Comparing ReAct vs Cot vs combining internal and external knowledge, incorporating both ReAct and CoT-SC together works best and letting the model decide when to switch to the other based on the provided heuristics – switch from ReAct to CoT-SC when it's unable to solve the task within defined no. of steps (unable to recover by valid reasoning to act next) and switch from CoT-SC to ReAct when the outcome is not very consistent (i.e. internal knowledge might not support the task confidently ) since ReAct's problem solving process is more grounded and factual.
+* In this paper, no ad-hoc format choice, thought design or example selection was performed while providing annotated human trajectories for few shot examples. * * ReAct shows robustness to prompt selections to generalize well on new task instance while learning only from 5-6 trajectory examples provided in context.
+
+**Benchmarks evaluated with** –
+* [Question Answering - HotPotQA, 2018](https://arxiv.org/pdf/1809.09600)
+* [Fact Verification (Fever, 2018)](https://arxiv.org/pdf/1803.05355)
+* [ALFWorld, 2020](https://arxiv.org/pdf/2010.03768)
+* [WebShop, 2022](https://arxiv.org/pdf/2207.01206)
+
+Paper link- https://arxiv.org/pdf/2210.03629
+
 ## Self-consistency improves CoT reasoning in Language Models, ICLR March 2023
 Wang et al
 
