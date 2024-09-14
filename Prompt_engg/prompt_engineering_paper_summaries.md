@@ -2,7 +2,7 @@
 * [Self-Refine: Iterative Refinement with Self-Feedback, 2023](#self-refine-iterative-refinement-with-self-feedback)
 * [ReAct: Synergizing Reasoning and Acting in Language Models, ICLR 2023](#react-synergizing-reasoning-and-acting-in-language-models)
 * [Self-consistency improves CoT reasoning in Language Models, ICLR March 2023](#self-consistency-improves-cot-reasoning-in-language-models-iclr-march-2023)
-* [LLMs can be easily distracted by irrelevant context – Jan 2023](#llms-can-be-easily-distracted-by-irrelevant-context--jan-2023)
+* [LLMs can be easily distracted by irrelevant context – ICML 2023](#llms-can-be-easily-distracted-by-irrelevant-context--jan-2023)
 * [Chain of thought prompting elicits reasoning in LLMs, NeurIPS 2022](#chain-of-thought-prompting-elicits-reasoning-in-llms-2022)
   
 
@@ -112,7 +112,7 @@ This conditional probability can be obtained from log probabilities during gener
 Paper link - [Self consistency](https://arxiv.org/pdf/2203.11171)
 
 ## LLMs can be easily distracted by irrelevant context – Jan 2023
-Shi et al
+Shi et al (Google DeepMind), ICML 2023
 
 ### Gist –
 •	This paper investigates the distractibility of large language models, i.e., how the model problem-solving accuracy can be influenced by irrelevant context
