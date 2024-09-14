@@ -87,9 +87,9 @@ The intrinsic dimension for a data set can be thought of as the number of variab
 **Rank of a matrix** - 
 In linear algebra, the rank of a matrix A is the dimension of the vector space generated (or spanned) by its columns. This corresponds to the maximal number of linearly independent columns of A. This, in turn, is identical to the dimension of the vector space spanned by its rows. 
 
-A matrix is low-rank if it has many fewer linearly independent columns than columns. Such matrices can be efficiently represented using rank-factorizations, which can be used to perform various computations rapidly. Many matrices appearing in applications which are not genuinely low-rank can be well-approximated by low-rank matrices; the best possible such approximation is given by the truncated singular value decomposition.  
+A matrix is low-rank if it has many fewer linearly independent columns than columns. Such matrices can be efficiently represented using rank-factorizations, which can be used to perform various computations rapidly. Many matrices appearing in applications, which are not genuinely low-rank, can be well-approximated by low-rank matrices; the best possible such approximation is given by the truncated singular value decomposition.  
 
-Src - https://www.ethanepperly.com/index.php/2021/10/26/big-ideas-in-applied-math-low-rank-matrices/#:~:text=Upshot%3A%20A%20matrix%20is%20low,to%20perform%20various%20computations%20rapidly. 
+Source - [Big Ideas in Applied Math: Low-rank Matrices, 2021, by Ethan N. Epperly](https://www.ethanepperly.com/index.php/2021/10/26/big-ideas-in-applied-math-low-rank-matrices/)
 
 **Low-rank approximation** - 
 The problem of low-rank approximation of a matrix is usually studied as approximating a given matrix by a matrix of low rank so that the Frobenius norm of the error in the approximation is minimized. 
