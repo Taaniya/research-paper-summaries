@@ -144,7 +144,7 @@ In many cases problem examplars had problems described with irrelevant context a
 Paper link - (LLMs can be easily distracted by irrelevant context, 2023)[https://arxiv.org/pdf/2302.00093]
 
 ## Chain of thought prompting elicits reasoning in LLMs, 2022
-Wei et al.
+Wei et al, (Google Research, Brain Team)  NeurIPS 2022
 
 ### Gist -
 * This paper introduces a prompting technique that improves an LLMs’ ability to reason for complex tasks
