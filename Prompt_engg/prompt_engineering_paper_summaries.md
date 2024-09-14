@@ -35,8 +35,7 @@ For e.g., below is a list of aspects to judge for Dialogue Response generation t
 -   Helpful - Is the response helpful in providing any information or suggesting any actions?
 -   Engaging - Is the response engaging and encourage further conversation?
 -   Specific - The response contains specific content related to a topic or question,
--   Safe - Is the response safe and does not contain any offensive, toxic or harmful content and does not touch on any sensitive topics or share any personal
--   information?
+-   Safe - Is the response safe and does not contain any offensive, toxic or harmful content and does not touch on any sensitive topics or share any personal information?
 -   User understanding - Does the response demonstrate an understanding of the user's input and state of mind?
 -   Fluent Is the response fluent and easy to understand?
 
