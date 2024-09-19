@@ -117,3 +117,9 @@ In distillation, knowledge is transferred to the distilled model by training it 
 * Cross entropy with correct labels, using logits in softmax by student, but using temperature of 1
 
 Paper link - https://arxiv.org/pdf/1503.02531
+
+**More References**-
+* https://keras.io/examples/vision/knowledge_distillation/
+* https://keras.io/examples/keras_recipes/better_knowledge_distillation/
+* https://colab.research.google.com/github/patrickphatnguyen/Knowledge-Distillation-Keras/blob/master/Knowledge_Distillation_Notebook.ipynb
+* https://github.com/philschmid/knowledge-distillation-transformers-pytorch-sagemaker
