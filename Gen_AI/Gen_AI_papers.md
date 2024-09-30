@@ -135,3 +135,34 @@ Schick et al
 * Doesn’t let the LLM to use a tool in an interactive way
 
 Paper link - [Toolformer, 2023](https://arxiv.org/pdf/2302.04761)
+
+## Can You Unpack That? Learning to Rewrite Questions-in-Context
+Elgohary et al., EMNLP 2019
+
+* This paper introduces the task of query rewriting in a conversational context, where given a conversation history in context, the model generates a context- independent, self-contained question.
+* The paper also releases a dataset – CANARD with 40,527 questions based on QUAC (Question Answering in Context) and trains seq2seq models on this for rewriting task
+* The paper specifies the instructions given to crowd workers and the quality control mechanism followed during data collection. The efficacy of quality control is performed manually.
+
+#### Dataset details -
+* Dataset is constructed using human crowd workers tasked with making previously context-dependent questions to unambiguously answerable. This resolved coreference linkages.
+* This dataset has multiple turns with variable turn lengths
+* Data is created from QUAC [(Choi et al., 2018)](https://aclanthology.org/D18-1241.pdf), a conversational reading comprehension dataset 
+
+
+**Baseline Model training data preparation –**
+* The input sentence is created by concatenating all utterances in history H, prepending them to q_m and adding a special separator token between utterances.
+
+**Evaluation –**
+* Involves comparing BLEU score of baseline models with that of human rewrites
+
+
+**Scripts –**
+* https://github.com/aagohary/canard
+
+**References -**
+* Paper - https://aclanthology.org/D19-1605.pdf
+* https://sites.google.com/view/qanta/projects/canard 
+
+
+
+
