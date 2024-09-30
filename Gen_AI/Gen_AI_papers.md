@@ -1,5 +1,5 @@
-## CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search - June 2024
-
+## CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search
+Mo et al., - June 2024
 #### Gist –
  * This paper proposes a 2-step method to enhance quality of contextual history to improve query rewriting
  * Based on using open source LLMs and leveraging their capabilities to resolve ambiguities in conversation history before query rewriting
