@@ -1,3 +1,6 @@
+# Paper
+* [MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing, June 2024](#magpie-alignment-data-synthesis-from-scratch-by-prompting-aligned-llms-with-nothing-june-2024)
+  
 ## MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing, June 2024
 Zhangchen Xu et al, 2024
 
