@@ -1,4 +1,26 @@
 # Papers
+* Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019
+* [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
+
+## Simple applications of BERT for Ad Hoc Document Retrieval
+
+Yang et al., 2019
+
+* Test their hypothesis that BERT can be finetuned to capture document relevance when applied on ad hoc document retrieval task
+* Also describe approach to handle scoring document relevance when doc length exceeds BERT’s max input length
+* Approach is built on top of previous approach - [BERTserini](#end-to-end-open-domain-question-answering-with-bertserini)
+
+**Approach –**
+* Finetunes on another dataset with short sentence-level annotations of Microblog social media posts on document retrieval task
+* Also finetuned on QA task but of similar domain as that of test data – News wire.
+* Flow includes 2 steps – retrieval using BM25 (Anserini Approach) and feeding top retrieved doc to BERT classifier. BERT score is combined with retrieved document through linear interpolation
+* Input to BERT classifier is a concatenation of query and retrieved document - [[CLS], Q, [SEP], D,[SEP]], and classifier output is obtained by using [CLS] token vector as input to a single layer neural network to classify whether its relevant.
+* Handles scoring long documents by performing classification inference over each sentence in retrieved document, selecting the sentence with highest score, and combining it with original doc score with linear interpolation.
+
+**Takeaways –**
+•	Finetuning on document retrieval task contributes better to it learning & better relevance scoring performance rather than on training on similar domain but of different task.
+
+Paper link - https://arxiv.org/pdf/1903.10972
 
 ## End-to-End Open-Domain Question Answering with BERTserini
 
