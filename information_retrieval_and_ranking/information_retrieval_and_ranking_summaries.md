@@ -1,5 +1,5 @@
 # Papers
-* Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019
+* [Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019](simple-applications-of-bert-for-ad-hoc-document-retrieval)
 * [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
 
 ## Simple applications of BERT for Ad Hoc Document Retrieval
