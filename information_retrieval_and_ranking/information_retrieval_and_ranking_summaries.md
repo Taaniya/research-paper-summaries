@@ -2,6 +2,15 @@
 * [Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019](#simple-applications-of-bert-for-ad-hoc-document-retrieval)
 * [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
 
+
+## A deep look into Neural Ranking models for IR 
+Guo et al, 2019
+
+**Gist**
+* A survey paper on neural ranking models studying & analyzing the existing models w.r.t their assumptions, major design principles, and learning strategies.
+* Includes comparison between representation focused vs interaction focused neural model architectures
+
+
 ## Simple applications of BERT for Ad Hoc Document Retrieval
 
 Yang et al., 2019
