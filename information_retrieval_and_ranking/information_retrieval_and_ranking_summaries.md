@@ -7,6 +7,28 @@
 6. [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
 7. [A Deep Relevance Matching Model for Ad-hoc Retrieval, Guo et al, ACM 2017](#a-deep-relevance-matching-model-for-ad-hoc-retrieval)
 
+## Sentence-T5 (ST5): Scalable Sentence Encoders from Pre-trained Text-to-Text Models
+Ni et al., ACL 2022
+
+* Aim - Introduces Sentence T5 Google, explores use of T5 for sentence embeddings
+* Explore 3 variations of sentence T5 models / turning a T5 model into a sentence embedding model-
+- ST5 first: use 1st token representation of encoder output
+- ST5 mean: use avg of all token representations of encoder output
+- Encoder-Decoder first : use 1st token representation from decoder output, when input text is fed to the encoder and only ‘start’ symbol is fed to the decoder as input
+
+**Training –**
+* Sentence encoder training using dual encoder architectures
+* Once both the modules sharing the weights create their representation of the input text respectively, projection and L2 normalization is applied to the resulting embeddings.
+* Next the embeddings from both the towers are scored for similarity with dot product. Since L2 norm is applied the similarity score is cosine similarity
+* 2-stage training -
+- Training on web mined conversational input-response & question answering pairs
+- Contrastive learning on NLI pairs
+
+**References-**
+* Git repo - https://huggingface.co/sentence-transformers/sentence-t5-base 
+* Paper link - https://aclanthology.org/2022.findings-acl.146.pdf 
+
+
 ## Text Embeddings by Weakly-Supervised Contrastive Pre-training
 Wang et al., 2022
 
