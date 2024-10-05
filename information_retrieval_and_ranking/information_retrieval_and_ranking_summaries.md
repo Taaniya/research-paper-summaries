@@ -4,6 +4,31 @@
 * [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
 * [A Deep Relevance Matching Model for Ad-hoc Retrieval, Guo et al, ACM 2017](#a-deep-relevance-matching)
 
+## Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
+Nils Reimers and Iryna Gurevych, EMNLP 2019
+
+**Gist -**
+* Introduces a modification to BERT network architecture and is computationally efficient
+* The modification is addition of pooling operation to output of BERT.
+* To fine-tune BERT, the architecture is also modified to use Siamese and triplet network structures to derive semantically meaningful sentence embeddings
+* Purpose is to tackle computational overhead on STS (semantic text similarity)
+* This way the new architecture enables BERT to be applicable for new tasks –
+* Large scale semantic similarity comparison, clustering, information retrieval via semantic-search
+* SBERT fine-tunes BERT in a Siamese / triplet network architecture i.e., in this paper, they started with a pre-trained BERT model & fine-tuned it to yield useful sentence embeddings
+
+#### SBERT Model architecture
+* With SBERT modified architecture, the addition is a pooling operation to the output of BERT / RoBERTa to derive a fixed size sentence embedding
+* Explore 3 pooling strategies –
+  - Using output of CLS token
+  - Computing mean of all output vectors (default)
+  - Computing max-over-time
+
+#### Evaluation -
+* Experimented with 2 set ups -
+  - Directly fine-tuned on STS benchmark data
+  - Pre-trained BERT on NLI, then fine-tuned on STS benchmark dataset. This shows better results.
+
+Paper link - https://aclanthology.org/D19-1410.pdf 
 
 ## A deep look into Neural Ranking models for IR 
 Guo et al, 2019
