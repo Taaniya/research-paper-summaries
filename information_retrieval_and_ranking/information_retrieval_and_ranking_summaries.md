@@ -31,6 +31,35 @@ Nils Reimers and Iryna Gurevych, EMNLP 2019
 
 Paper link - https://aclanthology.org/D19-1410.pdf 
 
+## Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling
+Hofstätter et al, 2021
+
+**Gist –** 
+* Proposes TAS Balanced – Topic aware sampling technique to compose training batches for training a dense passage retriever model
+* Paper contribution involves improving both pairwise and in-batch teacher signals
+* Topics are clustered before training, using semantic dot product similarity
+* Trained on 400K queries from MSMARCO dataset
+* Queries are sampled & selected from a single cluster to concentrate information about a topic in a single batch, which after in-batch negative teaching, leads to higher quality results
+* To be used for asymmetric search
+* Distilbert for dense passage retrieval with balanced topic-aware sampling
+* Optimized for the task of semantic search – Mentioned in huggingface model card
+* Suitable for dot product distance metric
+
+**Models -** 
+* Main dense retrieval model – dual encoder BERTDOT
+* 2 teacher architectures –
+  -  For combination of pairwise BERTCAT
+  -  In batch negative teaching ColBERT
+* Evaluation dataset - TREC
+
+**References -**
+* https://huggingface.co/sentence-transformers/msmarco-distilbert-base-tas-b
+* Paper link - https://arxiv.org/pdf/2104.06967.pdf
+* https://github.com/sebastian-hofstaetter/tas-balanced-dense-retrieval
+* Example notebook using the model for query and passage embeddings
+https://github.com/sebastian-hofstaetter/tas-balanced-dense-retrieval/blob/main/minimal_bert_dot_usage_example.ipynb 
+
+
 ## A deep look into Neural Ranking models for IR 
 Guo et al, 2019
 
