@@ -51,3 +51,59 @@ Yang et al., NAACL 2019
 * BERT reader needs improvement w.r.t weighted interpolation between BERT and retrieval scores.
 
 Paper link - https://aclanthology.org/N19-4013.pdf
+
+### A Deep Relevance Matching Model for Ad-hoc Retrieval
+by Guo et al, ACM 2017
+
+* This paper identifies the ad-hoc retrieval task as relevance matching problem in information retrieval rather than semantic matching problem and highlights the difference between the two problems.
+* Proposes deep neural relevance matching model – DRMM for ad-hoc retrieval
+
+
+* Matching problem is defined as -
+  
+$Match(T1, T2) – F(\phi(T_{1}), \phi(T_{2}))$
+
+$\phi$ – function to map each text to a representation vector
+
+$F$ – scoring function based on their interactions between them
+
+Depending upon the choice of these 2 functions, there are 2 types of deep matching models based on architectures –
+
+**Representation focused –**
+   * Build a good representation for a single text with a DNN. Then conducts matching between compositional and abstract text representations.
+   * $\phi$ is a complex representation of mapping function, while F is relatively simple matching function. Eg., in DSSM, phi is a Feed Forward NN, while F is a cosine similarity function.
+   * Without loss of generality, all the model architectures of representation-focused models can be viewed as a Siamese (symmetric) architecture.
+
+**Interaction-focused model –**
+   * First builds local interactions (i.e., local matching signals) between two pieces of text, and then uses deep neural networks to learn hierarchical interaction patterns for matching. 
+   * $\phi$ is a simple mapping function, while F is a complex deep model. E.g., in Deep Match, phi maps each text to a sequence of words, F is a FF NN powered by a topic model over word interactions matrix
+
+Differences in semantic matching and relevance matching problem –
+
+**Semantic matching -**
+*   Semantic matching problem can come in different forms in NLP tasks such as -paraphrase identification, question answering, automatic conversation, as these involve identifying semantic relations between 2 pieces of text.
+*   Semantic matching assumes that the 2 pieces of text are homogeneous and consist of a few natural language sentences like – Question/Answers, sentences, dialogs etc.
+
+This basically emphasizes on –
+* Similarity matching signals - to capture the semantic similarity/relatedness between words, phrases and sentences, as compared with exact matching signals.
+* Compositional meanings - to use the compositional meaning of the sentences in natural language based on grammatical structures rather than treating them as a set/sequence of words
+* Global matching requirement - Semantic matching usually treats the two pieces of text as a whole to infer the semantic relations between them, leading to a global matching requirement
+
+**Relevance matching –**
+*   The matching in ad-hoc retrieval, is about relevance matching, i.e., identifying whether a document is relevant to a given query, where a query is typically short and keyword based while document can be of varying lengths.
+
+Following factors are considered to estimate relevance between a query and a document.
+* Exact matching signals: the exact matching of terms in documents with those in queries is the most important signal in ad-hoc retrieval due to the indexing and search paradigm in modern search engines.
+* Query term importance: Since queries are mainly short & keyword based without complex grammatical structures, in ad-hoc retrieval it should be taken into account.
+* Diverse matching requirement: in ad-hoc retrieval, a relevant document length can be very long and relevance matching could happen in any part of the relevant document and we do not require the document as a whole to be relevant to a query.
+
+
+Proposed DRMM model –
+* Interaction focused-model employing a joint deep architecture at query term level for relevance matching
+* First builds local interactions between each pair of terms from a query and a document based on term embeddings.
+* For each query term, the variable-length local interactions are mapped into a fixed-length matching histogram.
+* Based on this fixed-length matching histogram, a feed forward matching network is employed to learn hierarchical matching patterns and produce a matching score.
+* Finally, the overall matching score is computed by aggregating the scores from each query term with
+a term gating network computing the aggregation weights.
+
+
