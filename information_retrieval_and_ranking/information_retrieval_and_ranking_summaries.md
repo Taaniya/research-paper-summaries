@@ -26,7 +26,7 @@ Ni et al., ACL 2022
   - Contrastive learning on NLI pairs
 
 **References-**
-* Git repo - https://huggingface.co/sentence-transformers/sentence-t5-base 
+* Model Card - https://huggingface.co/sentence-transformers/sentence-t5-base 
 * Paper link - https://aclanthology.org/2022.findings-acl.146.pdf 
 
 
