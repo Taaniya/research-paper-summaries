@@ -1,10 +1,11 @@
 # Papers
-1. [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks, Reimers and Gurevych, EMNLP 2019](#sentence-bert-sentence-embeddings-using-siamese-bert-networks)
-2. [Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling, Hofstatter et al, SIGIR, 2021](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
-3. [A deep look into Neural Ranking models for Information Retrieval, Guo et al., 2019](#a-deep-look-into-neural-ranking-models-for-ir)
-4. [Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019](#simple-applications-of-bert-for-ad-hoc-document-retrieval)
-5. [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
-6. [A Deep Relevance Matching Model for Ad-hoc Retrieval, Guo et al, ACM 2017](#a-deep-relevance-matching-model-for-ad-hoc-retrieval)
+1. [Text Embeddings by Weakly-Supervised Contrastive Pre-training, Wang et al., 2022](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
+2. [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks, Reimers and Gurevych, EMNLP 2019](#sentence-bert-sentence-embeddings-using-siamese-bert-networks)
+3. [Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling, Hofstatter et al, SIGIR, 2021](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
+4. [A deep look into Neural Ranking models for Information Retrieval, Guo et al., 2019](#a-deep-look-into-neural-ranking-models-for-ir)
+5. [Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019](#simple-applications-of-bert-for-ad-hoc-document-retrieval)
+6. [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
+7. [A Deep Relevance Matching Model for Ad-hoc Retrieval, Guo et al, ACM 2017](#a-deep-relevance-matching-model-for-ad-hoc-retrieval)
 
 ## Text Embeddings by Weakly-Supervised Contrastive Pre-training
 Wang et al., 2022
