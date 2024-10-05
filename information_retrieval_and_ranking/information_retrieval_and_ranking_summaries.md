@@ -72,12 +72,12 @@ Depending upon the choice of these 2 functions, there are 2 types of deep matchi
 
 **Representation focused –**
    * Build a good representation for a single text with a DNN. Then conducts matching between compositional and abstract text representations.
-   * $\phi$ is a complex representation of mapping function, while F is relatively simple matching function. Eg., in DSSM, phi is a Feed Forward NN, while F is a cosine similarity function.
+   * $\phi$ is a complex representation of mapping function, while $F$ is relatively simple matching function. Eg., in [DSSM](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf), $\phi$ is a Feed Forward NN, while $F$ is a cosine similarity function.
    * Without loss of generality, all the model architectures of representation-focused models can be viewed as a Siamese (symmetric) architecture.
 
 **Interaction-focused model –**
    * First builds local interactions (i.e., local matching signals) between two pieces of text, and then uses deep neural networks to learn hierarchical interaction patterns for matching. 
-   * $\phi$ is a simple mapping function, while F is a complex deep model. E.g., in Deep Match, phi maps each text to a sequence of words, F is a FF NN powered by a topic model over word interactions matrix
+   * $\phi$ is a simple mapping function, while F is a complex deep model. E.g., in [DeepMatch](https://papers.nips.cc/paper_files/paper/2013/file/8a0e1141fd37fa5b98d5bb769ba1a7cc-Paper.pdf), $\phi$ maps each text to a sequence of words, $F$ is a Feed Forward NN powered by a topic model over word interactions matrix
 
 Differences in semantic matching and relevance matching problem –
 
@@ -107,4 +107,4 @@ Proposed DRMM model –
 * Finally, the overall matching score is computed by aggregating the scores from each query term with
 a term gating network computing the aggregation weights.
 
-
+Paper link - https://ciir-publications.cs.umass.edu/getpdf.php?id=1247
