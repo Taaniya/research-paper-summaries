@@ -6,6 +6,26 @@
 5. [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
 6. [A Deep Relevance Matching Model for Ad-hoc Retrieval, Guo et al, ACM 2017](#a-deep-relevance-matching-model-for-ad-hoc-retrieval)
 
+## Text Embeddings by Weakly-Supervised Contrastive Pre-training
+Wang et al., 2022
+
+* This paper introduces E5, text embeddings model
+* Training data e.g., [MSMARCO](https://arxiv.org/pdf/1611.09268), NQ, NLI
+* Data prep –
+  - Curate a text pair dataset CCPairs (colossal clean text pairs) by harvesting heterogenuous semi structured data
+  - Strategy to choose negative samples – in-batch negatives
+  - Dataset used for general training (using contrastive training) –
+* Fine-tuning with labeled data – NLI (STS & linear probing tasks), MS-MARCO passage ranking dataset, NQ (Natural Questions) (MARCO and NQ for retrieval tasks)
+* Training method – contrastive training for initial training of the pre=trained encoder model, followed by further training on labelled dataModel architecture
+* Transformer encoder – bert-base-uncased, bert-large-uncased-word-masking
+* Evaluation – method, dataset, metrics
+  - Methods –
+    * BEIR – metrics – nDCG@10
+    * MTEB - accuracy, v-measure, average precision, MAP, nDCG@10, and Spearman coefficients
+
+Paper link - https://arxiv.org/pdf/2212.03533.pdf
+
+
 ## Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
 Nils Reimers and Iryna Gurevych, EMNLP 2019
 
