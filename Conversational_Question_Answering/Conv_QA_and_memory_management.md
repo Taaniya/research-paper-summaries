@@ -1,6 +1,7 @@
 # Papers
 1. [Learning to Select the Relevant History Turns in Conversational Question Answering, Zaib et al., 2023](#learning-to-select-the-relevant-history-turns-in-conversational-question-answering)
 2. [Keep Me Updated! Memory Management in Long-term Conversations, Bae et al., EMNLP 2022](#keep-me-updated-memory-management-in-long-term-conversations)
+3. [Learning to Identify Follow-Up Questions in Conversational Question Answering, Kundu et al., ACL, 2020](#learning-to-identify-follow-up-questions-in-conversational-question-answering)
 
 ## Learning to Select the Relevant History Turns in Conversational Question Answering
  Zaib et al., 2023
