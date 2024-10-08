@@ -1,4 +1,6 @@
 # Papers
+1. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
+2. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
 
 ## Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
 Raffel at el., JMLR 2019
