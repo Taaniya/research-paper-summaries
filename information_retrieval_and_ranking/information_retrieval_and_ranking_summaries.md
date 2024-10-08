@@ -1,6 +1,6 @@
 # Papers
 1. [Sentence-T5 (ST5): Scalable Sentence Encoders from Pre-trained Text-to-Text Models, Ni etal., ACL, 2022](#sentence-t5-st5-scalable-sentence-encoders-from-pre-trained-text-to-text-models)
-2. [Text Embeddings by Weakly-Supervised Contrastive Pre-training, Wang et al., 2022](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
+2. [Text Embeddings by Weakly-Supervised Contrastive Pre-training, Wang et al., 2022](#text-embeddings-by-weakly-supervised-contrastive-pre-training)
 3. [Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling, Hofstatter et al, SIGIR, 2021](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
 4. [ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT, Khattab & Zaharia, SIGIR 2020](#colbert-efficient-and-effective-passage-search-via-contextualized-late-interaction-over-bert)
 5. [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks, Reimers and Gurevych, EMNLP 2019](#sentence-bert-sentence-embeddings-using-siamese-bert-networks)
