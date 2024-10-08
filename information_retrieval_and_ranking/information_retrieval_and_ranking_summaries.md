@@ -1,9 +1,9 @@
 # Papers
 1. [Sentence-T5 (ST5): Scalable Sentence Encoders from Pre-trained Text-to-Text Models, Ni etal., ACL, 2022](#sentence-t5-st5-scalable-sentence-encoders-from-pre-trained-text-to-text-models)
 2. [Text Embeddings by Weakly-Supervised Contrastive Pre-training, Wang et al., 2022](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
-3. [ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT, Khattab & Zaharia, SIGIR 2020](#colbert-efficient-and-effective-passage-search-via-contextualized-late-interaction-over-bert)
-4. [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks, Reimers and Gurevych, EMNLP 2019](#sentence-bert-sentence-embeddings-using-siamese-bert-networks)
-5. [Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling, Hofstatter et al, SIGIR, 2021](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
+3. [Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling, Hofstatter et al, SIGIR, 2021](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
+4. [ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT, Khattab & Zaharia, SIGIR 2020](#colbert-efficient-and-effective-passage-search-via-contextualized-late-interaction-over-bert)
+5. [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks, Reimers and Gurevych, EMNLP 2019](#sentence-bert-sentence-embeddings-using-siamese-bert-networks)
 6. [A deep look into Neural Ranking models for Information Retrieval, Guo et al., 2019](#a-deep-look-into-neural-ranking-models-for-ir)
 7. [Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019](#simple-applications-of-bert-for-ad-hoc-document-retrieval)
 8. [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
@@ -49,6 +49,35 @@ Wang et al., 2022
     * MTEB - accuracy, v-measure, average precision, MAP, nDCG@10, and Spearman coefficients
 
 Paper link - https://arxiv.org/pdf/2212.03533.pdf
+
+## Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling
+Hofstätter et al., SIGIR 2021
+
+**Gist –** 
+* Proposes TAS Balanced – Topic aware sampling technique to compose training batches for training a dense passage retriever model
+* Paper contribution involves improving both pairwise and in-batch teacher signals
+* Topics are clustered before training, using semantic dot product similarity
+* Trained on 400K queries from MSMARCO dataset
+* Queries are sampled & selected from a single cluster to concentrate information about a topic in a single batch, which after in-batch negative teaching, leads to higher quality results
+* To be used for asymmetric search
+* Distilbert for dense passage retrieval with balanced topic-aware sampling
+* Optimized for the task of semantic search – Mentioned in huggingface model card
+* Suitable for dot product distance metric
+
+**Models -** 
+* Main dense retrieval model – dual encoder BERTDOT
+* 2 teacher architectures –
+  -  For combination of pairwise BERTCAT
+  -  In batch negative teaching ColBERT
+* Evaluation dataset - TREC
+
+**References -**
+* https://huggingface.co/sentence-transformers/msmarco-distilbert-base-tas-b
+* Paper link - https://arxiv.org/pdf/2104.06967.pdf
+* https://github.com/sebastian-hofstaetter/tas-balanced-dense-retrieval
+* Example notebook using the model for query and passage embeddings
+https://github.com/sebastian-hofstaetter/tas-balanced-dense-retrieval/blob/main/minimal_bert_dot_usage_example.ipynb 
+
 
 ## ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT
 Omar Khattab and Matei Zaharia, SIGIR 2020
@@ -111,34 +140,6 @@ Nils Reimers and Iryna Gurevych, EMNLP 2019
   - Pre-trained BERT on NLI, then fine-tuned on STS benchmark dataset. This shows better results.
 
 Paper link - https://aclanthology.org/D19-1410.pdf 
-
-## Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling
-Hofstätter et al., SIGIR 2021
-
-**Gist –** 
-* Proposes TAS Balanced – Topic aware sampling technique to compose training batches for training a dense passage retriever model
-* Paper contribution involves improving both pairwise and in-batch teacher signals
-* Topics are clustered before training, using semantic dot product similarity
-* Trained on 400K queries from MSMARCO dataset
-* Queries are sampled & selected from a single cluster to concentrate information about a topic in a single batch, which after in-batch negative teaching, leads to higher quality results
-* To be used for asymmetric search
-* Distilbert for dense passage retrieval with balanced topic-aware sampling
-* Optimized for the task of semantic search – Mentioned in huggingface model card
-* Suitable for dot product distance metric
-
-**Models -** 
-* Main dense retrieval model – dual encoder BERTDOT
-* 2 teacher architectures –
-  -  For combination of pairwise BERTCAT
-  -  In batch negative teaching ColBERT
-* Evaluation dataset - TREC
-
-**References -**
-* https://huggingface.co/sentence-transformers/msmarco-distilbert-base-tas-b
-* Paper link - https://arxiv.org/pdf/2104.06967.pdf
-* https://github.com/sebastian-hofstaetter/tas-balanced-dense-retrieval
-* Example notebook using the model for query and passage embeddings
-https://github.com/sebastian-hofstaetter/tas-balanced-dense-retrieval/blob/main/minimal_bert_dot_usage_example.ipynb 
 
 
 ## A deep look into Neural Ranking models for IR 
