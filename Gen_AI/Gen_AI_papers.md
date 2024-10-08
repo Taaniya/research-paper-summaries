@@ -170,7 +170,3 @@ Elgohary et al., EMNLP 2019
 **References -**
 * Paper - https://aclanthology.org/D19-1605.pdf
 * https://sites.google.com/view/qanta/projects/canard 
-
-
-
-
