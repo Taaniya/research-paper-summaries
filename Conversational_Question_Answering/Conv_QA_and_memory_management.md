@@ -68,7 +68,7 @@ Memory management system – decides which info to keep in memory
 * Paper link - https://aclanthology.org/2022.findings-emnlp.276.pdf
 
 
-## Learning to identify follow-up questions – 2020
+## Learning to Identify Follow-Up Questions in Conversational Question Answering
 Kundu et al., ACL, 2020
 
 **Gist-**
