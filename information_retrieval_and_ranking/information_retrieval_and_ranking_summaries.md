@@ -1,12 +1,13 @@
 # Papers
 1. [Sentence-T5 (ST5): Scalable Sentence Encoders from Pre-trained Text-to-Text Models, Ni etal., ACL, 2022](#sentence-t5-st5-scalable-sentence-encoders-from-pre-trained-text-to-text-models)
 2. [Text Embeddings by Weakly-Supervised Contrastive Pre-training, Wang et al., 2022](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
-3. [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks, Reimers and Gurevych, EMNLP 2019](#sentence-bert-sentence-embeddings-using-siamese-bert-networks)
-4. [Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling, Hofstatter et al, SIGIR, 2021](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
-5. [A deep look into Neural Ranking models for Information Retrieval, Guo et al., 2019](#a-deep-look-into-neural-ranking-models-for-ir)
-6. [Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019](#simple-applications-of-bert-for-ad-hoc-document-retrieval)
-7. [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
-8. [A Deep Relevance Matching Model for Ad-hoc Retrieval, Guo et al, ACM 2017](#a-deep-relevance-matching-model-for-ad-hoc-retrieval)
+3. [ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT, Khattab & Zaharia, SIGIR 2020](#colbert-efficient-and-effective-passage-search-via-contextualized-late-interaction-over-bert)
+4. [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks, Reimers and Gurevych, EMNLP 2019](#sentence-bert-sentence-embeddings-using-siamese-bert-networks)
+5. [Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling, Hofstatter et al, SIGIR, 2021](#efficiently-teaching-an-effective-dense-retriever-with-balanced-topic-aware-sampling)
+6. [A deep look into Neural Ranking models for Information Retrieval, Guo et al., 2019](#a-deep-look-into-neural-ranking-models-for-ir)
+7. [Simple applications of BERT for Ad Hoc Document Retrieval, Yang et al., 2019](#simple-applications-of-bert-for-ad-hoc-document-retrieval)
+8. [End-to-End Open-Domain Question Answering with BERTserini, Yang et al., NAACL, 2019](#end-to-end-open-domain-question-answering-with-bertserini)
+9. [A Deep Relevance Matching Model for Ad-hoc Retrieval, Guo et al, ACM 2017](#a-deep-relevance-matching-model-for-ad-hoc-retrieval)
 
 ## Sentence-T5 (ST5): Scalable Sentence Encoders from Pre-trained Text-to-Text Models
 Ni et al., ACL 2022
@@ -56,14 +57,14 @@ Omar Khattab and Matei Zaharia, SIGIR 2020
 * Introduces ranking model adapting BERT for efficient retrieval, that uses contextualized late interactions over BERT
 * Introduces late interaction architecture that independently encodes query and document using BERT to get their respective contextualized embeddings. This interaction step that models their fine-grained similarity. This is followed by computing their relevance using cheap and pruning-friendly approach that enables faster computations without exhaustively evaluating every candidate.
 * This architecture’s effectiveness is competitive with BERT based models & outperforms non-BERT based approaches & significantly demonstrates faster performance compared to the latter.
-* Training & Evaluation datasets – passage search, MS MARCO & TREC CAR
+* Training & Evaluation datasets – passage search, MS MARCO & TREC CAR.
 
-####Approach –
+#### Approach –
 * The approach basically combines fine-grained matching of interaction-based models and pre-computation in representation-based models and yet strategically delays the query-document interaction in the overall execution flow.
 * Fixed size embedding dimensions -
 
 **Query encoding -**
-* Query is encoded by appending token [Q] immediately after prepending [CSL] token in the beginning of given query, tokenizing the sequence using WordPiece upto pre-defined no. of tokens N_q (by either padding it with special [MASK] token or truncating them) and subsequently passing them through BERT encoder to get contextualized embeddings for each token in the sequence.
+* Query is encoded by appending token [Q] immediately after prepending [CSL] token in the beginning of given query, tokenizing the sequence using WordPiece upto pre-defined no. of tokens $N_q$ (by either padding it with special [MASK] token or truncating them) and subsequently passing them through BERT encoder to get contextualized embeddings for each token in the sequence.
 * Then the embeddings are passed through a linear layer without any activations, but producing output of m-dimensions, where m is fixed to a smaller size than BERT’s hidden size dimensions.
 * Paper also provides reasons for making above decisions based on observations of various ablation studies.
 
@@ -71,7 +72,7 @@ Omar Khattab and Matei Zaharia, SIGIR 2020
 * Similarly, each document is encoded by first tokenizing it, adding token [D] after prepending [CLS] token in the beginning.
 
 **Late interaction approach to compute relevance score –**
-* Dot product of bag of contextualized embeddings of all query tokens – E_q and contextualized embeddings of each token in document d, E_d.
+* Dot product of bag of contextualized embeddings of all query tokens – $E_q$ and contextualized embeddings of each token in document d, $E_d$.
 * To compute score for each document, its reduced across all document tokens with max_pool to choose document term with maximum similarity. Similarly, this token embeddings similarity with each query token embeddings is summed up to compute the relevance score. All the documents are sorted by this relevance score for ranking.
 
 **Indexing technique –**
