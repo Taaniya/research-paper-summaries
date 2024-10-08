@@ -108,12 +108,15 @@ Omar Khattab and Matei Zaharia, SIGIR 2020
 * To enable end-to-end retrieval with ranking for a large collection, this is achieved by applying MaxSim operator for each query embedding across all documents in the collection using fast vector-similarity data structures to conduct this search efficiently using FAISS implementation of an efficient index – IVFPQ (Inverted File with Product Quantization).
 * This index partitions the embeddings into a pre-defined number of cells which helps in faster search by searching in only nearest partitions at runtime. To optimize memory efficiency, the embeddings are divided into sub-vectors such that similarity computations are performed within this compressed domain leading to cheaper computations and faster performance.
 
-
 **Model training –**
 * BERT is fine-tuned, while additional parameters for linear layer and embeddings for [Q] & [D] are trained from scratch using Adam optimizer
 
-Paper link - https://arxiv.org/pdf/2004.12832
-Git repo - https://github.com/stanford-futuredata/ColBERT
+**Performance efficiency-**
+* Attention mechanism takes quadratic time in computation on the input's sequence length when usual BERT based ranking models are used which require feeding k different documents, each of length $l = |q| + |d_i|$ for query $q$ and document $d_i$. Whereas, ColBERT feeds BERT only single short sequence of fixed length $l = |q|$, which significantly improves performance.
+
+**References -**
+* Paper link - https://arxiv.org/pdf/2004.12832
+* Git repo - https://github.com/stanford-futuredata/ColBERT
 
 ## Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
 Nils Reimers and Iryna Gurevych, EMNLP 2019
