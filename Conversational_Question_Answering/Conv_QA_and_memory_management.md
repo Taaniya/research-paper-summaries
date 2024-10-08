@@ -68,4 +68,33 @@ Memory management system – decides which info to keep in memory
 * Paper link - https://aclanthology.org/2022.findings-emnlp.276.pdf
 
 
+## Learning to identify follow-up questions – 2020
+Kundu et al., ACL, 2020
+
+**Gist-**
+* Introduce a follow up question identification task. Define the task in a conversational reading comprehension setting which supports automatic evaluation
+* Present the dataset LIF – Learning to Identify Follow-up
+* Approach – 3 way attentive pooling network to identify follow up given passage, conversation history & a candidate follow up question
+* Makes the model to understand topic continuity and topic shift
+* Binary classification Task - To predict whether a follow up question is valid or invalid
+
+**Challenges in dataset-**
+* The model is required to identify whether the subject of the question is the same as in the associated passage or in the conversation history, which is often distracted by the introduction of pronouns (e.g., I, he, she) and possessive pronouns (e.g., my, his, her). Such resolution of pronouns is a critical aspect while determining the validity of a follow-up question.
+* It also needs to examine whether the actions and the characteristics of the subject described in the candidate follow-up question can be logically inferred from the associated passage or the conversation history.
+* Moreover, capturing topic continuity and topic shift is necessary to determine the validity of a follow-up question.
+* Subjects and their actions or characteristics in the invalid follow-up questions are often mentioned in the passages, but associated with different topics. 
+
+**3 way attentive pooling approach-**
+* Used to score each candidate follow up question
+* The scoring is based on the relevance of candidate follow up question to conversation history considering 2 perspectives –
+   - Considering associated passage
+   - Without considering associated passage
+   - Use binary cross entropy loss for training the model
+
+Candidate scoring -
+Score – f_sim(candidate , conversation_history | passage) + f_sim(candidate , conversation_history)  
+
+Paper link - https://aclanthology.org/2020.acl-main.90.pdf
+
+
 
