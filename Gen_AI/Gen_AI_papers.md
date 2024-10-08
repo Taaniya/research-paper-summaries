@@ -1,9 +1,9 @@
 # Papers
-* [CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search, June 2024](#chiq-contextual-history-enhancement-for-improving-query-rewriting-in-conversational-search)
-* [ToolLLM: Facilitating LLMs to use 1600 real-world APIs, ICLR 2024](#toolllm-facilitating-llms-to-use-1600-real-world-apis-iclr-2024)
-* [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
-* [Toolformer, NeurIPS 2023](#toolformer-2023)
-* [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
+1. [CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search, June 2024](#chiq-contextual-history-enhancement-for-improving-query-rewriting-in-conversational-search)
+2. [ToolLLM: Facilitating LLMs to use 1600 real-world APIs, ICLR 2024](#toolllm-facilitating-llms-to-use-1600-real-world-apis-iclr-2024)
+3. [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
+4. [Toolformer, NeurIPS 2023](#toolformer-2023)
+5. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
 
 
 ## CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search
