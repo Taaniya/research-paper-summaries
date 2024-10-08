@@ -1,7 +1,7 @@
 # Papers
 1. [Self-Refine: Iterative Refinement with Self-Feedback, NeurIPS 2023](#self-refine-iterative-refinement-with-self-feedback)
 2. [ReAct: Synergizing Reasoning and Acting in Language Models, ICLR 2023](#react-synergizing-reasoning-and-acting-in-language-models)
-3. [Self-consistency improves CoT reasoning in Language Models, ICLR March 2023](#self-consistency-improves-cot-reasoning-in-language-models-iclr-march-2023
+3. [Self-consistency improves CoT reasoning in Language Models, ICLR March 2023](#self-consistency-improves-cot-reasoning-in-language-models-iclr-march-2023)
 4. [LLMs can be easily distracted by irrelevant context – ICML 2023](#llms-can-be-easily-distracted-by-irrelevant-context--jan-2023)
 5. [Chain of thought prompting elicits reasoning in LLMs, NeurIPS 2022](#chain-of-thought-prompting-elicits-reasoning-in-llms-2022)
   
