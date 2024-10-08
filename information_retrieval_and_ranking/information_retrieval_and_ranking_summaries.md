@@ -49,6 +49,41 @@ Wang et al., 2022
 
 Paper link - https://arxiv.org/pdf/2212.03533.pdf
 
+## ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT
+Omar Khattab and Matei Zaharia, SIGIR 2020
+
+**Gist -**
+* Introduces ranking model adapting BERT for efficient retrieval, that uses contextualized late interactions over BERT
+* Introduces late interaction architecture that independently encodes query and document using BERT to get their respective contextualized embeddings. This interaction step that models their fine-grained similarity. This is followed by computing their relevance using cheap and pruning-friendly approach that enables faster computations without exhaustively evaluating every candidate.
+* This architecture’s effectiveness is competitive with BERT based models & outperforms non-BERT based approaches & significantly demonstrates faster performance compared to the latter.
+* Training & Evaluation datasets – passage search, MS MARCO & TREC CAR
+
+####Approach –
+* The approach basically combines fine-grained matching of interaction-based models and pre-computation in representation-based models and yet strategically delays the query-document interaction in the overall execution flow.
+* Fixed size embedding dimensions -
+
+**Query encoding -**
+* Query is encoded by appending token [Q] immediately after prepending [CSL] token in the beginning of given query, tokenizing the sequence using WordPiece upto pre-defined no. of tokens N_q (by either padding it with special [MASK] token or truncating them) and subsequently passing them through BERT encoder to get contextualized embeddings for each token in the sequence.
+* Then the embeddings are passed through a linear layer without any activations, but producing output of m-dimensions, where m is fixed to a smaller size than BERT’s hidden size dimensions.
+* Paper also provides reasons for making above decisions based on observations of various ablation studies.
+
+**Document encoding –**
+* Similarly, each document is encoded by first tokenizing it, adding token [D] after prepending [CLS] token in the beginning.
+
+**Late interaction approach to compute relevance score –**
+* Dot product of bag of contextualized embeddings of all query tokens – E_q and contextualized embeddings of each token in document d, E_d.
+* To compute score for each document, its reduced across all document tokens with max_pool to choose document term with maximum similarity. Similarly, this token embeddings similarity with each query token embeddings is summed up to compute the relevance score. All the documents are sorted by this relevance score for ranking.
+
+**Indexing technique –**
+* To enable end-to-end retrieval with ranking for a large collection, this is achieved by applying MaxSim operator for each query embedding across all documents in the collection using fast vector-similarity data structures to conduct this search efficiently using FAISS implementation of an efficient index – IVFPQ (Inverted File with Product Quantization).
+* This index partitions the embeddings into a pre-defined number of cells which helps in faster search by searching in only nearest partitions at runtime. To optimize memory efficiency, the embeddings are divided into sub-vectors such that similarity computations are performed within this compressed domain leading to cheaper computations and faster performance.
+
+
+**Model training –**
+* BERT is fine-tuned, while additional parameters for linear layer and embeddings for [Q] & [D] are trained from scratch using Adam optimizer
+
+Paper link - https://arxiv.org/pdf/2004.12832
+Git repo - https://github.com/stanford-futuredata/ColBERT
 
 ## Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
 Nils Reimers and Iryna Gurevych, EMNLP 2019
