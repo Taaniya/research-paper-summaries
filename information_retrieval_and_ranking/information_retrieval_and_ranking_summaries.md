@@ -87,6 +87,7 @@ Omar Khattab and Matei Zaharia, SIGIR 2020
 * Introduces late interaction architecture that independently encodes query and document using BERT to get their respective contextualized embeddings. This interaction step that models their fine-grained similarity. This is followed by computing their relevance using cheap and pruning-friendly approach that enables faster computations without exhaustively evaluating every candidate.
 * This architecture’s effectiveness is competitive with BERT based models & outperforms non-BERT based approaches & significantly demonstrates faster performance compared to the latter.
 * Training & Evaluation datasets – passage search, MS MARCO & TREC CAR.
+* Evaluation metric - MRR@10
 
 #### Approach –
 * The approach basically combines fine-grained matching of interaction-based models and pre-computation in representation-based models and yet strategically delays the query-document interaction in the overall execution flow.
