@@ -6,7 +6,7 @@
 ## Finetuned Language Models are Zero-shot learners
 Wei et al., ICLR 2022
 
-**Gist-**
+**Gist -**
 * FLAN – Fine-tune Language Net. Uses LaMDA-PT as base model for instruction tuning
 * 137 B parameter model, fine-tuned on 60 NLP tasks
 * Architecture – Decoder only
@@ -24,14 +24,64 @@ Wei et al., ICLR 2022
 * Proves that training with instructions is crucial for zero-shot performance on unseen tasks.
 * Plus this improvement only emerges with model scale
 
-**Limitations-**
+**Limitations -**
 * Costly to serve due to large scaled model – 137 B parameters
 * Compute intensive & time-consuming process for instruction-fine-tune – 60 hrs on a TPU with 128 cores. Slows down prototyping & development work, hinders frequent iteration of model improvements
 
 
-**References-**
+**References -**
 * git repo - https://github.com/google-research/flan
 * Paper link - https://arxiv.org/pdf/2109.01652
+
+
+## Multitask prompted training enables zero-shot task generalization
+
+By Sanh et al, ICLR 2022
+
+**Gist -**
+* Test question at scale - Can zero-shot generalization also be induced by explicit multi-task learning? – by developing a system to convert any natutal language task into human-readable prompt form - multi task prompt training
+* Why explicit multi-task learning ? while LLMs are already hypothesized to generalize well to new tasks so far as a result of implicit process of multi-task learning
+  - Because this ability requires sufficiently large model
+  - And is sensitive to wording of its prompts
+* Hence, paper focuses on – explicitly training LMs in a supervised and multitask fashion & aim to make model robust to wording choices of prompts
+
+**Architecture –**
+* T0 – An Encoder-decoder  (T5 variant). Lester’s LM adapted T5 model : T5 + LM 
+* 11 B parameter version of T5+LM
+* Previous works (T5 and others) of using NL to describe underlying NLP task use single QA prompt due to which model doesn’t generalize well to new prompts or new tasks which aren’t expressed in their fixed format
+* Note: What's the difference between this work and FLAN although closely related? –
+  - Prompts are more diverse than used in FLAN and due to encoder-decoder architecture with MLM pre-training objective, model performs better after multi-task prompt training whereas FLAN degrades.
+
+**Approach -**
+* Uses a training mixture containing large set of different tasks specific in NL prompts
+* Training dataset – 62 datasets 12 tasks
+* Develop a templating language & application to diverse datasets into prompts
+* Templates are functions mapping a data example into natural language for the input and target sequences
+* Each dataset has multiple prompt templates consisting of an input and a target template
+* More details section 4 - Unified prompt format
+
+**Creating prompts from raw datasets -**
+* Crowdwork. Contributors created diverse, open prompts for each dataset
+* Training method -
+  - Fine-tuned T0 i.e.,T5+LM model on multi-task training mixture dataset of NL prompts mentioned above.
+  - It is trained to generate output only. Like Encoder decoder model does.
+
+**Results -**
+* T0 (11B) better than baseline – T5+LM
+* T0 (11B) matches or exceeds GPT-3 on 9 out of 11 tasks
+* Also recorded results of smaller 3B version of T0. From the results in eppendix F, this version either performs at par with baseline T5+LM or exceeds it but still underperforms 11B T0 model
+* For comparison purpose - GPT-3 is 175 B param
+
+**Takeaways –**
+* Training on more prompts per dataset leads to better and more robust generalization to held-out tasks
+* Releases models and prompts used to fine-tune models
+
+**References -**
+* Git repo – how to create NL prompts for NLP tasks - https://github.com/bigscience-workshop/promptsource
+* Paper link - https://openreview.net/pdf?id=9Vrb9D0WI4
+
+
+
 
 ## Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
 Raffel at el., JMLR 2019
