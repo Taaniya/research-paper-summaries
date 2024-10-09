@@ -1,6 +1,8 @@
 # Papers
-1. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
-2. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
+1. [Finetuned Language Models are Zero-shot learners, Wei et al., ICLR 2022](#finetuned-language-models-are-zero-shot-learners)
+2. [Multitask prompted training enables zero-shot task generalization, Sanh et al, ICLR 2022](#multitask-prompted-training-enables-zero-shot-task-generalization)
+3. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
+4. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
 
 
 ## Finetuned Language Models are Zero-shot learners
