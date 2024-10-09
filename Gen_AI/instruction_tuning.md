@@ -2,6 +2,37 @@
 1. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
 2. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
 
+
+## Finetuned Language Models are Zero-shot learners
+Wei et al., ICLR 2022
+
+**Gist-**
+* FLAN – Fine-tune Language Net. Uses LaMDA-PT as base model for instruction tuning
+* 137 B parameter model, fine-tuned on 60 NLP tasks
+* Architecture – Decoder only
+* Objective – Full language modelling / Causal language modelling
+* Focuses on exploring zero-shot capabilities for instruction type prompts. Though similar to DecaNLP ,but differs since DecaNLP focuses on multi-task learning whereas FLAN focuses on zero-shot capabilities.
+* Motivation is to improve LMs ability to respond to NLP instructions
+* Hypothesis – Idea is by using supervision to teach an LM to perform tasks via instructions, will also make it more capable to follow instructions and will do so for unseen NLP tasks.
+
+**Approach –**
+* Instructions used are similar to QA based task formulation and aims to unify NLP tasks by casting them as QA over a context
+* Describes method for instruction-tuning – a method where a model is fine-tuned on multiple tasks phrased as instructions
+* Outperforms GPT-3 on zero-shot performance for 20 datasets out of 25 tested
+* Source code to load fine-tuning dataset is on git repo - https://github.com/google-research/flan
+* More effective on tasks naturally verbalized as instructions than those which are directly formulated as language modelling
+* Proves that training with instructions is crucial for zero-shot performance on unseen tasks.
+* Plus this improvement only emerges with model scale
+
+**Limitations-**
+* Costly to serve due to large scaled model – 137 B parameters
+* Compute intensive & time-consuming process for instruction-fine-tune – 60 hrs on a TPU with 128 cores. Slows down prototyping & development work, hinders frequent iteration of model improvements
+
+
+**References-**
+* git repo - https://github.com/google-research/flan
+* Paper link - https://arxiv.org/pdf/2109.01652
+
 ## Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
 Raffel at el., JMLR 2019
 
