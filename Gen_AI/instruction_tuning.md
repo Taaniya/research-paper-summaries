@@ -12,9 +12,9 @@ By Wang et al., ACL 2023
 * Annotation-free method to align LMs on instruction following behavior
 * Introduces a semi-automated process of instruction-tuning with model’s own instruction signals. Uses an iterative bootstrapping algorithm
 * Also release synthetic dataset of 52K instructions & set of manually written tasks to build and evaluate instruction following models
-* Evaluated on benchmark – NATURAL INSTRUCTIONS by Wang, 2022
+* Evaluated on benchmark – [SUPER NATURAL INSTRUCTIONS dataset by Wang, 2022]](https://aclanthology.org/2022.emnlp-main.340.pdf)
 * Base model – GPT-3 fine-tuned with these curated instructions dataset
-* Performance results are close to Instruct GPT
+* Performance results are close to [Instruct GPT](#training-language-models-to-follow-instructions-with-human-feedback)
 * Work is similar to data augmentation, except that it is task-agnostic instruct generation. Motivation is to bootstrap new tasks
 
 **Data generation step –**
@@ -54,7 +54,7 @@ Wei et al., ICLR 2022
 * 137 B parameter model, fine-tuned on 60 NLP tasks
 * Architecture – Decoder only
 * Objective – Full language modelling / Causal language modelling
-* Focuses on exploring zero-shot capabilities for instruction type prompts. Though similar to DecaNLP ,but differs since DecaNLP focuses on multi-task learning whereas FLAN focuses on zero-shot capabilities.
+* Focuses on exploring zero-shot capabilities for instruction type prompts. Though similar to [DecaNLP, 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering), but differs since DecaNLP focuses on multi-task learning whereas FLAN focuses on zero-shot capabilities.
 * Motivation is to improve LMs ability to respond to NLP instructions
 * Hypothesis – Idea is by using supervision to teach an LM to perform tasks via instructions, will also make it more capable to follow instructions and will do so for unseen NLP tasks.
 
