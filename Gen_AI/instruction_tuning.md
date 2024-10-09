@@ -1,10 +1,10 @@
 # Papers
-1. [Finetuned Language Models are Zero-shot learners, Wei et al., ICLR 2022](#finetuned-language-models-are-zero-shot-learners)
+1. [Fine-tuned Language Models are Zero-shot learners, Wei et al., ICLR 2022](#finetuned-language-models-are-zero-shot-learners)
 2. [Multitask prompted training enables zero-shot task generalization, Sanh et al, ICLR 2022](#multitask-prompted-training-enables-zero-shot-task-generalization)
 3. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
 4. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
 
-Training language models to follow instructions with human feedback
+## Training language models to follow instructions with human feedback
 Ouyang et al, OpenAI, NeurIPS 2022
 
 * Propose InstructGPT models
