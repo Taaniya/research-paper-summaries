@@ -180,7 +180,7 @@ McCann et al., ICLR 2019
 9.	uses co-attention, self-attention & LSTM to create intermediate context state
 
 **References-**
-* Git repo - (Codebase – Code for data procuring, prep, training, evaluation available) - https://github.com/salesforce/decaNLP
+* Git repo - (Code for data procuring, prep, training, evaluation) - https://github.com/salesforce/decaNLP
 * Paper link - https://openreview.net/pdf?id=B1lfHhR9tm
 
 
