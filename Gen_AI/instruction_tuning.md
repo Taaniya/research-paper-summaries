@@ -4,6 +4,23 @@
 3. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
 4. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
 
+Training language models to follow instructions with human feedback
+Ouyang et al, OpenAI, NeurIPS 2022
+
+* Propose InstructGPT models
+* Parameters – 1.3 B
+* Source model – GPT3
+* Fine-tuning twice for aligning model on user’s intent -
+  - Demonstrated behaviour dataset created by labelers
+  - on ranked model output dataset by human feedback. Labelers labeled their preferences over multiple outputs by a model for the same prompt.
+
+* Applied Reinforcement learning to align with human values -
+  - Train a reward model (RM) to predict which of the model output out of multiple outputs for every prompt, will the labeler prefer.
+  - This RM is used to as a reward function to fine-tune supervised learning baseline to maximize this reward using PPO
+  - In other words, this reward function models the preferences of human labelers & provides feedback to the RL agent. This agent is trained with PPO algorithm.
+
+Paper link - https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf
+
 
 ## Finetuned Language Models are Zero-shot learners
 Wei et al., ICLR 2022
