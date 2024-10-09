@@ -5,6 +5,29 @@
 4. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
 5. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
 
+## SELF-INSTRUCT: Aligning Language Models with Self-Generated Instructions
+By Wang et al., ACL 2023
+
+* Framework for instruction following capabilities of model
+* Annotation-free method to align LMs on instruction following behavior
+* Introduces a semi-automated process of instruction-tuning with model’s own instruction signals. Uses an iterative bootstrapping algorithm
+* Also release synthetic dataset of 52K instructions & set of manually written tasks to build and evaluate instruction following models
+* Evaluated on benchmark – NATURAL INSTRUCTIONS by Wang, 2022
+* Base model – GPT-3 fine-tuned with these curated instructions dataset
+* Performance results are close to Instruct GPT
+* Work is similar to data augmentation, except that it is task-agnostic instruct generation. Motivation is to bootstrap new tasks
+
+**Data generation step –**
+* Model used to generate instances – GPT 3 – davinci – text-davinci-001
+* Fine-tuning step
+  - input – concatenate instruction & instance input
+  - output – target
+  - Set the prompt loss weight to 0
+  - Fine-tuned model – GPT3 – davinci (same model used to generate instruction data)
+* Fine-tuning performed using OpenAI’s fine-tuning API. Set the prompt loss weight to 0
+* Git repo - https://github.com/yizhongw/self-instruct 
+
+
 ## Training language models to follow instructions with human feedback
 By Ouyang et al, OpenAI, NeurIPS 2022
 
