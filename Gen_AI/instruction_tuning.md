@@ -1,9 +1,10 @@
 # Papers
-1. [Training language models to follow instructions with human feedback,  Ouyang et al, OpenAI, NeurIPS 2022](#training-language-models-to-follow-instructions-with-human-feedback)
-2. [Fine-tuned Language Models are Zero-shot learners, Wei et al., ICLR 2022](#finetuned-language-models-are-zero-shot-learners)
-3. [Multitask prompted training enables zero-shot task generalization, Sanh et al, ICLR 2022](#multitask-prompted-training-enables-zero-shot-task-generalization)
-4. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
-5. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
+1. [SELF-INSTRUCT: Aligning Language Models with Self-Generated Instructions, Wang et al., 2023](#self-instruct-aligning-language-models-with-self-generated-instructions)
+2. [Training language models to follow instructions with human feedback,  Ouyang et al, OpenAI, NeurIPS 2022](#training-language-models-to-follow-instructions-with-human-feedback)
+3. [Fine-tuned Language Models are Zero-shot learners, Wei et al., ICLR 2022](#finetuned-language-models-are-zero-shot-learners)
+4. [Multitask prompted training enables zero-shot task generalization, Sanh et al, ICLR 2022](#multitask-prompted-training-enables-zero-shot-task-generalization)
+5. [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (T5), Raffel et al., JMLR](#exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer)
+6. [The Natural Language Decathlon: Multitask Learning as Question Answering (decaNLP), McCann et al., ICLR 2019](#the-natural-language-decathlon-multitask-learning-as-question-answering)
 
 ## SELF-INSTRUCT: Aligning Language Models with Self-Generated Instructions
 By Wang et al., ACL 2023
