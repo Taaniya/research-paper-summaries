@@ -59,7 +59,8 @@ Yao et al, ICLR 2023
 
 **Gist** –
 * Paper introduces use of LLMs by prompt engg strategy that prompts LLMs to generate both verbal reasoning traces and actions specific to the task in an interleaved manner, while also interacting with external environments (e.g. Wikipedia) to incorporate additional information into reasoning
-
+* In this ReAct pattern, an LLM first thinks about what to do and then decides what action to take. That action is executed in an environment and an observation is returned. With that observation, the LLM then repeats its pattern - thinks about the next action, processes its observation after it's executed in the environment and so on until it decides it is done.
+  
 #### Approach –
 
 For an agent to interact with environment to solve a task, ReAct paradigm augments the agent's action space with auxiliary actions from language space, referred as a thought or reasoning trace. A thought doesn't affect the external environment and rather aims to compose useful information by reasoning over current context. Thoughts could of various types for solving complex tasks for e.g.,
