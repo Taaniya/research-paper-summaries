@@ -1,8 +1,10 @@
 # Papers
-1. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](https://arxiv.org/pdf/2402.16347)
+1. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
 
 ## CodeS: Towards Building Open-source Language Models for Text-to-SQL
 Li et al, ACM 2024
+
+Paper link- https://arxiv.org/pdf/2402.16347
 
 **Gist –**
 * This paper introduces CodeS, a series of pre-trained open source language models (1B to 15 B parameters), specifically designed for Text-to-SQL task
