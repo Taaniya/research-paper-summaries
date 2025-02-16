@@ -50,7 +50,7 @@ Defined as process to identify references database schemas (tables and columns) 
 
 #### Evaluation –
 **Benchmark Datasets-**
-1.	BIRD (larger dataset, more challenging)
+1.	[BIRD (larger dataset, more challenging)](https://proceedings.neurips.cc/paper_files/paper/2023/file/83fc8fab1710363050bbd1d4b8cc0021-Paper-Datasets_and_Benchmarks.pdf)
 2.	SPIDER (contains 200 databases including 138 diverse domains)
 3.	To assess robustness, 4 more challenging benchmarks-
 a.	Spider-DK
