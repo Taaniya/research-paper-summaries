@@ -1,7 +1,5 @@
 # Papers
 1. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
-2. [On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries, Shi et al EMNLP 2020](#on-the-potential-of-lexico-logical-alignments-for-semantic-parsing-to-sql-queries)
-
 
 ## CodeS: Towards Building Open-source Language Models for Text-to-SQL
 Li et al, ACM 2024
