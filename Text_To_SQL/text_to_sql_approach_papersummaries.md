@@ -71,11 +71,10 @@ d.	Dr. Spider
 ## On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries
 Shi et al, 2020
 
-Paper link - https://aclanthology.org/2020.findings-emnlp.167.pdf
-
-SQUALL Dataset link – https://github.com/tzshi/squall 
-Git repo – https://github.com/tzshi/squall 
-Dataset format - https://github.com/tzshi/squall?tab=readme-ov-file#squall-dataset-format 
+* Paper link - https://aclanthology.org/2020.findings-emnlp.167.pdf
+* SQUALL Dataset link – https://github.com/tzshi/squall
+* Git repo – https://github.com/tzshi/squall
+* Dataset format - https://github.com/tzshi/squall?tab=readme-ov-file#squall-dataset-format 
 
 **Gist-**
 * Solves previous challenge of just having logical forms for NL input as training set. Since just having logical forms do not indicate important fine-grained relationships between individual words & logical form tokens
