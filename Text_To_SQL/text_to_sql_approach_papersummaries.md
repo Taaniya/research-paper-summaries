@@ -118,11 +118,11 @@ Shi et al, 2020
       *  Training logic is in main.py
 
 **Using alignments in model training –**
-* After feeding the concentrated forms of input questions & column headers, how do we teach the model pay attention to column headers? – this is where alignments are used.
+* After feeding the concentrated forms of input questions & column headers, how do we teach the model to pay attention to column headers? – this is where alignments are used.
 * The alignments provided, act as necessary supervision for the attention weights. This use of alignment instead of induced attention boosts the accuracy significantly.
 * This alignment is incorporated during training as a finer-grained type of supervision improved results by 2.3 % by BERT and 3 % without BERT
 * Loss function used in training strategy for alignment during model training –
-* A Linear combination of loss terms of – seq2swl model, supervised attention, column prediction
+* A Linear combination of loss terms of – seq2sql model, supervised attention, column prediction
 
 
 
