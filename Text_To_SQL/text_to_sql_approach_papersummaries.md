@@ -1,5 +1,7 @@
 # Papers
 1. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+2. [On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries, Shi et al EMNLP 2020]
+
 
 ## CodeS: Towards Building Open-source Language Models for Text-to-SQL
 Li et al, ACM 2024
@@ -65,5 +67,65 @@ d.	Dr. Spider
 * BIRD –
   * Execution accuracy used as reliable and stable metric
 * Schema item classifiers evaluated with AUC classifier metric
+
+## On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries
+Shi et al, 2020
+
+Paper link - https://aclanthology.org/2020.findings-emnlp.167.pdf
+
+SQUALL Dataset link – https://github.com/tzshi/squall 
+Git repo – https://github.com/tzshi/squall 
+Dataset format - https://github.com/tzshi/squall?tab=readme-ov-file#squall-dataset-format 
+
+**Gist-**
+* Solves previous challenge of just having logical forms for NL input as training set. Since just having logical forms do not indicate important fine-grained relationships between individual words & logical form tokens
+* Release dataset built on top of WikiTableQuestionss (WTQ) dataset & enriches 11,276 questions of WikiSQL questions with manually created SQL equivalents between SQL and question fragments
+* Proposes and proves that richer supervision will help more in semantic parsing of NLQ to generate SQL for Text-to-SQL
+* Proposes 2 methods –
+  * Supervised attention
+  * Using lexical alignments during model training
+  * Adopting an auxiliary objective of disambiguating references in input queries to table columns also called column prediction – to infer column in data table a question fragment refers to.
+* Dataset contribution –
+   *  Train – 9.03 K tokens
+   *  dev – 2.24 K tokens
+   *  test – 4.34 K tokens
+* Dataset annotations including labelling columns & literal values (Filter values)
+* WikiTables has around 11.2 K tables with 22k questions, out of which SQUALL has 11.2 K questions.
+* WikiTables is the base dataset chosen having QA pairs where the answer is present in semi-structured form in table
+* This paper contributes to creating SQL queries for these questions & also align question tokens with corresponding SQL query fragments
+* They suffixed every column name with their data type
+* For annotation consistency, all tables are assigned the same name & columns with sequential names – c1, c2…. In database schema. But the original table headers were kept as is for feature extraction. 
+
+**Alignment annotation -**
+* Annotators selected fragments from both sides – NLQ and SQL. The tokens need not be contiguous to be aligned. E.g., Non-contiguous ‘order by’ …. Limit 1 aligns with ‘the highest’ in NLQ.
+* Overall 49% tokens in questions were aligned.
+* Paper also shows distribution of tokens with POS tags which were aligned & which didn’t align with the SQL counterpart.
+* Comparisons with other datasets –
+  * WTQ includes more diverse semantics and logical operations
+  * The family of SPIDER datasets contain queries even more complex than in WTQ, including a higher percentage of nested queries & multiple table joins.
+  * Sequence labels for SQL type – column, literal (refer dataset row, column – nl_align), with this annotation
+
+### Approach -
+* Uses Seq2Seq as baseline – section 4
+* Question & table encoding –
+   * Uses 2 approaches – LSTM Bi-encoder & BERT as feature extractors
+   * With BERT, the input is the concatenated sequence of question & column headers separated by [SEP] token. Each column is also separated by [SEP] token. The encodings are final layer representations
+   * The NLQ and columns are passed as 2 segments to BERT encoder with segment ID set to 0 for all tokens of NLQ till [SEP] token between them & setting this ID to 1 from 1st token of column onwards.
+   * Proposed approach in section 5
+   * Code snippet –
+      *  https://github.com/tzshi/squall/blob/main/model/model.py
+      *  class TableParser. Method - _bert_features()
+      *  TableParser is the encoder-decoder model
+      *  Training logic is in main.py
+
+**Using alignments in model training –**
+* After feeding the concentrated forms of input questions & column headers, how do we teach the model pay attention to column headers? – this is where alignments are used.
+* The alignments provided, act as necessary supervision for the attention weights. This use of alignment instead of induced attention boosts the accuracy significantly.
+* This alignment is incorporated during training as a finer-grained type of supervision improved results by 2.3 % by BERT and 3 % without BERT
+* Loss function used in training strategy for alignment during model training –
+* A Linear combination of loss terms of – seq2swl model, supervised attention, column prediction
+
+
+
 
 
