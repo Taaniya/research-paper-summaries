@@ -68,7 +68,7 @@ d.	Dr. Spider
 * Schema item classifiers evaluated with AUC classifier metric
 
 ## On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries
-Shi et al, 2020 (Benchmark Dataset)
+Shi et al, 2020 (Training & evaluation Dataset)
 
 * Paper link - https://aclanthology.org/2020.findings-emnlp.167.pdf
 * SQUALL Dataset link – https://github.com/tzshi/squall
