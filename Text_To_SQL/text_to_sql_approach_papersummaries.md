@@ -1,5 +1,6 @@
 # Papers
 1. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+2. [On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries, Shi et al EMNLP 2020](#on-the-potential-of-lexico-logical-alignments-for-semantic-parsing-to-sql-queries)
 
 ## CodeS: Towards Building Open-source Language Models for Text-to-SQL
 Li et al, ACM 2024
@@ -67,7 +68,7 @@ d.	Dr. Spider
 * Schema item classifiers evaluated with AUC classifier metric
 
 ## On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries
-Shi et al, 2020
+Shi et al, 2020 (Benchmark Dataset)
 
 * Paper link - https://aclanthology.org/2020.findings-emnlp.167.pdf
 * SQUALL Dataset link – https://github.com/tzshi/squall
