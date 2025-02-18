@@ -7,7 +7,7 @@
 Li et al. NeurIPS , 2023
 
 **Gist** -  
-* Present a new text-to-SQL benchmark dataset that better represent real life scenarios
+* Presents **BIRD** a new text-to-SQL benchmark dataset that better represent real life scenarios
 * Paper emphasizes the database values
 * Highlights challenges of text-to-SQL problem on real world databases
 * Emphasizes these challenges on big databases
