@@ -1,5 +1,7 @@
 # Papers
 1. [BOLAA – Benchmarking and orchestrating LLM autonomous agents, ICLR 2024](#bolaa--benchmarking-and-orchestrating-llm-autonomous-agents) 
+2. [ChatDev - Communicative Agents for Software Development, ACL 2024](#)
+
 
 ## BOLAA – Benchmarking and orchestrating LLM autonomous agents
 Liu et al, Salesforce, ICLR 2024
@@ -61,4 +63,39 @@ the high performing LLMs.
 * Increasing context length of LAA many not alone improve their performance. For e.g., they could suffer more from issues like hallucinations when LAA run for more steps.
 * A powerful LLM (E.g., Open AI based LLMs) is able to generalize well under ZeroShot LAA architecture. However, for other less powerful LLMs, few shot prompts are necessary for LAAs.
 * Planning flow of LAA hinders performance in the knowledge reasoning tasks and environments.
+
+
+
+
+## ChatDev - Communicative Agents for Software Development
+
+Qian et al, ACL, 2024
+
+* This paper introduces Chatdev, a system with communicative agents for software development
+* Each agent is driven by LLM and is guided by what to communicate and how to communicate
+* Demonstrates how linguistic communication facilitates multi-agent collaboration
+* Introduces Chat chain to divide each phase into smaller subtasks and communicative de-hallucination to ensure genuine response generation during communication
+
+### Chat chain –
+* Adopting waterfall model, software development is broken down to sequential phases – design, coding & testing, where each phase is further divided into subtasks.
+* In each subtask, 2 agents with their specialized roles perform function of an instructor and an assistant.
+* The instructor agent initiates instructions, instructing the discourse toward the completion of the subtask, while the assistant agent adheres to these instructions and responds with appropriate solutions.
+* They engage in a multi-turn dialogue working cooperatively until they achieve consensus, extracting solutions
+that can range from the text (e.g., defining a software function point) to code (e.g., creating the initial version of source code), ultimately leading to the completion of the subtask
+Subsequently, the solution from previous tasks serve as bridges to the next phase
+
+### Agentic workflow -
+* Follows agentic workflow, where prompt engineering only takes place at the start of each subtask round.
+* As the communication phase begins, the instructor and assistant communicate with each other in an automated loop, continuing this exchange until the task concludes.
+* Some challenges faced here – Role flipping, instruction repeating, fake replies etc, resulting in failure to advance progress of productive communications and hinders achievement of meaningful solutions
+* This paper employs inception prompting mechanism to tackle this for initiating, sustaining, and concluding agents’ communication to guarantee a robust and efficient workflow.
+
+
+### Memory –
+* To tackle the issue arising from constraint of context length in LLM while maintaining communication history among all agents and phases, agent’s memories are segmented into –
+  * Long term - preserve contextual awareness across different phases
+  * Short term - sustain continuity of dialogue in a single phase
+
+### Communication dehallucination –
+* Coding hallucinations usually occur when the assistant LAA struggles to precisely follow instructions. To tackle this, dehallucination encourages the assistant to actively seek more detailed suggestions from instructor before delivering a formal response.
 
