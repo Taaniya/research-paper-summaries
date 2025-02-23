@@ -47,7 +47,7 @@ Liu et al, Salesforce, ICLR 2024
 * Evaluation metrics –
   * Reward score defined in each environment as per task for e.g., custom ratio metric, Recall and F1 score
 
-** Takeaways from experimental results -**
+**Takeaways from experimental results -**
 * BOLAA performs the best compared with the other LAA architectures, especially when built on
 the high performing LLMs.
 * Selecting the appropriate LAA yields quality communication and stabilizes action generation
