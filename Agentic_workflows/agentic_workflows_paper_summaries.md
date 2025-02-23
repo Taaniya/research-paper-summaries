@@ -32,8 +32,8 @@ Liu et al, Salesforce, ICLR 2024
 
 ### BOLAA -
 * Has following 2 main modules -
- * Labor agents pool that manager multiple LAA each focusing on specialized tasks
- * Controller - The controller is devised to selectively call LAAs from agents pool.
+  * Labor agents pool that manager multiple LAA each focusing on specialized tasks
+  * Controller - The controller is devised to selectively call LAAs from agents pool.
 * Controller has 2 core modules that involve performing agent selection and communication between multiple labor agents
 * **Agent select module –**
   * Heuristic based approach works by defining rules to select relevant agent while LLM based method present the agent selection task as the action generation process for the LLM.
