@@ -31,8 +31,10 @@ Liu et al, Salesforce, ICLR 2024
    * Generalization ability
 
 ### BOLAA -
-* Has controller module on top of multiple labor agents
-* Has 2 core modules that involve performing agent selection and communication between multiple labor agents
+* Has following 2 main modules -
+ * Labor agents pool that manager multiple LAA each focusing on specialized tasks
+ * Controller - The controller is devised to selectively call LAAs from agents pool.
+* Controller has 2 core modules that involve performing agent selection and communication between multiple labor agents
 * **Agent select module –**
   * Heuristic based approach works by defining rules to select relevant agent while LLM based method present the agent selection task as the action generation process for the LLM.
   * This way the controller plays the role of an orchestrating agent itself whose action is the select the optimal labor agent.
