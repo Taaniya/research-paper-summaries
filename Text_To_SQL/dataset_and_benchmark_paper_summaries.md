@@ -1,7 +1,7 @@
 # Papers
 
 1. [BIRD: Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs, Li et al, NeurIPS, 2023](#can-llm-already-serve-as-a-database-interface-a-big-bench-for-large-scale-database-grounded-text-to-sqls)
-2. [On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries, Shi et al EMNLP 2020](#on-the-potential-of-lexico-logical-alignments-for-semantic-parsing-to-sql-queries)
+2. [SQUALL: On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries, Shi et al EMNLP 2020](#on-the-potential-of-lexico-logical-alignments-for-semantic-parsing-to-sql-queries)
 
 ## Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs 
 Li et al. NeurIPS , 2023
