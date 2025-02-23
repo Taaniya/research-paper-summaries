@@ -71,6 +71,7 @@ the high performing LLMs.
 
 Qian et al, ACL, 2024
 
+**Gist-**
 * This paper introduces Chatdev, a system with communicative agents for software development
 * Each agent is driven by LLM and is guided by what to communicate and how to communicate
 * Demonstrates how linguistic communication facilitates multi-agent collaboration
