@@ -1,5 +1,5 @@
 # Papers
-1. [BOLAA – Benchmarking and orchestrating LLM autonomous agents](#bolaa--benchmarking-and-orchestrating-llm-autonomous-agents, ICLR 2024) 
+1. [BOLAA – Benchmarking and orchestrating LLM autonomous agents, ICLR 2024](#bolaa--benchmarking-and-orchestrating-llm-autonomous-agents) 
 
 ## BOLAA – Benchmarking and orchestrating LLM autonomous agents
 Liu et al, Salesforce, ICLR 2024
