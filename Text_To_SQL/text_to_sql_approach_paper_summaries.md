@@ -1,5 +1,5 @@
 # Papers
-1. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, 2025](#)
+1. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
 2. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
 
 ## XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL
