@@ -1,5 +1,41 @@
 # Papers
-1. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+1. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, 2025](#)
+2. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+
+XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL
+Gao et al, 2025
+
+Paper link - https://arxiv.org/pdf/2411.08599 
+Git repo - https://github.com/XGenerationLab/M-Schema 
+
+**Gist –** 
+* This paper presents a framework for Text-To-SQL called XiYAN-SQL based on ensemble of multiple generators for SQL candidates.
+* Uses combined approaches of prompt engineering with In-context-learning (ICL) to maximize generation of high-quality & diverse SQL queries and SFT to achieve better controllability
+* Proposes a two-stage and multi-task training strategy to train series of models with different preferences along with candidate selection strategy to select the most reasonable candidate
+* Introduce M-schema – a semi-structured schema representation method designed to enhance the understanding of database structures
+* The proposes framework – XiYAN-SQL achieves SOTA execution accuracy of 75.63 % on Bird benchmark, 89% on SPIDER etc.
+	
+## Framework –
+* Introduces M-schema, based on MAC-SQL extended with additional information including column data types & description, primary key marking and value examples.
+* Schema linking pipelines consists of retrieval module to search values and columns in database and column selector to remove irrelevant tables and columns post retrieval step.
+   * First the LLM is prompted to identify keywords and entities in question, using which the retriever module retrieves top-k columns for each keyword.
+   * Value retriever involves a two-phase retrieval strategy based on Locality Sensitive Hashing (LSH) and semantic similarity to identify similar values in the database. The final selected schema is the union set of column retriever and value retriever.
+   * Column selector – The retrieved schema from previous step is presented to LLM organized M-schema along with few shot examples to evaluate the relevance of each column to user’s query and select only relevant ones.
+
+
+## Candidate generation involves a -
+* Fine-tuned SQL generator obtained by 2 stage multi-task training approach (basic syntax training & generation enhance training) to fine-tune a series of high precision models with distinct advantages
+* Different LLMs are used to rephrase the original query in multiple ways without altering its original meaning.
+* ICL SQL generator –
+   * The quality of SQL generation for a query also depends on the examples provided apart from the LLM’s reasoning capabilities.
+   * Employs example selection strategy to include in the prompt to retrieve useful examples
+* SQL refiner optimizes the generated SQLs obtained from previous step
+* Candidate selection – Fine tunes a selection model to select the most reasonable candidate SQL among the various generated in previous step. This tackles the limitations of existing approaches which selects based on self-consistency which sometimes may not result in a consistent output at all or other times a consistent output itself could be incorrect too.
+
+## Evaluation results & takeaways –
+* Evaluation datasets - BIRD, SPIDER, SQL-eval
+* When used M-schema representation for 4 different LLMs – GPT 4o, Claude Sonnet 3.5, Gemini 1.5 Pro, all the models demonstrated improvements as compared using DDL schema representation in the prompt
+
 
 ## CodeS: Towards Building Open-source Language Models for Text-to-SQL
 Li et al, ACM 2024
@@ -9,7 +45,7 @@ Paper link- https://arxiv.org/pdf/2402.16347
 **Gist –**
 * This paper introduces CodeS, a series of pre-trained open source language models (1B to 15 B parameters), specifically designed for Text-to-SQL task
 * Studies research challenges in building CodeS including schema linking
-* Evaluation on public benchmarks - BIRD, SPIDER and 2 real world datasets for financial and academic application
+* Evaluation on public benchmarks - BIRD, SPIDER and 2 real-world datasets for financial and academic application
 * Achieves SOTA accuracy and robustness on Text-to-SQL benchmarks
 
 **Architecture –** 
