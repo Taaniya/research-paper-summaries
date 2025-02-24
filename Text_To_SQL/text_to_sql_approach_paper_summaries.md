@@ -31,7 +31,10 @@ Gao et al, 2025
    * The quality of SQL generation for a query also depends on the examples provided apart from the LLM’s reasoning capabilities.
    * Employs example selection strategy to include in the prompt to retrieve useful examples
 * SQL refiner optimizes the generated SQLs obtained from previous step
-* Candidate selection – Fine tunes a selection model to select the most reasonable candidate SQL among the various generated in previous step. This tackles the limitations of existing approaches which selects based on self-consistency which sometimes may not result in a consistent output at all or other times a consistent output itself could be incorrect too.
+
+**Candidate selection –** 
+* Fine tunes a selection model to select the most reasonable candidate SQL among the various generated in previous step.
+* This tackles the limitations of existing approaches which selects based on self-consistency which sometimes may not result in a consistent output at all or other times a consistent output itself could be incorrect too.
 
 **Evaluation results & takeaways –**
 * Evaluation datasets - BIRD, SPIDER, SQL-eval
