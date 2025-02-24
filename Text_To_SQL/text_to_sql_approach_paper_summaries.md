@@ -14,7 +14,7 @@ Gao et al, 2025
 * Uses combined approaches of prompt engineering with In-context-learning (ICL) to maximize generation of high-quality & diverse SQL queries and SFT to achieve better controllability
 * Proposes a two-stage and multi-task training strategy to train series of models with different preferences along with candidate selection strategy to select the most reasonable candidate
 * Introduce M-schema – a semi-structured schema representation method designed to enhance the understanding of database structures
-* The proposes framework – XiYAN-SQL achieves SOTA execution accuracy of 75.63 % on Bird benchmark, 89% on SPIDER etc.
+* The proposes framework – XiYAN-SQL achieves new SOTA execution accuracy of 75.63 % on Bird benchmark, 89% on SPIDER etc.
 	
 **Framework –**
 * Introduces M-schema, based on MAC-SQL extended with additional information including column data types & description, primary key marking and value examples.
