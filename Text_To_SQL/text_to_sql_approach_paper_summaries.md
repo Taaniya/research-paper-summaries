@@ -6,8 +6,8 @@
 
 Gao et al, 2025
 
-Paper link - https://arxiv.org/pdf/2411.08599 
-Git repo - https://github.com/XGenerationLab/M-Schema 
+* Paper link - https://arxiv.org/pdf/2411.08599 
+* Git repo - https://github.com/XGenerationLab/M-Schema 
 
 **Gist –** 
 * This paper presents a framework for Text-To-SQL called XiYAN-SQL based on ensemble of multiple generators for SQL candidates.
