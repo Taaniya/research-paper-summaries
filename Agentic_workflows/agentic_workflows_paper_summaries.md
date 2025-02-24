@@ -32,7 +32,7 @@ Liu et al, Salesforce, ICLR 2024
    * ICL – in context learning
    * Generalization ability
 
-### BOLAA -
+**BOLAA architecture-**
 * Has following 2 main modules -
   * Labor agents pool that manager multiple LAA each focusing on specialized tasks
   * Controller - The controller is devised to selectively call LAAs from agents pool.
