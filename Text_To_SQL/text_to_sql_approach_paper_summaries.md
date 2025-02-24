@@ -16,7 +16,7 @@ Gao et al, 2025
 * Introduce M-schema – a semi-structured schema representation method designed to enhance the understanding of database structures
 * The proposes framework – XiYAN-SQL achieves SOTA execution accuracy of 75.63 % on Bird benchmark, 89% on SPIDER etc.
 	
-## Framework –
+**Framework –**
 * Introduces M-schema, based on MAC-SQL extended with additional information including column data types & description, primary key marking and value examples.
 * Schema linking pipelines consists of retrieval module to search values and columns in database and column selector to remove irrelevant tables and columns post retrieval step.
    * First the LLM is prompted to identify keywords and entities in question, using which the retriever module retrieves top-k columns for each keyword.
@@ -24,7 +24,7 @@ Gao et al, 2025
    * Column selector – The retrieved schema from previous step is presented to LLM organized M-schema along with few shot examples to evaluate the relevance of each column to user’s query and select only relevant ones.
 
 
-## Candidate generation involves a -
+**Candidate generation involves a -**
 * Fine-tuned SQL generator obtained by 2 stage multi-task training approach (basic syntax training & generation enhance training) to fine-tune a series of high precision models with distinct advantages
 * Different LLMs are used to rephrase the original query in multiple ways without altering its original meaning.
 * ICL SQL generator –
@@ -33,7 +33,7 @@ Gao et al, 2025
 * SQL refiner optimizes the generated SQLs obtained from previous step
 * Candidate selection – Fine tunes a selection model to select the most reasonable candidate SQL among the various generated in previous step. This tackles the limitations of existing approaches which selects based on self-consistency which sometimes may not result in a consistent output at all or other times a consistent output itself could be incorrect too.
 
-## Evaluation results & takeaways –
+**Evaluation results & takeaways –**
 * Evaluation datasets - BIRD, SPIDER, SQL-eval
 * When used M-schema representation for 4 different LLMs – GPT 4o, Claude Sonnet 3.5, Gemini 1.5 Pro, all the models demonstrated improvements as compared using DDL schema representation in the prompt
 
