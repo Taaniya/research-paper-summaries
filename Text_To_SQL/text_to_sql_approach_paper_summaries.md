@@ -1,6 +1,7 @@
 # Papers
 1. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
-2. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+2. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL](#)
+3. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
 
 ## XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL
 
@@ -39,6 +40,38 @@ Gao et al, 2025
 **Evaluation results & takeaways –**
 * Evaluation datasets - BIRD, SPIDER, SQL-eval
 * When used M-schema representation for 4 different LLMs – GPT 4o, Claude Sonnet 3.5, Gemini 1.5 Pro, all the models demonstrated improvements as compared using DDL schema representation in the prompt
+
+
+## MAC-SQL: A Multi-agent collaborative framework for Text-To-SQL
+Wang et al, ACL 2025
+
+**Gist –**
+* Introduces MAC-SQL, a multi agent collaborative framework for Text-To-SQL
+* Achieves SOTA execution accuracy 59.59 (at time of writing paper) using GPT 4 as backbone with MAC-SQL on BIRD benchmark
+* Also introduce instruction-tuning model – SQL-Llama for the task of Text-to-SQL
+
+#### Components –
+**Involves 3 agents -**
+1. Selector –
+   * When needed, it decomposes a large database into a smaller sub-database to minimize interference irrelevant information to LLM
+   * Aim is to locate the minimal schema to answer the question with given knowledge
+   * Motivation –
+     * Introducing too many irrelevant schema items can result in LLM generating irrelevant schema items in the output SQL
+     * Using complete database schema can lead to exceeding context length, adding to costs and issues from context length constraint
+     * Activated only when the length of the database exceeds context-length, otherwise original schema is used
+2. Decomposer agent -
+  * This is the core agent for Text-to-SQL generation which uses selector and refiner on need basis
+  * Decomposes complex original question into simpler sub-questions as reasoning steps & resolves them progressively by few shot CoT reasoning to get the final query
+  * Aim is to enhance LLM’s reasoning ability by generating a series of intermediate steps (sub-questions and SQLs) before predicting the final SQL
+  * First user’s question is judge for determining the complexity and if it can be answered by a single SQL query, the the query is generated directly, otherwise it decomposes it into sub-questions as mentioned above.
+
+3. Refiner –
+  * Performs SQL execution using tool and refines it if necessary in case of errors in generated SQL
+
+**Evaluation -**
+Benchmark datasets – BIRD, SPIDER
+
+Paper link - https://aclanthology.org/2025.coling-main.36.pdf
 
 
 ## CodeS: Towards Building Open-source Language Models for Text-to-SQL
