@@ -78,7 +78,7 @@ Qian et al, ACL, 2024
 * Demonstrates how linguistic communication facilitates multi-agent collaboration
 * Introduces Chat chain to divide each phase into smaller subtasks and communicative de-hallucination to ensure genuine response generation during communication
 
-### Chat chain –
+#### Chat chain –
 * Adopting waterfall model, software development is broken down to sequential phases – design, coding & testing, where each phase is further divided into subtasks.
 * In each subtask, 2 agents with their specialized roles perform function of an instructor and an assistant.
 * The instructor agent initiates instructions, instructing the discourse toward the completion of the subtask, while the assistant agent adheres to these instructions and responds with appropriate solutions.
@@ -86,19 +86,19 @@ Qian et al, ACL, 2024
 that can range from the text (e.g., defining a software function point) to code (e.g., creating the initial version of source code), ultimately leading to the completion of the subtask
 Subsequently, the solution from previous tasks serve as bridges to the next phase
 
-### Agentic workflow -
+#### Agentic workflow -
 * Follows agentic workflow, where prompt engineering only takes place at the start of each subtask round.
 * As the communication phase begins, the instructor and assistant communicate with each other in an automated loop, continuing this exchange until the task concludes.
 * Some challenges faced here – Role flipping, instruction repeating, fake replies etc, resulting in failure to advance progress of productive communications and hinders achievement of meaningful solutions
 * This paper employs inception prompting mechanism to tackle this for initiating, sustaining, and concluding agents’ communication to guarantee a robust and efficient workflow.
 
 
-### Memory –
+#### Memory –
 * To tackle the issue arising from constraint of context length in LLM while maintaining communication history among all agents and phases, agent’s memories are segmented into –
   * Long term - preserve contextual awareness across different phases
   * Short term - sustain continuity of dialogue in a single phase
 
-### Communication dehallucination –
+#### Communication dehallucination –
 * Coding hallucinations usually occur when the assistant LAA struggles to precisely follow instructions. To tackle this, dehallucination encourages the assistant to actively seek more detailed suggestions from instructor before delivering a formal response.
 
 ## TaskWeaver: A Code-first agent framework
