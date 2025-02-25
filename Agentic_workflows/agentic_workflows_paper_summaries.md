@@ -43,8 +43,8 @@ Liu et al, Salesforce, ICLR 2024
   * This way the controller plays the role of an orchestrating agent itself whose action is the select the optimal labor agent.
 
 * **Communication module –**
-* Communication is core to agent orchestration. The controller constructs the message after selecting the LAA in previous step And builds the communication.
-* Heuristic based methods generates message using pre-defined template while LLM based method involves the LLM to generate the communication using a prompt that includes – label agent responses, their details, task instructions, demo examples, execution history etc. After getting the response from labor LAA, the controller parses it into an executable action and interacts with the environment.
+  * Communication is core to agent orchestration. The controller constructs the message after selecting the LAA in previous step And builds the communication.
+  * Heuristic based methods generates message using pre-defined template while LLM based method involves the LLM to generate the communication using a prompt that includes – label agent responses, their details, task instructions, demo examples, execution history etc. After getting the response from labor LAA, the controller parses it into an executable action and interacts with the environment.
 
 ### Experiment & result analysis -
 **Evaluation -**
