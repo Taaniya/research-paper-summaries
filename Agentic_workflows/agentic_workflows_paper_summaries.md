@@ -111,7 +111,7 @@ Qiao et al, Microsoft, 2024
 -	Solves the existing challenge of incorporating domain specific knowledge by using examples.
 -	This paper also provides examples of case study results and examples of planning, code generation, plugin and test cases in the appendix.
 
-#### Overview (components)- 
+#### Overview (components) - 
 * Plugin – User-defined plugins treated as callable function by TastWeaver in generated code
 * Planner –
  * Breaks down user’s request into subtasks & manages the execution process with self-reflection
@@ -132,7 +132,7 @@ Qiao et al, Microsoft, 2024
 * According to this plan, planner phrases the queries and communicates with the CI, where CG generates the code, CE executes it and planner receives the execution result to decide next step.
 * The planner performs self-reflection and as a result, may modify the original plan in case the result diverges from expectations, confirm with the user about the outcome or proceed with the next step.
 
-** Incorporating domain-specific knowledge –**
+**Incorporating domain-specific knowledge –**
 * For domain-specific tasks , it can be challenging for the LLM to generate correct code to call plugins or to make a good plan.
 * This is tackled by enabling users to configure examples to teach LLM how to respond to certain requests. These examples are incorporated in planner prompt to generate its plan
 * There are 2 types of examples – one for planner and the other for code generator
