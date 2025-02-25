@@ -111,7 +111,7 @@ Qiao et al, Microsoft, 2024
 -	Solves the existing challenge of incorporating domain specific knowledge by using examples.
 -	This paper also provides examples of case study results and examples of planning, code generation, plugin and test cases in the appendix.
 
-### Overview (components)- 
+#### Overview (components)- 
 * Plugin – User-defined plugins treated as callable function by TastWeaver in generated code
 * Planner –
  * Breaks down user’s request into subtasks & manages the execution process with self-reflection
@@ -127,7 +127,7 @@ Qiao et al, Microsoft, 2024
 * Roles – Planner and Code Interpreters are 2 internal roles
 * Memory – Has short \-term and long-term memory
 
-### Flow - 
+#### Flow - 
 * Planner takes user query, CI’s description listing the available plugins and planning examples (if available) to generate a step-by-step plan.  It first creates an initial plan and later refines it by considering dependencies, among sub-tasks in a CoT manner.
 * According to this plan, planner phrases the queries and communicates with the CI, where CG generates the code, CE executes it and planner receives the execution result to decide next step.
 * The planner performs self-reflection and as a result, may modify the original plan in case the result diverges from expectations, confirm with the user about the outcome or proceed with the next step.
@@ -138,19 +138,19 @@ Qiao et al, Microsoft, 2024
 * There are 2 types of examples – one for planner and the other for code generator
 
 
-### Experiences and personalization –
+#### Experiences and personalization –
 * On user’s command, experience memory stores past chats, that especially helps in scenarios where a solution to a user query was obtained a after series of bidirectional communication between system and user by receiving some help from user for a complex query. When user commands, the system distils ‘experience tips’ from this history encapsulates the actionable insights about what to do & what not to do, in response to similar requests.
 * At runtime, for similar complex queries, these experiences are used in prompts to inform the strategy in planning and code generation.
 * This way, user’s preferences are also captured that can be incorporated while interacting with the agent
 
-### Evaluation –
+#### Evaluation –
 * Evaluation of LAA is challenging as they perform in multiple steps for multiple tasks and this paper describes limitations of existing evaluation methods
 * One of the approaches to evaluate is to have an adaptable approach involving 2 roles – examiner and judge.
 * For each test case, the examiner is provided with task description and assumes the responsibility of supervising the conversation with the evaluation target –the agent. It can ask clarifying questions to the agent.
 * Once the agent provides a solution, the Examiner concludes the conversation and forwards the solution to the judge for evaluation against the ground truth.
 
 
-### Benchmark datasets –
+#### Benchmark datasets –
 * DS-1000 – for code generation benchmark
 * InfiAgent-DA-Bench - Benchmark to asses agent’s performance on data analytics tasks
 * DSEval – Evaluate performance of Data science agents
