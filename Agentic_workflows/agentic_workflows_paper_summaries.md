@@ -117,12 +117,12 @@ Qiao et al, Microsoft, 2023
 #### Overview (components) - 
 * Plugin – User-defined plugins treated as callable function by TastWeaver in generated code
 * Planner –
- * Breaks down user’s request into subtasks & manages the execution process with self-reflection
- * Responds back to user by transforming execution result into human readable form
+  * Breaks down user’s request into subtasks & manages the execution process with self-reflection
+  * Responds back to user by transforming execution result into human readable form
 * Code interpreter-
- * Responsible for generating code for given task and execute it to get result. Includes 2 below components -
- * Code generator – Generates code for given subtask from planner considering available plugins to use them as function calls in generated code for specific tasks
- * Code executor – Executes the code and maintains the execution state throughout the session
+  * Responsible for generating code for given task and execute it to get result. Includes 2 below components -
+  * Code generator – Generates code for given subtask from planner considering available plugins to use them as function calls in generated code for specific tasks
+  * Code executor – Executes the code and maintains the execution state throughout the session
 * Role – Conceptualized as an object instance capable of participating in a conversation by implementing a ‘reply’ interface.
 * Self-reflection – TaskWeaver has the capability to rectify errors throughout the planning and code generation stages.
 * The planner reviews the outcomes of preceding steps and detects if it diverges from the expectation, reassess its original plan and can modify it and explore alternative approaches.
