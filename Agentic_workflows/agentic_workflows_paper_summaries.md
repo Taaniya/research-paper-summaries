@@ -1,7 +1,7 @@
 # Papers
 1. [BOLAA – Benchmarking and orchestrating LLM autonomous agents, ICLR 2024](#bolaa--benchmarking-and-orchestrating-llm-autonomous-agents) 
 2. [ChatDev - Communicative Agents for Software Development, ACL 2024](#chatdev---communicative-agents-for-software-development)
-3. [TaskWeaver: A Code-First Agent Framework, 2024](#taskweaver-a-code-first-agent-framework)
+3. [TaskWeaver: A Code-First Agent Framework, 2023](#taskweaver-a-code-first-agent-framework)
 
 
 ## BOLAA – Benchmarking and orchestrating LLM autonomous agents
@@ -84,7 +84,7 @@ Qian et al, ACL, 2024
 * The instructor agent initiates instructions, instructing the discourse toward the completion of the subtask, while the assistant agent adheres to these instructions and responds with appropriate solutions.
 * They engage in a multi-turn dialogue working cooperatively until they achieve consensus, extracting solutions
 that can range from the text (e.g., defining a software function point) to code (e.g., creating the initial version of source code), ultimately leading to the completion of the subtask
-Subsequently, the solution from previous tasks serve as bridges to the next phase
+Subsequently, the solutions from previous tasks serve as bridges to the next phase
 
 #### Agentic workflow -
 * Follows agentic workflow, where prompt engineering only takes place at the start of each subtask round.
@@ -102,7 +102,10 @@ Subsequently, the solution from previous tasks serve as bridges to the next phas
 * Coding hallucinations usually occur when the assistant LAA struggles to precisely follow instructions. To tackle this, dehallucination encourages the assistant to actively seek more detailed suggestions from instructor before delivering a formal response.
 
 ## TaskWeaver: A Code-first agent framework
-Qiao et al, Microsoft, 2024
+Qiao et al, Microsoft, 2023
+
+* Paper - https://arxiv.org/pdf/2311.17541
+* git repo - https://github.com/microsoft/TaskWeaver 
 
 **Gist -**
 -	Code-first framework to build and orchestrate LLM powered autonomous agents (LAA)
