@@ -1,6 +1,7 @@
 # Papers
 1. [BOLAA – Benchmarking and orchestrating LLM autonomous agents, ICLR 2024](#bolaa--benchmarking-and-orchestrating-llm-autonomous-agents) 
 2. [ChatDev - Communicative Agents for Software Development, ACL 2024](#chatdev---communicative-agents-for-software-development)
+3. [TaskWeaver: A Code-First Agent Framework, 2024](#)
 
 
 ## BOLAA – Benchmarking and orchestrating LLM autonomous agents
@@ -99,4 +100,63 @@ Subsequently, the solution from previous tasks serve as bridges to the next phas
 
 ### Communication dehallucination –
 * Coding hallucinations usually occur when the assistant LAA struggles to precisely follow instructions. To tackle this, dehallucination encourages the assistant to actively seek more detailed suggestions from instructor before delivering a formal response.
+
+## TaskWeaver: A Code-first agent framework
+Qiao et al, Microsoft, 2024
+
+**Gist -**
+-	Code-first framework to build and orchestrate LLM powered autonomous agents (LAA)
+-	Converts user requests into executable code, where every user-defined plugins are treated as callable functions in the workflow.
+-	Supports rich data structures, flexible plugin usage, dynamic plugin selection
+-	Solves the existing challenge of incorporating domain specific knowledge by using examples.
+-	This paper also provides examples of case study results and examples of planning, code generation, plugin and test cases in the appendix.
+
+### Overview (components)- 
+* Plugin – User-defined plugins treated as callable function by TastWeaver in generated code
+* Planner –
+ * Breaks down user’s request into subtasks & manages the execution process with self-reflection
+ * Responds back to user by transforming execution result into human readable form
+* Code interpreter-
+ * Responsible for generating code for given task and execute it to get result. Includes 2 below components -
+ * Code generator – Generates code for given subtask from planner considering available plugins to use them as function calls in generated code for specific tasks
+ * Code executor – Executes the code and maintains the execution state throughout the session
+* Role – Conceptualized as an object instance capable of participating in a conversation by implementing a ‘reply’ interface.
+* Self-reflection – TaskWeaver has the capability to rectify errors throughout the planning and code generation stages.
+* The planner reviews the outcomes of preceding steps and detects if it diverges from the expectation, reassess its original plan and can modify it and explore alternative approaches.
+* CI also evaluates the execution results and regenerates the code if any error is encountered
+* Roles – Planner and Code Interpreters are 2 internal roles
+* Memory – Has short \-term and long-term memory
+
+### Flow - 
+* Planner takes user query, CI’s description listing the available plugins and planning examples (if available) to generate a step-by-step plan.  It first creates an initial plan and later refines it by considering dependencies, among sub-tasks in a CoT manner.
+* According to this plan, planner phrases the queries and communicates with the CI, where CG generates the code, CE executes it and planner receives the execution result to decide next step.
+* The planner performs self-reflection and as a result, may modify the original plan in case the result diverges from expectations, confirm with the user about the outcome or proceed with the next step.
+
+** Incorporating domain-specific knowledge –**
+* For domain-specific tasks , it can be challenging for the LLM to generate correct code to call plugins or to make a good plan.
+* This is tackled by enabling users to configure examples to teach LLM how to respond to certain requests. These examples are incorporated in planner prompt to generate its plan
+* There are 2 types of examples – one for planner and the other for code generator
+
+
+### Experiences and personalization –
+* On user’s command, experience memory stores past chats, that especially helps in scenarios where a solution to a user query was obtained a after series of bidirectional communication between system and user by receiving some help from user for a complex query. When user commands, the system distils ‘experience tips’ from this history encapsulates the actionable insights about what to do & what not to do, in response to similar requests.
+* At runtime, for similar complex queries, these experiences are used in prompts to inform the strategy in planning and code generation.
+* This way, user’s preferences are also captured that can be incorporated while interacting with the agent
+
+### Evaluation –
+* Evaluation of LAA is challenging as they perform in multiple steps for multiple tasks and this paper describes limitations of existing evaluation methods
+* One of the approaches to evaluate is to have an adaptable approach involving 2 roles – examiner and judge.
+* For each test case, the examiner is provided with task description and assumes the responsibility of supervising the conversation with the evaluation target –the agent. It can ask clarifying questions to the agent.
+* Once the agent provides a solution, the Examiner concludes the conversation and forwards the solution to the judge for evaluation against the ground truth.
+
+
+### Benchmark datasets –
+* DS-1000 – for code generation benchmark
+* InfiAgent-DA-Bench - Benchmark to asses agent’s performance on data analytics tasks
+* DSEval – Evaluate performance of Data science agents
+
+**Challenge in LLM evaluation –**
+* During evaluation, successful completion by TaskWeaver cannot always be guaranteed due to various factors – including the fact that the performance of a given LLM endpoint is not consistent, exhibiting fluctuations over time and across different host machines. Such variations pose a huge challenge for LLM based apps.
+
+
 
