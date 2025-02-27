@@ -12,6 +12,6 @@ This repository contains summaries of research papers in the areas of Generative
 * [Architecture Advancements](architecture_advancements): optimizing attention mechanism, knowledge distillation, efficient hidden state representations
 * [Information Retrieval and Ranking](information_retrieval_and_ranking): Information retrieval, embedding models, reranking, relevance ranking
 
-### Contribute to this Repository 
+### Contribute to this Repository -
 * If you find this repository helpful, contribute to it by giving it a :star:
 * Raise Pull request to request summaries for papers not included or submit your own paper summaries or include more highlights & takeaways to existing paper summaries
