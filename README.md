@@ -1,7 +1,7 @@
 # research-paper-summaries
 This repository contains summaries of research papers in the areas of Generative AI, deep learning architectures and NLP
 
-### Research areas covered 
+### Research areas covered -
 
 * [Agents Workflows](Agentic_workflows): LLM-based autonomous AI Agents (LAA), building agents, Multi-agent orchestration / collaboration, planning
 * [Conversational Question Answering](Conversational_Question_Answering): Building CoQA, challenges including memory & context management, identifying followups
@@ -12,4 +12,4 @@ This repository contains summaries of research papers in the areas of Generative
 * [Architecture Advancements](architecture_advancements): optimizing attention mechanism, knowledge distillation, efficient hidden state representations
 * [Information Retrieval and Ranking](information_retrieval_and_ranking): Information retrieval, embedding models, reranking, relevance ranking
 
-
+If you find this repository helpful contribute to it by giving it a :star:
