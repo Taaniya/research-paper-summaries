@@ -14,12 +14,12 @@ Liu et al, Salesforce, ICLR 2024
 **Gist –** 
 * This paper performs comparison different LLM based autonomous agents (LAA) in terms of agent architectures and LLM models used within them
 * Explores new areas –
- * Compatibility of different LLM models with task complexities and agent architectures
- * Strategic orchestration of multiple agents with increasing task complexity
-* Proposes a new strategy to orchestrate multiple LAAs with architecture BOLAA to orchestrate multiple agents and also identify the challenges of designing this architecture for environments with compounding actions.
+  * Compatibility of different LLM models with task complexities and agent architectures
+  * Strategic orchestration of multiple agents with increasing task complexity
+  * Proposes a new strategy to orchestrate multiple LAAs with architecture BOLAA to orchestrate multiple agents and also identify the challenges of designing this architecture for environments with compounding actions.
 * This paper studies following 2 core modules of BOLAA on the basis of LLM based and heuristic based methods -
- * Agent selection to select most relevant agent
- * Communication module to communicate between multiple agents
+  * Agent selection to select most relevant agent
+  * Communication module to communicate between multiple agents
 
 **LAA architectures-**
 * This paper defines and compares different agent architectures (LAAs) –
