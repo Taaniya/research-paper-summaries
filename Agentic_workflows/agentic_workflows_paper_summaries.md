@@ -161,5 +161,13 @@ Qiao et al, Microsoft, 2023
 **Challenge in LLM evaluation –**
 * During evaluation, successful completion by TaskWeaver cannot always be guaranteed due to various factors – including the fact that the performance of a given LLM endpoint is not consistent, exhibiting fluctuations over time and across different host machines. Such variations pose a huge challenge for LLM based apps.
 
+References -
+* [Taskweaver documentation](https://microsoft.github.io/TaskWeaver/docs/overview/)
+* [Taskweaver concepts](https://microsoft.github.io/TaskWeaver/docs/concepts)
+* [Plugin introduction](https://microsoft.github.io/TaskWeaver/docs/plugin/plugin_intro/)
+* [Memory](https://microsoft.github.io/TaskWeaver/docs/memory)
+* [Prompt Compression](https://microsoft.github.io/TaskWeaver/docs/advanced/compression/)
+* [Using TaskWeaver as a library](https://microsoft.github.io/TaskWeaver/docs/usage/library)
+* [Roles in Taskweaver](https://microsoft.github.io/TaskWeaver/docs/concepts/role)
 
 
