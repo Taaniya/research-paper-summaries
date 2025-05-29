@@ -165,9 +165,10 @@ References -
 * [Taskweaver documentation](https://microsoft.github.io/TaskWeaver/docs/overview/)
 * [Taskweaver concepts](https://microsoft.github.io/TaskWeaver/docs/concepts)
 * [Plugin introduction](https://microsoft.github.io/TaskWeaver/docs/plugin/plugin_intro/)
-* [Memory](https://microsoft.github.io/TaskWeaver/docs/memory)
+* Memory, Shared Memory - https://microsoft.github.io/TaskWeaver/docs/memory
+* [Attachment](https://microsoft.github.io/TaskWeaver/docs/concepts/attachment/)
 * [Prompt Compression](https://microsoft.github.io/TaskWeaver/docs/advanced/compression/)
 * [Using TaskWeaver as a library](https://microsoft.github.io/TaskWeaver/docs/usage/library)
-* [Roles in Taskweaver](https://microsoft.github.io/TaskWeaver/docs/concepts/role)
+* [Roles in Taskweaver and role entry](https://microsoft.github.io/TaskWeaver/docs/concepts/role)
 
 
