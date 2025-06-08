@@ -3,7 +3,7 @@
 2. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
 3. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025](#practiq-a-practical-conversational-text-to-sql-dataset-with-ambiguous-and-unanswerable-queries)
 4. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
-5. [Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql, Wang et al., ACL 2023]()
+5. [Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql, Wang et al., ACL 2023](#know-what-i-dont-know--handling-ambiguous-and-unanswerable-questions-for-text-to-sql)
 
 ## XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL
 
