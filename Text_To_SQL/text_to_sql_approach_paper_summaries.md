@@ -107,10 +107,12 @@ Paper link - https://aclanthology.org/2025.naacl-long.13.pdf
 #### Dataset Evaluation & baseline –
 2 evaluation tasks -
 
-* Question category classification – classify whether the question is answerable or 1 of the 8 ambiguous/unanswerable categories
-* This is evaluated using classification accuracy to measure model’s classification performance
-* Clarification SQL generation – predict the final SQL given the assistant’s clarification question and user’s clarification response
-* This is evaluated using execution accuracy to measure model’s performance
+* Question category classification –
+    * Classify whether the question is answerable or 1 of the 8 ambiguous/unanswerable categories
+    * This is evaluated using classification accuracy to measure model’s classification performance
+* Clarification SQL generation –
+    * Predict the final SQL given the assistant’s clarification question and user’s clarification response
+    * This is evaluated using execution accuracy to measure model’s performance
 
 
 **Question category classification approach –**
@@ -125,6 +127,7 @@ Paper link - https://aclanthology.org/2025.naacl-long.13.pdf
 **Takeaways -**
 * Improving retrieval of cell values improves accuracy of identifying ambiguous / unanswerable question in text-to-sql system
 * Ambiguous and unanswerable questions are challenging to handle even for SoTA LLMs in real-world practical Text-to-SQL data
+
 
 **Observations on DIN-SQL performance on ambiguous and unanswerable queries –**
 * For Ambiguous SELECT Column, for most cases, the generated SQL contains one of the ambiguous column names for the relevant entity in the user query. In few cases, the framework hallucinates, i.e., it assumes that entity mentioned in the user question is actually present as a column in the schema, in other cases the generated SQL doesn’t contain any of the related ambiguous columns from the schema for the entity in the user query.
