@@ -122,6 +122,16 @@ Paper link - https://aclanthology.org/2025.naacl-long.13.pdf
 * Each example includes an input comprising the initial user question and relevant cell values retrieved via fuzzy matching approach ([Lin et al](https://aclanthology.org/2020.findings-emnlp.438.pdf)) & RAT-SQL ([Wang et al](https://aclanthology.org/2020.acl-main.677.pdf))
 * The in-context demonstrations contain human-curated step-by-step thoughts and classification of the question categories
 
+**Baseline experiments on handling ambiguities by SoTA LLMs -**
+* Baseline approach – [DIN-SQL](https://proceedings.neurips.cc/paper_files/paper/2023/file/72223cc66f63ca1aa59edaec1b3670e6-Paper-Conference.pdf) – for predicting final clarification SQL
+* Input to DIN-SQL framework – an ambiguous / unanswerable query without the assistant response or follow-up clarified user query
+* As expected, model performs poorly as the framework is not designed to handle such queries
+* For e.g., the model often hallucinates columns that do not exist in the database, potentially because the examples in the few-shot include only answerable questions
+
+**Evaluated the dataset on 2 core tasks –**
+* Question category classification
+* SQL prediction
+
 
 #### Results and error analysis –
 **Takeaways -**
@@ -131,7 +141,7 @@ Paper link - https://aclanthology.org/2025.naacl-long.13.pdf
 
 **Observations on DIN-SQL performance on ambiguous and unanswerable queries –**
 * For Ambiguous SELECT Column, for most cases, the generated SQL contains one of the ambiguous column names for the relevant entity in the user query. In few cases, the framework hallucinates, i.e., it assumes that entity mentioned in the user question is actually present as a column in the schema, in other cases the generated SQL doesn’t contain any of the related ambiguous columns from the schema for the entity in the user query.
-* For Ambiguous WHERE Column, all the predicted SQLs contain one of the ambiguous columns
+* For ambiguous WHERE Column, all the predicted SQLs contain one of the ambiguous columns
 * For Non-existent SELECT Column, (45%) cases lead to hallucination, i.e. the framework assumes that the entity in user query is present as a column in the schema and includes the column name in the final predicted SQL
 * For Non-existent WHERE Column, only few cases lead to hallucination, the framework assumes that the entity in user query is present as column in the schema and the rest (78%) of the case are predicted as incorrect SQLs
 * In the case of Unsupported Join we see that 56% of the SQLs are predicted with syntax errors/hallucinations where the framework assumes the presence of certain columns that do not exist in the schema to facilitate a JOIN operation to answer the question. Rest of the cases have logical errors, in the predicted SQL i.e., they contain JOIN columns that do not have any foreign key relationship
