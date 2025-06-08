@@ -297,7 +297,7 @@ Wang et al., (Microsoft Asia) ACL 2023
    * Sequence labelling module
 * Grounding module
    * Use ETA, a pre-trained probing based grounding model & modified the vanilla version to support handling of ambiguous and unanswerable questions
-   * A heuristic-based baseline [Sorokin and Gurevych, 2018](https://aclanthology.org/S18-2007.pdf) is used in which n-gram matching via enumerating all n-gram (n < 5) phrases in natural language question and is done and which are linked to schema items via fuzzy string matching. A span is considered as ambiguous when it can fuzzy match with multiple results.
+   * A heuristic-based baseline ([Sorokin and Gurevych, 2018](https://aclanthology.org/S18-2007.pdf)) is used in which n-gram matching via enumerating all n-gram (n < 5) phrases in natural language question and is done and which are linked to schema items via fuzzy string matching. A span is considered as ambiguous when it can fuzzy match with multiple results.
    * Similarly, if a noun phrase span can match no results, it is considered to be an unanswerable span.
  
      
