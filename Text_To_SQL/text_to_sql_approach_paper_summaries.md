@@ -1,7 +1,8 @@
 # Papers
 1. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, Gao et al 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
 2. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
-3. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+3. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025]()
+4. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
 
 ## XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL
 
@@ -72,6 +73,69 @@ Wang et al, ACL 2025
 Benchmark datasets – BIRD, SPIDER
 
 Paper link - https://aclanthology.org/2025.coling-main.36.pdf
+
+## Practiq: A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries 
+Dong et al., ACL 2025
+
+Paper link - https://aclanthology.org/2025.naacl-long.13.pdf 
+
+**Gist -**
+* This paper studies existing real-world text-to-sql datasets
+* Identifies 4 categories of ambiguous and 4 categories of unanswerable questions
+* Implements framework to construct practical multi-turn conversational text-to-sql datasets consisting of ambiguous and unanswerable questions based on real-world datasets
+* Multiple turns include – initial user question, assistant’s response seeking clarification, user’s clarification and assistant’s clarified SQL response with natural language explanation of the execution results
+* To benchmark performance on this dataset, the paper implemented and evaluated SoTA LLM based baselines using different LLMs
+
+**Definitions -**
+* Ambiguous question – A question is ambiguous if it has multiple valid interpretations given the database schema
+* Unanswerable question – A question is unanswerable if the corresponding database doesn’t contain the data that the question is asking for.
+* Question categories –
+    * Ambiguous question categories – ambiguous SELECT column, ambiguous Values within column, ambiguous WHERE column, ambiguous filter criteria
+    * Unanswerable categories – Non-existent SELECT column, non-existent WHERE column, non-existent filter value, unsupported joins
+
+
+**Approach for refining generated conversations and quality control –**
+* A separate evaluation step is incorporated after each generation step to control the data quality besides optimizing the generation prompt
+* This filtering step uses both LLM and execution checks
+* LLM based approach –
+    * Used to evaluate quality of the generated data from previous step
+    * Rank different candidates if multiple candidates have been generated. E.g., For an ambiguous SELECT column in a questions, after generating multiple alternative columns for the SELECT column, a separate prompt with few shot examples is used for the LLM to evaluate whether the given multiple alternate columns are good candidates and make the question ambiguous.
+    * For execution checks, in case of any Database change of generation of modified SQLs, the SQLs are executed against the database to ensure they are executable
+    * Finally, after generating data for each category, an LLM is prompted to perform binary classification on whether the provided question and modified database pair belonged to the designed category or not. This classification is based on the definition of the category of ambiguous or unanswerable questions and severable human-curated examples. 
+
+
+#### Dataset Evaluation & baseline –
+2 evaluation tasks -
+
+* Question category classification – classify whether the question is answerable or 1 of the 8 ambiguous/unanswerable categories
+* This is evaluated using classification accuracy to measure model’s classification performance
+* Clarification SQL generation – predict the final SQL given the assistant’s clarification question and user’s clarification response
+* This is evaluated using execution accuracy to measure model’s performance
+
+
+**Question category classification approach –**
+* Employ few-shot prompting strategy for the question category classification task
+* Experimented with different no. of few shot examples with different LLMs
+* Prompt contains definition of each category along with a variable no. of examples per category
+* Each example includes an input comprising the initial user question and relevant cell values retrieved via fuzzy matching approach ([Lin et al](https://aclanthology.org/2020.findings-emnlp.438.pdf)) & RAT-SQL ([Wang et al](https://aclanthology.org/2020.acl-main.677.pdf))
+* The in-context demonstrations contain human-curated step-by-step thoughts and classification of the question categories
+
+
+#### Results and error analysis –
+**Takeaways -**
+* Improving retrieval of cell values improves accuracy of identifying ambiguous / unanswerable question in text-to-sql system
+* Ambiguous and unanswerable questions are challenging to handle even for SoTA LLMs in real-world practical Text-to-SQL data
+
+**Observations on DIN-SQL performance on ambiguous and unanswerable queries –**
+* For Ambiguous SELECT Column, for most cases, the generated SQL contains one of the ambiguous column names for the relevant entity in the user query. In few cases, the framework hallucinates, i.e., it assumes that entity mentioned in the user question is actually present as a column in the schema, in other cases the generated SQL doesn’t contain any of the related ambiguous columns from the schema for the entity in the user query.
+* For Ambiguous WHERE Column, all the predicted SQLs contain one of the ambiguous columns
+* For Non-existent SELECT Column, (45%) cases lead to hallucination, i.e. the framework assumes that the entity in user query is present as a column in the schema and includes the column name in the final predicted SQL
+* For Non-existent WHERE Column, only few cases lead to hallucination, the framework assumes that the entity in user query is present as column in the schema and the rest (78%) of the case are predicted as incorrect SQLs
+* In the case of Unsupported Join we see that 56% of the SQLs are predicted with syntax errors/hallucinations where the framework assumes the presence of certain columns that do not exist in the schema to facilitate a JOIN operation to answer the question. Rest of the cases have logical errors, in the predicted SQL i.e., they contain JOIN columns that do not have any foreign key relationship
+	
+
+Git repo -
+https://github.com/amazon-science/conversational-ambiguous-unanswerable-text2sql
 
 
 ## CodeS: Towards Building Open-source Language Models for Text-to-SQL
