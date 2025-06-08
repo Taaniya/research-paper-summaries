@@ -3,6 +3,7 @@
 2. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
 3. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025](#practiq-a-practical-conversational-text-to-sql-dataset-with-ambiguous-and-unanswerable-queries)
 4. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+5. [Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql, Wang et al., ACL 2023]()
 
 ## XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL
 
@@ -246,6 +247,62 @@ headers were kept as is for feature extraction.
 * This alignment is incorporated during training as a finer-grained type of supervision improved results by 2.3 % by BERT and 3 % without BERT
 * Loss function used in training strategy for alignment during model training –
 * A Linear combination of loss terms of – seq2sql model, supervised attention, column prediction
+
+
+## Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql 
+Wang et al., (Microsoft Asia) ACL 2023 
+
+* Paper link - https://aclanthology.org/2023.findings-acl.352.pdf 
+* Git repo – https://github.com/wbbeyourself/DTE 
+
+**Gist –**
+* This paper studies ambiguous and unanswerable cases in text-to-sql & summarizes them into 6 categories
+* Identifies the causes behind each category and proposes requirements for handling ambiguous and unanswerable questions
+* Proposes an effective approach to automatically produce ambiguous and unanswerable text-to-sql examples
+* Proposes a weakly supervised DTE (Detecting then explaining) model for error detection, localization and explanation. 
+
+**Definitions –**
+* Ambiguous question - Questions that can have multiple semantic meanings based on a single table. E.g., the word “rating” in a user’s query could be mapped to disparate columns, such as “IMDB Rating”, “Rotten Tomatoes Rating”, or “Content Rating”.
+   * Column ambiguity - Column ambiguity means that some tokens in the user question could be mapped to multiple columns.
+   * Value ambiguity - means that some tokens in the user question could be mapped to multiple cell values in the table.
+* Unanswerable questions – Questions that cannot be answered based on the information provided by the tables
+   * Column unanswerable
+   * value unanswerable
+   * calculation unanswerable – This is more subtle. It requires mapping the concept mentioned in the user question to composite operations over existing table columns. E.g., For example, the balance of trade is a concept derived from “Exports − Imports”. Such mapping functions require external domain knowledge. Any model trained on general corpus, is likely to fail in such cases.
+   * Out-of-scope – This category means that the question is out of SQL's operation scope, such as chart operations.
+
+**Causes of ambiguous and unanswerable questions –**
+* Unanswerable questions - end users are unfamiliar with the content of the table and don’t read the table carefully, 
+* Ambiguity –
+   * Arises due to the richness of natural language expressions and the habitual omission of expressions by users
+   * Emergence of similar concepts in the table
+
+**Expectations/requirements of an explainable parsing system –**
+* To detect ambiguous and unanswerable questions
+* To locate the specific reasons and generate corresponding explanations to guide the user in rectification.
+
+**Motivation for handling such cases –**
+* Enhances models’ ability to deal with problematic questions and improve user trust
+* Makes it clear to users which part of their questions are problematic, guiding them to revise their questions
+
+
+**Approach to handle ambiguous and unanswerable questions-**
+* DTE model (Detecting then explaining)
+   * This model is used to handle ambiguous and unanswerable questions
+   * To locate ambiguous or unanswerable tokens in user query.
+   * The location process is formulated as a sequence labelling problem, where each token in the user question will be tagged as being related to an ambiguous label, an unanswerable label, or others.
+* DTE Has 3 modules -
+   * Concept prediction module
+   * Grounding module
+   * Sequence labelling module
+* Grounding module
+   * Use ETA, a pre-trained probing based grounding model & modified the vanilla version to support handling of ambiguous and unanswerable questions
+   * A heuristic-based baseline is used in which n-gram matching via enumerating all n-gram (n < 5) phrases in natural language question and is done and which are linked to schema items via fuzzy string matching. A span is considered as ambiguous when it can fuzzy match with multiple results.
+   * Similarly, if a noun phrase span can match no results, it is considered to be an unanswerable span.
+ 
+     
+
+
 
 
 
