@@ -181,8 +181,7 @@ Paper link - https://cdn.openai.com/research-covers/language-unsupervised/langua
 * Demonstrates that gains on multiple NLP tasks can be achieved by generative pre-training a single task-agnostic language model on diverse text corpus of unlabeled text – followed by discriminative fine-tuning on specific task in NLP
 * Works with language modelling objective on unlabeled data
 * Explores semi-supervised approach for language understanding (involving unsupervised pre-training)
-* Unsupervised pre-training –
-    * Standard LM objective
+* Unsupervised pre-training objective – Standard LM objective
 * Training data (Unsupervised pre-training) -
     * Book corpus dataset – 7K unique unpublished books (fantasy, romance), crucially containing long texts to learn long range dependencies.
 
