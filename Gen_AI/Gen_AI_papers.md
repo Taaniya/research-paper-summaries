@@ -4,6 +4,7 @@
 3. [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
 4. [Toolformer, NeurIPS 2023](#toolformer-2023)
 5. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
+6. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#)
 
 
 ## CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search
@@ -170,3 +171,41 @@ Elgohary et al., EMNLP 2019
 **References -**
 * Paper - https://aclanthology.org/D19-1605.pdf
 * https://sites.google.com/view/qanta/projects/canard 
+
+## Improving Language Understanding by Generative Pre-Training
+Radford et al., 2018
+
+Paper link - https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+
+**Gist -**
+* Demonstrates that gains on multiple NLP tasks can be achieved by generative pre-training a single task-agnostic language model on diverse text corpus of unlabeled text – followed by discriminative fine-tuning on specific task in NLP
+* Works with language modelling objective on unlabeled data
+* Explores semi-supervised approach for language understanding (involving unsupervised pre-training)
+* Unsupervised pre-training –
+    * Standard LM objective maximize below likelihood
+* Training data (Unsupervised pre-training) -
+    * Book corpus dataset – 7K unique unpublished books (fantasy, romance), crucially containing long texts to learn long range dependencies.
+
+**Model architecture -**
+* 12 layer decoder, masked self-attention heads
+* 768 dimensions, 12 multi-headed self-attention heads
+* BPE – Byte-pair encoding vocab with 40K merges 
+
+**Pre-training experiment set up –**
+* Adam optimizer
+* LR scheduling – increasing lr linearly from 0 for 1st 2K updates & then annealed to 0 using cosine schedule
+* Trained for 100 epochs 64 batch size
+* Regularization with layer normalization
+* Context size – 512 tokens (contiguous sequence)
+* Activation function – GELU (Gaussian Error Linear Unit)
+* Uses learned position encodings instead of sinusoidal
+* Data cleaning - Used ftfy library to clean raw book corpus dataset text, standardize punctuation & whitespace and used spacy tokenizer
+
+**Evaluation –** 
+* 4 Tasks –
+    * Natural Language Inference
+    * Question Answering
+    * Semantic similarity
+    * Text classification
+
+
