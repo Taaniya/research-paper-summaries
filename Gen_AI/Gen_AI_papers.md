@@ -182,7 +182,7 @@ Paper link - https://cdn.openai.com/research-covers/language-unsupervised/langua
 * Works with language modelling objective on unlabeled data
 * Explores semi-supervised approach for language understanding (involving unsupervised pre-training)
 * Unsupervised pre-training –
-    * Standard LM objective maximize below likelihood
+    * Standard LM objective
 * Training data (Unsupervised pre-training) -
     * Book corpus dataset – 7K unique unpublished books (fantasy, romance), crucially containing long texts to learn long range dependencies.
 
