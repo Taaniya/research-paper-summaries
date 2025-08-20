@@ -4,7 +4,7 @@
 3. [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
 4. [Toolformer, NeurIPS 2023](#toolformer-2023)
 5. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
-6. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#)
+6. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#improving-language-understanding-by-generative-pre-training)
 
 
 ## CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search
@@ -198,7 +198,7 @@ Paper link - https://cdn.openai.com/research-covers/language-unsupervised/langua
 * Regularization with layer normalization
 * Context size – 512 tokens (contiguous sequence)
 * Activation function – GELU (Gaussian Error Linear Unit)
-* Uses learned position encodings instead of sinusoidal
+* Used learned position encodings instead of sinusoidal
 * Data cleaning - Used ftfy library to clean raw book corpus dataset text, standardize punctuation & whitespace and used spacy tokenizer
 
 **Evaluation –** 
