@@ -189,7 +189,9 @@ Paper link - https://cdn.openai.com/research-covers/language-unsupervised/langua
 **Model architecture -**
 * 12 layer decoder, masked self-attention heads
 * 768 dimensions, 12 multi-headed self-attention heads
-* BPE – Byte-pair encoding vocab with 40K merges 
+* BPE – Byte-pair encoding vocab with 40K merges
+* Masked self-attention: where every token can only attend to previous tokens in the self-attention layers
+* Uni-directional language model, left-to-right architecture
 
 **Pre-training experiment set up –**
 * Adam optimizer
