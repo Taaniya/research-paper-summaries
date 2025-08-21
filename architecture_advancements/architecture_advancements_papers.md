@@ -152,7 +152,8 @@ Devlin et al., 2018
     * Sentence level tasks – e.g., MNLI, MRPC etc.
 
 * Based on evaluation results and ablation studies, BERT is found effective for both feature based and fine-tuning based approaches.
-* Feature based approaches - Where contextual representations are learnt during training, and during inferences, this fixed features (contextual representations) are extracted and integrated from pre-trained model and applied to any task specific architecture.
+
+**Feature based approaches** - Where contextual representations are learnt during training, and during inferences, this fixed features (contextual representations) are extracted and integrated from pre-trained model and applied to any task specific architecture.
 
 Paper link - https://arxiv.org/pdf/1810.04805
 
