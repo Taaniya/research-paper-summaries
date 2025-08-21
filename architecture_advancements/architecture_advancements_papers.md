@@ -138,7 +138,7 @@ Devlin et al., 2018
     * This final hidden vector of the i-th token is used to predict the original token with cross entropy loss.
     * In contrast to previous approaches using denoising auto encoders, only masked tokens are predicted instead of reconstructing the entire input.
     * To tackle the downside of masking, which creates a mismatch between pre-training and fine-tuning (as [MASK] tokens do not appear in fine-tuning data), masked tokens are not always replaced with [MASK] token and hence also replaced with other tokens at random or remain unreplaced.
-    * Advantage of masking - since the transformer encoder doesn't know tokens in the input it will be asked to predict and which tokens will be replaced, it will be forced to maintain a distributional contextual representation of every token in the input. Also, since the random replacement only happens for 1.5% (10% of 15%) tokens, it doesn't harm the language understanding capability of the model. 
+    * **Advantage of masking -** since the transformer encoder doesn't know tokens in the input it will be asked to predict and which tokens will be replaced, it will be forced to maintain a distributional contextual representation of every token in the input. Also, since the random replacement only happens for 1.5% (10% of 15%) tokens, it doesn't harm the language understanding capability of the model. 
 
 * **NSP -**
     * Pre-trained on binarized NSP to train the model to understand the sentence relationships because many downstream tasks require this understanding and is not captured with standard language modelling task
@@ -148,7 +148,7 @@ Devlin et al., 2018
 **Fine-tuning –**
 * Task specific models are formed for fine-tuning on different tasks with minimal changes to architecture
 * This is done by incorporating BERT with additional output layer so that minimal no. of params need to be trained from scratch
-* 4 Tasks –
+* Tasks –
     * token level tasks – e.g., sequence tagging, Question answering
     * Sentence level tasks – e.g., MNLI, MRPC etc.
 
