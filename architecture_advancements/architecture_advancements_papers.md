@@ -2,7 +2,8 @@
 1. [Flash Attention 2, 2023](#flash-attention-2-faster-attention-with-better-parallelism-and-work-partitioning)
 2. [Flash Attention 1, 2022](#flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness)
 3. [LoRA, 2021](#lora-low-rank-adaptation-of-large-language-models--2021)
-4. [Distilling knowledge in neural network – 2015](#distilling-knowledge-in-neural-network--2015)
+4. [BERT, 2018](#)
+5. [Distilling knowledge in neural network – 2015](#distilling-knowledge-in-neural-network--2015)
 
 ## Flash attention 2: Faster Attention with Better Parallelism and Work Partitioning
 Tri Dao, July 2023
@@ -99,6 +100,59 @@ LoRA explained - https://medium.com/@Shrishml/lora-low-rank-adaptation-from-the-
 
 Paper link - https://arxiv.org/pdf/2106.09685
 
+
+## BERT Pre-training of Bidirectional Transformers for Language Understanding
+Devlin et al., 2018
+
+**Gist-**
+* Designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers
+* Can be fine-tuned with just one additional output layer for different tasks – QA, language inference, without substantial architectural changes
+* Alleviates unidirectional nature of other language models (e.g., GPT) by using MLM pre-training objective
+* Pre-trained with unlabeled data on pre-training 2 tasks – MLM (Masked Language Modelling & Next Sentence Prediction)
+* Fine-tuning – First initialized with pre-trained parameters which are subsequently fine-tuned using labeled data on downstream tasks with minimal modification to overall architecture
+
+**Architecture –**
+* Multilayer bidirectional transformer encoder with 2 variations – Base & Large
+    * Base – 12 layers, 768 dimensions, 12 attention heads, total params – 110 M
+    * Large – 24 layers, 1024 dimensions, 16 attention heads, total params – 340 M
+* Vocab size – 3000 token vocabulary with Word piece tokenizer
+* Uses bidirectional self-attention whereas GPT uses constrained self-attention (only attend to previous tokens)
+* Inputs are provided as single token sequences. In case of 2 input sentences, their token sequences are packed together and distinguished with special token [SEP] between them
+* Additionally, a learned embedding is added to every token to indicate whether a sentence belongs to sentence A or sentence B
+* Special tokens –
+    * [SEP] – token inserted between 2 sentences to distinguish sentences in input token sequence
+    * [CLS] – 1st token of every sequence. The final hidden vector corresponding to this token is used as aggregated sequence representation for classification tasks
+* Final embeddings for an input token sequence is a obtained by summing up 3 components – token embeddings, position embeddings and segment embeddings of the corresponding token
+
+**Pre-training –** 
+* 2 unsupervised tasks - Masked Language Modelling & Next Sentence Prediction
+* Datasets – BookCorpus & English Wikipedia (only text passages, lists, tables & headers are ignored). It was critical to use a document level corpus than a shuffled sentence level corpus to extract long contiguous sequences.
+* **MLM –**
+    * Masks 15 % of tokens in each sequence at random, and the model predicts these masked tokens
+    * Masking – out of 15% of token chosen at random, the masking is performed by replacing an i-th token with-
+        * [MASK] token, 80% of times
+        * A random token, 10% of times
+        * The same token, 10% of times (i.e., it remains unchanged)
+    * Final hidden vectors corresponding to masked tokens are fed to output softmax over the vocabulary, as in a standard language model.
+    * This final hidden vector of the i-th token is used to predict the original token with cross entropy loss.
+    * In contrast to previous approaches using denoising auto encoders, only masked tokens are predicted instead of reconstructing the entire input.
+    * To tackle the downside of masking, which creates a mismatch between pre-training and fine-tuning (as [MASK] tokens do not appear in fine-tuning data), masked tokens are not always replaced with [MASK] token and hence also replaced with other tokens at random or remain unreplaced.
+
+* **NSP -**
+    * Pre-trained on binarized NSP to train the model to understand the sentence relationships because many downstream tasks require this understanding and is not captured with standard language modelling task
+    * Preparation – For collecting sentence pairs A and B, 50% of times, sentence B truly follows sentence A, while 50% times, B is chosen at random.
+    * The final hidden vector corresponding to [CLS] token is used for NSP
+
+**Fine-tuning –**
+* Task specific models are formed for fine-tuning on different tasks with minimal changes to architecture
+* This is done by incorporating BERT with additional output layer so that minimal no. of params need to be trained from scratch
+* 4 Tasks –
+    * token level tasks – e.g., sequence tagging, Question answering
+    * Sentence level tasks – e.g., MNLI, MRPC etc.
+
+* Based on evaluation results and ablation studies, BERT is found effective for both feature based and fine-tuning based approaches.
+
+Paper link - https://arxiv.org/pdf/1810.04805
 
 ## Distilling knowledge in neural network – 2015 
 
