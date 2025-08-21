@@ -109,7 +109,8 @@ Devlin et al., 2018
 * Can be fine-tuned with just one additional output layer for different tasks – QA, language inference, without substantial architectural changes
 * Alleviates unidirectional nature of other language models (e.g., GPT) by using MLM pre-training objective
 * Pre-trained with unlabeled data on pre-training 2 tasks – MLM (Masked Language Modelling & Next Sentence Prediction)
-* Fine-tuning – First initialized with pre-trained parameters which are subsequently fine-tuned using labeled data on downstream tasks with minimal modification to overall architecture
+* Fine-tuning – First initialized with pre-trained parameters which are subsequently fine-tuned using labeled data on supervised downstream tasks with minimal modification to overall architecture
+* Learns to produce contextual token representations from bidirectional context
 
 **Architecture –**
 * Multilayer bidirectional transformer encoder with 2 variations – Base & Large
@@ -151,6 +152,7 @@ Devlin et al., 2018
     * Sentence level tasks – e.g., MNLI, MRPC etc.
 
 * Based on evaluation results and ablation studies, BERT is found effective for both feature based and fine-tuning based approaches.
+* Feature based approaches - Where contextual representations are learnt during training, and during inferences, this fixed features (contextual representations) are extracted and integrated from pre-trained model and applied to any task specific architecture.
 
 Paper link - https://arxiv.org/pdf/1810.04805
 
