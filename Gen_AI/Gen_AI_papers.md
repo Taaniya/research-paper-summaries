@@ -4,7 +4,8 @@
 3. [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
 4. [Toolformer, NeurIPS 2023](#toolformer-2023)
 5. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
-6. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#improving-language-understanding-by-generative-pre-training)
+6. [GPT2 - ]
+7. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#improving-language-understanding-by-generative-pre-training)
 
 
 ## CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search
@@ -171,6 +172,63 @@ Elgohary et al., EMNLP 2019
 **References -**
 * Paper - https://aclanthology.org/D19-1605.pdf
 * https://sites.google.com/view/qanta/projects/canard 
+
+
+## GPT2 - Language Models are Unsupervised Multitask Learners
+Radford et al., 2019
+
+**Gist -**
+* This paper continues the trend of more general methods of transfer of learned representations with pretraining phase. This work shows language models begin to learn multiple NLP tasks (Question answering, machine translation, summarization etc.) without any explicit supervision when trained on new dataset of millions of webpages – WebText
+* The paper demonstrates that LMs can perform down stream tasks in few shot settings without any parameter or architecture modification
+* Preliminary experiments confirmed that sufficiently large LMs (LLMs) are able to perform multi task learning in this toyish setup
+* The capacity of the LLM is essential to the success of zero-shot task transfer and performance increasing this capacity improves its performance in log-linear fashion across tasks
+* Training dataset – WebText (Millions of web pages)
+* Largest Language Model GPT 2 is 1.5B parameters
+* GPT 2 achieves SOTA results on 7 out of 8 language modelling tasks and still underfits the dataset
+
+**Motivation –**
+* Prevalence of single task training on single domain datasets majorly contributes to lack of generalization in diverse systems
+* Multi-task learning () is a promising framework to improve general performance. This demonstrates language model performs downstream tasks in zero-shot setting.
+* From meta learning perspective, each (dataset, objective) pair is a single training example sampled from distribution of datasets and objectives – implying that current systems would require 100s to 1000s of examples to induce functions to generalize well with multitask training which will be difficult to scale w.r.t dataset creation and designing of objectives.
+* Current best performing systems on language tasks utilize a combination of pre-training and supervised fine-tuning that helps in more flexible forms of transfer.
+* Recent works also suggest that task specific architectures are no longer necessary and transferring many self-attention blocks is sufficient
+* This paper combines the above works and demonstrates the capability of zero-shot performance on down stream tasks without any parameter or architecture changes.
+
+
+**Approach –**
+* Core approach – Language modelling (unsupervised training)
+* Single language has a natural sequential ordering, it is common to factorize the joint probabilities over symbols as product of conditional probabilities
+
+$P(x) = \prod_{i=1}^{n}(s_n | s1,...,s_{n-1})$
+ 
+* Learning to perform a single task can be expressed in a probabilistic framework as estimation of conditional distribution p(output|input). Since a general system should be able to perform many tasks, even for the same input, it should condition not only on the input but also on the task to be performed – i.e., it should model p(output | input, task). This has been formalized in multitask and meta learning settings. Though, task conditioning has been implemented at architectural level, recent work [McCann et al.,](https://arxiv.org/pdf/1806.08730) have shown that language provides a flexible way to specify tasks, inputs and outputs, all as a sequence of symbols. E.g., For example, a translation training example can be written as the sequence (translate to french, english text, french text)
+* Language modelling is also able to learn the tasks without explicit supervision of which symbols are the outputs to be predicted.
+* Since the supervised objective is the same as unsupervised objective, but only evaluated on a subset of sequence, the global minimum of the unsupervised objective is also the global minimum of the supervised objective.
+* Preliminary experiments show that sufficiently large LMs are able to perform multi task learning but learning is much slower than in explicitly supervised approaches.
+
+**Training set –**
+* Own scraping – WebText – all outbound links from Reddit, which received atleast 3 karma (ensuring only human curated / filtered web pages are scraped)
+* ~ 8 Million docs, 40 GB
+* Not used Common Crawl due to data quality issues (unintelligible)
+* Wanted the dataset to be of diverse domain & no assumptions of tasks to be performed ahead of time
+* Removed Wikipedia docs due to overlapping training data with evaluation tasks
+  
+**Input representation –**
+* [BPE - Byte-pair-encoding (Sennrich et al., Sennrich, 2015)](https://arxiv.org/pdf/1508.07909): Middle ground between word level LM & character level
+(https://huggingface.co/learn/llm-course/en/chapter6/5)
+* This tokenization algorithm effectively interpolates between word level inputs for frequent symbol sequences and character
+level inputs for infrequent symbol sequences
+* Though this is often operated on Unicode points rather than byte sequences, this approach can lead to very large base vocabulary – 130k (which is much larger than usual 32K to 64K)
+* Also directly applying BPE to byte sequence results in sub-optimal merges due to BPE using greedy frequency based heuristics to build the vocab. Hence, this work modified some merging rules to improve compression efficiency and ensuring minimal fragmentation of words across multi vocab tokens
+
+**Model –**
+* Largely follows the details of Open AI GPT model with a few modifications
+* Vocab size – 50, 257
+* Batch size – 512
+* Context size – 1024 tokens
+
+
+
 
 ## Improving Language Understanding by Generative Pre-Training
 Radford et al., 2018
