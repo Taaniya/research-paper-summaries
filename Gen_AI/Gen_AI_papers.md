@@ -4,7 +4,7 @@
 3. [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
 4. [Toolformer, NeurIPS 2023](#toolformer-2023)
 5. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
-6. [GPT2 - ]
+6. [GPT2 - Language Models are Multitask Learners, 2019](#gpt2---language-models-are-unsupervised-multitask-learners)
 7. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#improving-language-understanding-by-generative-pre-training)
 
 
@@ -227,7 +227,7 @@ level inputs for infrequent symbol sequences
 * Batch size – 512
 * Context size – 1024 tokens
 
-
+Paper link - https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
 
 
 ## Improving Language Understanding by Generative Pre-Training
