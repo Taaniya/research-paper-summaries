@@ -203,19 +203,62 @@ Radford et al., 2018
 Paper link - https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
 
 **Gist -**
-* Demonstrates that gains on multiple NLP tasks can be achieved by generative pre-training a single task-agnostic language model on diverse text corpus of unlabeled text – followed by discriminative fine-tuning on specific task in NLP
+* Demonstrates that gains on multiple NLP tasks can be achieved by generative pre-training a single task-agnostic language model on a diverse text corpus of unlabeled text, followed by discriminative fine-tuning on the specific tasks in NLP
 * Works with language modelling objective on unlabeled data
-* Explores semi-supervised approach for language understanding (involving unsupervised pre-training)
-* Unsupervised pre-training objective – Standard LM objective
+* Explores a semi-supervised approach for language understanding (involving unsupervised pre-training)
+* Unsupervised pre-training objective – Standard LM objective to learn initial parameters of the neural network model. Subsequently, these parameters are adapted to a target task (discriminating task) using the corresponding supervised objective with labeled data
 * Training data (Unsupervised pre-training) -
-    * Book corpus dataset – 7K unique unpublished books (fantasy, romance), crucially containing long texts to learn long range dependencies.
+    * Book corpus dataset – 7K unique unpublished books (fantasy, romance), crucially containing long texts to learn long-range dependencies.
 
 **Model architecture -**
-* 12 layer decoder, masked self-attention heads
+* 12-layer decoder, masked multi-headed self-attention heads
 * 768 dimensions, 12 multi-headed self-attention heads
 * BPE – Byte-pair encoding vocab with 40K merges
 * Masked self-attention: where every token can only attend to previous tokens in the self-attention layers
 * Uni-directional language model, left-to-right architecture
+
+**Unsupervised pre-training -**
+* Training objective - standard language modelling objective on unlabeled data to maximize the following likelihood -
+
+  $L_1(U) = \sum{i} log(u_i | u_i-k,...,u_i-1; \theta)$
+  
+* where,
+   * $k$ - size of the context window
+   * $P$ - conditional probability P is modeled using neural network with parameters \theta$
+   * Parameters are trained using stochastic gradient descent
+  
+* Output token generation -
+   * Within the decoder, multi-headed self-attention is applied over the input context tokens followed by position-wise feedforward layers to produce an output distribution over target tokens.
+  
+$h_0 = UW_e + W_p$
+
+$h_l = \text{transformer-block}(h_{l-1}) \forall i \in [1,n]$
+
+$P(u) = \text{softmax}(h_nW^T_e)$
+
+* where,
+   * $U = (u_k,...., u-1)$ - context vector of tokens
+   * $n$ - number of layers
+   * $W_e$ - token embedding matrix and $W_p$ is the position embedding matrix
+
+**Supervised fine-tuning-**
+* Post pre-training, the model parameters are adapted to the supervised task.
+* Consider, labeled dataset $C$, with each consisting of a sequence of input tokens $x^1,...,x^m$, along with a label $y$.
+* The inputs are passed to the pre-trained model to get get final transformer block's activation $h_l^m$
+* This activation is fed to an added linear output layer with parameters $W_y$ to predict the token $y$
+
+  $P(y) = P(x^1,....,x^m) = \text{softmax}(h_l^m W_y)$
+* Objective to maximize in fine-tuning -
+  
+  $L_2(C) = \sum_{x,y} log(y | x^1,...,x^m)$
+
+* It was found that including language modelling as the auxiliary objective to fine-tuning helped learning by-
+   * improving generalization of the supervised model
+   * accelerating convergence
+* Combined objective to optimize (with weight $\lambda$) in fine-tuning -
+  
+  $L_3(c) = L_2(C) + \lambda * L_1(C)$
+  
 
 **Pre-training experiment set up –**
 * Adam optimizer
