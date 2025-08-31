@@ -1,5 +1,5 @@
 # Papers
-1. 1. [CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search, June 2024](#chiq-contextual-history-enhancement-for-improving-query-rewriting-in-conversational-search)
+1. [CHIQ: Contextual History Enhancement for Improving Query Rewriting in Conversational Search, June 2024](#chiq-contextual-history-enhancement-for-improving-query-rewriting-in-conversational-search)
 2. [Learning to Select the Relevant History Turns in Conversational Question Answering, Zaib et al., 2023](#learning-to-select-the-relevant-history-turns-in-conversational-question-answering)
 3. [Keep Me Updated! Memory Management in Long-term Conversations, Bae et al., EMNLP 2022](#keep-me-updated-memory-management-in-long-term-conversations)
 4. [Learning to Identify Follow-Up Questions in Conversational Question Answering, Kundu et al., ACL, 2020](#learning-to-identify-follow-up-questions-in-conversational-question-answering)
