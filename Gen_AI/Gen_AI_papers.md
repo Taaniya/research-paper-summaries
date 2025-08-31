@@ -220,7 +220,7 @@ Paper link - https://cdn.openai.com/research-covers/language-unsupervised/langua
 **Unsupervised pre-training -**
 * Training objective - standard language modelling objective on unlabeled data to maximize the following likelihood -
 
-  $L_1(U) = \sum{i} log(u_i | u_i-k,...,u_i-1; \theta)$
+  $L_1(U) = \sum_{i} log(u_i | u_i-k,...,u_i-1; \theta)$
   
 * where,
    * $k$ - size of the context window
