@@ -4,7 +4,7 @@
 3. [Toolformer, NeurIPS 2023](#toolformer-2023)
 4. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
 5. [GPT2 - Language Models are Multitask Learners, 2019](#gpt2---language-models-are-unsupervised-multitask-learners)
-6. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#improving-language-understanding-by-generative-pre-training)
+6. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#gpt---improving-language-understanding-by-generative-pre-training)
 
 ## What are tools anyway? A survey from Language Model Perspective 
 Wang et al, March 2024
@@ -197,7 +197,7 @@ level inputs for infrequent symbol sequences
 Paper link - https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
 
 
-## Improving Language Understanding by Generative Pre-Training
+## GPT - Improving Language Understanding by Generative Pre-Training
 Radford et al., 2018
 
 Paper link - https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
