@@ -4,8 +4,8 @@ This repository contains summaries of research papers in the areas of Generative
 ### Research areas covered -
 
 * [Agentic Workflows](Agentic_workflows): LLM-based autonomous AI Agents (LAA), building agents, Multi-agent orchestration / collaboration, planning
-* [Conversational Question Answering](Conversational_Question_Answering): Building CoQA, challenges including memory & context management, identifying followups
-* [Generative AI](Gen_AI): Origin of LLMs, Instruction tuning & instruction following LLMs, Query rewriting, tool / function calling
+* [Conversational Question Answering](Conversational_Question_Answering): Building CoQA, Query rewriting in CoQA settings, challenges including memory & context management, identifying followups
+* [Generative AI](Gen_AI): Origin of LLMs, Instruction tuning & instruction following LLMs, tool / function calling
 * [Prompt engineering](Prompt_engg): Prompt engineering strategies, in-context learning and strategies
 * [Text-To-SQL](Text_To_SQL): Text-To-SQL, challenges including schema-linking, supporting complex, nested, multi-step queries
 * [Aligning LLMs](aligning_llms): Aligning LLMs with human values
