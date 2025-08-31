@@ -258,17 +258,25 @@ $P(u) = \text{softmax}(h_nW^T_e)$
 * Combined objective to optimize (with weight $\lambda$) in fine-tuning -
   
   $L_3(c) = L_2(C) + \lambda * L_1(C)$
-  
+
+* Overall, only extra parameters required during fine-tuning are $W_y$, and embeddings for delimiter tokens.   
 
 **Pre-training experiment set up –**
 * Adam optimizer
 * LR scheduling – increasing lr linearly from 0 for 1st 2K updates & then annealed to 0 using cosine schedule
-* Trained for 100 epochs 64 batch size
+* Trained for 100 epochs, batch of 64 randomly samples, contiguous sequence of 512 tokens
 * Regularization with layer normalization
 * Context size – 512 tokens (contiguous sequence)
 * Activation function – GELU (Gaussian Error Linear Unit)
 * Used learned position encodings instead of sinusoidal
 * Data cleaning - Used ftfy library to clean raw book corpus dataset text, standardize punctuation & whitespace and used spacy tokenizer
+
+**Fine-tuning set up-**
+* Most hyperparameters reused from unsupervised pre-training
+* For most tasks, batch size 32 used
+* Fine-tuning finished quickly, with 3 epochs found as sufficient for most tasks
+* linear learning rate schedule decay schedule with warmup over 0.2% of training.   
+  
 
 **Evaluation –** 
 * 4 Tasks –
