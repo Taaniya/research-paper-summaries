@@ -155,7 +155,7 @@ Radford et al., 2019
 
 **Motivation –**
 * Prevalence of single task training on single domain datasets majorly contributes to lack of generalization in diverse systems
-* Multi-task learning () is a promising framework to improve general performance. This demonstrates language model performs downstream tasks in zero-shot setting.
+* [Multi-task learning](https://people.eecs.berkeley.edu/~russell/classes/cs294/f05/papers/caruana-1997.pdf) is a promising framework to improve general performance. This demonstrates language model performs downstream tasks in zero-shot setting.
 * From meta learning perspective, each (dataset, objective) pair is a single training example sampled from distribution of datasets and objectives – implying that current systems would require 100s to 1000s of examples to induce functions to generalize well with multitask training which will be difficult to scale w.r.t dataset creation and designing of objectives.
 * Current best performing systems on language tasks utilize a combination of pre-training and supervised fine-tuning that helps in more flexible forms of transfer.
 * Recent works also suggest that task specific architectures are no longer necessary and transferring many self-attention blocks is sufficient
