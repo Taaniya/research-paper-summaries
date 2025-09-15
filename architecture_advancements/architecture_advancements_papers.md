@@ -37,7 +37,7 @@ Su et al., Nov 2023
 
   * where, $q_m, k_n$ and $v_n$ incorporate the $m^{th}$ and $n^{th}$ positions through $f_q, f_k$ and $f_v$, respectively. The query and key vectors are used to compute attention scores while the weighted sum of value vectors is used to compute the output.
 
-*** Absolute encoding -
+**Absolute encoding** -
 
 $f_{t:t \in {q,k,v}} (x_i, i) := W_{t:t \in {q,k,v}} (x_i + p_i)$
 
