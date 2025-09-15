@@ -1,9 +1,61 @@
 # Papers
-1. [Flash Attention 2, 2023](#flash-attention-2-faster-attention-with-better-parallelism-and-work-partitioning)
-2. [Flash Attention 1, 2022](#flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness)
-3. [LoRA, 2021](#lora-low-rank-adaptation-of-large-language-models--2021)
-4. [BERT, 2018](#bert-pre-training-of-bidirectional-transformers-for-language-understanding)
-5. [Distilling knowledge in neural network – 2015](#distilling-knowledge-in-neural-network--2015)
+1. [RoFormer , 2023]
+2. [Flash Attention 2, 2023](#flash-attention-2-faster-attention-with-better-parallelism-and-work-partitioning)
+3. [Flash Attention 1, 2022](#flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness)
+4. [LoRA, 2021](#lora-low-rank-adaptation-of-large-language-models--2021)
+5. [BERT, 2018](#bert-pre-training-of-bidirectional-transformers-for-language-understanding)
+6. [Distilling knowledge in neural network – 2015](#distilling-knowledge-in-neural-network--2015)
+
+## RoFormer: Enhanced transformers with Rotary Position Embeddings
+Su et al., Nov 2023
+#### Gist -
+* It combines the advantages of absolute and relative position encoding
+* Encodes absolute position with a rotation matrix and incorporates relative position information in self-attention formulation
+* Motivation to use position encodings in transformer model – Self-attention mechanism or current PLMs (Pre-trained Language Models) is position agnostic
+* Different approaches have been proposed before to encode this position information in the learning process
+
+#### Existing approaches for encoding position information –
+* Absolute position encoding -
+    * Using pre-defined function in original transformers architecture. This encoding is directly added to the contextual representations
+    * Trainable absolute position encoding (as used in BERT, GPT, GPT 2 etc.)
+    * Limitation –
+        * Doesn’t generalize well due to not being flexible to context length. E.g., if initialized with a matrix of 512 x 768 dimensions for a context of 512 tokens and 768 dim, this matrix is updated during the training process. This makes it incapable of processing any sentences longer than 512 tokens. There is however discussion around overcoming this limitation with initializing position encodings longer than 512 and fine-tuning them. (reference - https://kexue.fm/archives/8130 , https://kexue.fm/archives/7947 )
+* Relative position encoding – where relative position information is encoded in the attention mechanism
+•	…. Etc.
+
+#### Limitation of existing approaches –
+•	Basically, all existing approaches commonly add the position information to the contextual representation which makes it unsuitable for linear self-attention architecture
+
+### Background From original transformers paper-
+* For a sequence of n tokens, with corresponding word embedding $E_N = {x_i}^N$, where $x_i \in R^d$ is the d-dimensional word embedding vector $w_i$ at position $i$ without the position information. The self-attention first incorporates the position information to the word embeddings and transforms them into query, key & value representations.
+  
+  $q_m = f_q(x_m,m)$
+
+  $k_n = f_k(x_n, n)$
+
+  $v_n = f_v(x_n, n)$
+
+  * where, $q_m, k_n$ and $v_n$ incorporate the $m^{th}$ and $n^{th}$ positions through $f_q, f_k$ and $f_v$, respectively. The query and key vectors are used to compute attention scores while the weighted sum of value vectors is used to compute the output.
+
+*** Absolute encoding -
+
+$f_{t:t \in {q,k,v}} (x_i, i) := W_{t:t \in {q,k,v}} (x_i + p_i)$
+
+* Where, $p_i \in R^d$ is a d-dimensional vector depending upon position of vector x.
+
+#### References -
+•	https://huggingface.co/blog/designing-positional-encoding - 
+•	https://youtu.be/o29P0Kpobz0?si=5PB40YR1Dp4gKMm- - Rotary position embedding
+•	https://youtu.be/EZufiIwwqFA?si=vjlitIE2gwMdpIhD  - Rotation matrix
+•	https://www.youtube.com/watch?v=n1vWKSSw4Uk&t=6s – Complex numbers and rotation matrix
+•	https://www.youtube.com/watch?v=kst2Io91JbM – Complex numbers as matrices
+•	https://www.youtube.com/watch?v=2CZhtdzUAi8&t=1s – Visualizing multiplication by i in complex plane
+•	https://www.youtube.com/watch?v=EZufiIwwqFA – Rotation matrix derivation
+•	https://www.youtube.com/watch?v=_zusa5ik_2g&t=1s – How to write complex number in polar form
+•	https://www.youtube.com/watch?v=Ty-4FnfY5i8 - Polar and Euler forms of a complex number
+
+Paper link - https://arxiv.org/pdf/2104.09864
+
 
 ## Flash attention 2: Faster Attention with Better Parallelism and Work Partitioning
 Tri Dao, July 2023
