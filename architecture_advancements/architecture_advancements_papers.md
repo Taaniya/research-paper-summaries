@@ -44,15 +44,15 @@ $f_{t:t \in {q,k,v}} (x_i, i) := W_{t:t \in {q,k,v}} (x_i + p_i)$
 * Where, $p_i \in R^d$ is a d-dimensional vector depending upon position of vector x.
 
 #### References -
-•	https://huggingface.co/blog/designing-positional-encoding - 
-•	https://youtu.be/o29P0Kpobz0?si=5PB40YR1Dp4gKMm- - Rotary position embedding
-•	https://youtu.be/EZufiIwwqFA?si=vjlitIE2gwMdpIhD  - Rotation matrix
-•	https://www.youtube.com/watch?v=n1vWKSSw4Uk&t=6s – Complex numbers and rotation matrix
-•	https://www.youtube.com/watch?v=kst2Io91JbM – Complex numbers as matrices
-•	https://www.youtube.com/watch?v=2CZhtdzUAi8&t=1s – Visualizing multiplication by i in complex plane
-•	https://www.youtube.com/watch?v=EZufiIwwqFA – Rotation matrix derivation
-•	https://www.youtube.com/watch?v=_zusa5ik_2g&t=1s – How to write complex number in polar form
-•	https://www.youtube.com/watch?v=Ty-4FnfY5i8 - Polar and Euler forms of a complex number
+* https://huggingface.co/blog/designing-positional-encoding -
+* https://youtu.be/o29P0Kpobz0?si=5PB40YR1Dp4gKMm- - Rotary position embedding
+* https://youtu.be/EZufiIwwqFA?si=vjlitIE2gwMdpIhD  - Rotation matrix
+* https://www.youtube.com/watch?v=n1vWKSSw4Uk&t=6s – Complex numbers and rotation matrix
+* https://www.youtube.com/watch?v=kst2Io91JbM – Complex numbers as matrices
+* https://www.youtube.com/watch?v=2CZhtdzUAi8&t=1s – Visualizing multiplication by i in complex plane
+* https://www.youtube.com/watch?v=EZufiIwwqFA – Rotation matrix derivation
+* https://www.youtube.com/watch?v=_zusa5ik_2g&t=1s – How to write complex number in polar form
+* https://www.youtube.com/watch?v=Ty-4FnfY5i8 - Polar and Euler forms of a complex number
 
 Paper link - https://arxiv.org/pdf/2104.09864
 
