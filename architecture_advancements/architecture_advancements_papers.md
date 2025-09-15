@@ -21,7 +21,7 @@ Su et al., Nov 2023
     * Limitation –
         * Doesn’t generalize well due to not being flexible to context length. E.g., if initialized with a matrix of 512 x 768 dimensions for a context of 512 tokens and 768 dim, this matrix is updated during the training process. This makes it incapable of processing any sentences longer than 512 tokens. There is however discussion around overcoming this limitation with initializing position encodings longer than 512 and fine-tuning them. (reference - https://kexue.fm/archives/8130 , https://kexue.fm/archives/7947 )
 * Relative position encoding – where relative position information is encoded in the attention mechanism
-•	…. Etc.
+* ….other variants Etc.
 
 #### Limitation of existing approaches –
 •	Basically, all existing approaches commonly add the position information to the contextual representation which makes it unsuitable for linear self-attention architecture
