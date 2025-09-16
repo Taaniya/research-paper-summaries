@@ -1,5 +1,5 @@
 # Papers
-1. [RoFormer , 2023](#roformer-enhanced-transformers-with-rotary-position-embeddings)
+1. [RoFormer: Enhanced transformers with Rotary Position Embeddings, Su et al., Nov 2023](#roformer-enhanced-transformers-with-rotary-position-embeddings)
 2. [Flash Attention 2, 2023](#flash-attention-2-faster-attention-with-better-parallelism-and-work-partitioning)
 3. [Flash Attention 1, 2022](#flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness)
 4. [LoRA, 2021](#lora-low-rank-adaptation-of-large-language-models--2021)
@@ -8,6 +8,7 @@
 
 ## RoFormer: Enhanced transformers with Rotary Position Embeddings
 Su et al., Nov 2023
+
 #### Gist -
 * It combines the advantages of absolute and relative position encoding
 * Encodes absolute position with a rotation matrix and incorporates relative position information in self-attention formulation
