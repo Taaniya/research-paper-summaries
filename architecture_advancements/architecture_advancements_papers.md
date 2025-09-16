@@ -71,7 +71,7 @@ $f_v(x_n, n) = W_v(x_i + p_r^v)$
 * Unlike existing works, which add the positional vector to encode the position of a word in a sentence, this applies a rotation to the word embedding vector through multiplication
 * rotation matrix – rotates a vector by an angle $m$ theta, where $m$ is the absolute position of the token in a sentence
 
-RoPE has following properties which overcomes limitations of previous approaches with following advantages –
+**RoPE has following properties which overcomes limitations of previous approaches with following advantages –**
 * Best of absolute and relative encodings
     * Encodes absolute positions with rotation matrix
     * Incorporates explicit relative position dependency in self-attention formulation
@@ -82,6 +82,7 @@ RoPE has following properties which overcomes limitations of previous approaches
 Note:- Since RoPE injects position information by rotation, the norm of hidden representations remain unchanged, which implies the base semantic information of the word embeddings vector is retained.
 
 **RoPE problem formulation-**
+
 Let $g$ be the function to formulate the inner product of query $q_m$ and key $k_n$ vector in self-attention mechanism to compute attention scores. This g is a function of word embeddings $x_m, x_n$ and their relative position $m-n$ as input variables. The aim is to encode position information only in relative form.
 
 $<f_q(x_m, m), f_k(x_n,n)> = g(x_m, x_n, m-n)$
