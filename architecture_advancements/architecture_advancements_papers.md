@@ -100,7 +100,7 @@ $g(x_m, x_n, m-n) = R_e[(W_qx_m)(W_kx_n)^*e^{i(m-n)\theta}]$
 * $W_kx_n^*$ is the complex conjugate of $W_kx_n$
 * $\theta \in R$, which is a preset non-zero constant
   
-Further the function $f_q(x_m, m) and f_k(x_n, n)$ can be written generally as -
+Further the functions $f_q(x_m, m)$ and $f_k(x_n, n)$ can be written generally as -
 
 $$
 f_{q,k}(x_m, m) = 
@@ -119,6 +119,24 @@ x_m^1 \\
 x_m^2
 \end{pmatrix}
 $$
+
+* where, $x_m$ is represented in 2D coordinates
+* $g$ can be viewed as a matrix
+
+**The generalized form of this function for d-dimentions is -**
+
+$f_{q,k}(x_m,m) = R_{Θ,m}^d W_{q,k}x_m$
+
+* where, dimension space $d$ is divided into d/2 sub-spaces
+* $x_i$ is any word embedding vector of dimensions $d$, where $d$ is even
+* $R_{Θ,m}^d$ is the rotation matrix with pre-defined parameters $\theta = {\theta_i = 10000^{-2(i-1)/d}, i \in [1,2,..., d/2]}$
+
+The final equation to compute inner product then is -
+
+$q_m^⊺k_n = (R_{Θ,m}^dW_qx_m)^⊺(R_{Θ,n}^dW_kx_n) = x^⊺W_qR_{Θ,n-m}^dW_kx_n$
+
+ * where, $R_{Θ,n−m}^d = (R_{Θ,m}^d)^⊺R_{Θ,n}^d$
+ * Note that, $R_Θ ^d$ is [orthogonal](https://en.wikipedia.org/wiki/Orthogonal_matrix), which ensures the stability during the process of encoding
 
 #### References -
 * https://huggingface.co/blog/designing-positional-encoding -
