@@ -38,11 +38,33 @@ Su et al., Nov 2023
 
   * where, $q_m, k_n$ and $v_n$ incorporate the $m^{th}$ and $n^{th}$ positions through $f_q, f_k$ and $f_v$, respectively. The query and key vectors are used to compute attention scores while the weighted sum of value vectors is used to compute the output.
 
-**Absolute encoding** -
+**Absolute Position Embedding** -
+The function $f$ to incorporate absolute position embedding in self-attention mechanism for a vector $x_i$ at position $i$ is defined as -
 
 $f_{t:t \in {q,k,v}} (x_i, i) := W_{t:t \in {q,k,v}} (x_i + p_i)$
 
-* Where, $p_i \in R^d$ is a d-dimensional vector depending upon position of vector x.
+* Where, $p_i \in R^d$ is a d-dimensional position embedding vector depending upon position of vector $x_i$.
+* In the original transformers paper, the position embedding $p_i$ is generated using the sinusoidal function
+
+  $p_{i, 2t} = sin(k/10000^{2t/d})$
+  
+  $p_{i, 2+t} = cos(k/10000^{2t/d})$
+
+* where $p_{i, 2t}$ is the $2^{th}$ element of the d-dimensional position embedding vector $p_i$.
+
+**Relative Position embedding**-
+
+For relative position embeddings, the function to incorporate them in self-attention mechanism is defined as -
+
+$f_q(x_m) = W_qx_m$
+
+$f_k(x_n, n) = W_k(x_i + p_r^k)$
+
+$f_v(x_n, n) = W_v(x_i + p_r^v)$
+
+* Where, $p_r^k$ and $p_r^v$ are trainable relative position embeddings
+* $r$ represents the relative distance between positions $m$ and $n$
+
 
 #### References -
 * https://huggingface.co/blog/designing-positional-encoding -
