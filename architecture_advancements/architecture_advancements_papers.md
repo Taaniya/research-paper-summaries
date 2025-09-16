@@ -84,7 +84,7 @@ Note:- Since RoPE injects position information by rotation, the norm of hidden r
 **RoPE problem formulation-**
 Let $g$ be the function to formulate the inner product of query $q_m$ and key $k_n$ vector in self-attention mechanism to compute attention scores. This g is a function of word embeddings $x_m, x_n$ and their relative position $m-n$ as input variables. The aim is to encode position information only in relative form.
 
-$<f_q(x_m, m), f_k(x_n,n) = g(x_m, x_n, m-n)>$
+$<f_q(x_m, m), f_k(x_n,n)> = g(x_m, x_n, m-n)$
 
 The ultimate goal is to find an equivalent encoding mechanism to solve the functions $f_q(x_m, m)$ and $f_k(x_n, n)$ to conform the above relation
 
@@ -98,8 +98,27 @@ $g(x_m, x_n, m-n) = R_e[(W_qx_m)(W_kx_n)^*e^{i(m-n)\theta}]$
 
 * where, Re[.] is the real part of the complex number
 * $W_kx_n^*$ is the complex conjugate of $W_kx_n$
-* \theta \isin R, which is a preset non-zero constant
+* $\theta \in R$, which is a preset non-zero constant
   
+Further the function $f_q(x_m, m) and f_k(x_n, n)$ can be written generally as -
+
+$$
+f_{q,k}(x_m, m) = 
+\begin{pmatrix}
+cosm\theta & -sin m\theta \\
+sin m\theta & cos m\theta
+\end{pmatrix}
+\quad
+\begin{pmatrix}
+W_{q,k}^{1,1} & W_{q,k}^{1,2} \\
+W_{q,k}^{2,1} & W_{q,k}^{2,2}
+\end{pmatrix}
+\quad
+\begin{pmatrix}
+x_m^1 \\
+x_m^2
+\end{pmatrix}
+$$
 
 #### References -
 * https://huggingface.co/blog/designing-positional-encoding -
