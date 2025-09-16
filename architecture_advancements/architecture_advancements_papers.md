@@ -38,7 +38,7 @@ Su et al., Nov 2023
 
   * where, $q_m, k_n$ and $v_n$ incorporate the $m^{th}$ and $n^{th}$ positions through $f_q, f_k$ and $f_v$, respectively. The query and key vectors are used to compute attention scores while the weighted sum of value vectors is used to compute the output.
 
-**Absolute Position Embedding** -
+#### Absolute Position Embedding -
 The function $f$ to incorporate absolute position embedding in self-attention mechanism for a vector $x_i$ at position $i$ is defined as -
 
 $f_{t:t \in {q,k,v}} (x_i, i) := W_{t:t \in {q,k,v}} (x_i + p_i)$
@@ -52,7 +52,7 @@ $f_{t:t \in {q,k,v}} (x_i, i) := W_{t:t \in {q,k,v}} (x_i + p_i)$
 
 * where $p_{i, 2t}$ is the $2^{th}$ element of the d-dimensional position embedding vector $p_i$.
 
-**Relative Position embedding**-
+#### Relative Position embedding -
 
 For relative position embeddings, the function to incorporate them in self-attention mechanism is defined as -
 
@@ -65,6 +65,41 @@ $f_v(x_n, n) = W_v(x_i + p_r^v)$
 * Where, $p_r^k$ and $p_r^v$ are trainable relative position embeddings
 * $r$ represents the relative distance between positions $m$ and $n$
 
+#### RoPE - Rotary Position embeddings -
+* Aims to encode position information only in relative form
+* Relative position is incorporated in the position embedding by simply rotating the affine-transformed word embedding vector by the amount of angle multiples of its position index.
+* Unlike existing works, which add the positional vector to encode the position of a word in a sentence, this applies a rotation to the word embedding vector through multiplication
+* rotation matrix – rotates a vector by an angle $m$ theta, where $m$ is the absolute position of the token in a sentence
+
+RoPE has following properties which overcomes limitations of previous approaches with following advantages –
+* Best of absolute and relative encodings
+    * Encodes absolute positions with rotation matrix
+    * Incorporates explicit relative position dependency in self-attention formulation
+* Flexibility in sequence length
+* Decaying inter-token dependency with increasing relative distances
+* Equipping linear self-attention with relative position encoding
+
+Note:- Since RoPE injects position information by rotation, the norm of hidden representations remain unchanged, which implies the base semantic information of the word embeddings vector is retained.
+
+**RoPE problem formulation-**
+Let $g$ be the function to formulate the inner product of query $q_m$ and key $k_n$ vector in self-attention mechanism to compute attention scores. This g is a function of word embeddings $x_m, x_n$ and their relative position $m-n$ as input variables. The aim is to encode position information only in relative form.
+
+$<f_q(x_m, m), f_k(x_n,n) = g(x_m, x_n, m-n)>$
+
+The ultimate goal is to find an equivalent encoding mechanism to solve the functions $f_q(x_m, m)$ and $f_k(x_n, n)$ to conform the above relation
+
+With RoPE, this is solved by below solutions (this example is based on 2D vector, the paper also includes the generalised solution of higher dimensional scenario in reality).
+
+$f_q(x_m, m) = (W_qx_m)e^{im\theta}$
+
+$f_k(x_n, n) = (W_kx_n)e^{in\theta}$
+
+$g(x_m, x_n, m-n) = R_e[(W_qx_m)(W_kx_n)^*e^{i(m-n)\theta}]$
+
+* where, Re[.] is the real part of the complex number
+* $W_kx_n^*$ is the complex conjugate of $W_kx_n$
+* \theta \isin R, which is a preset non-zero constant
+  
 
 #### References -
 * https://huggingface.co/blog/designing-positional-encoding -
