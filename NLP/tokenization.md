@@ -37,4 +37,5 @@ Sennrich et al., 2016
 * BPE tokenization is used in GPT family of models
 * Llama uses a SentencePiece BPE tokenizer
 * Mistral models use byte-fallback BPE tokenizer
+  
 Paper link - https://aclanthology.org/P16-1162.pdf
