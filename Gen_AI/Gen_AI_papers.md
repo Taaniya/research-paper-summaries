@@ -168,7 +168,7 @@ Radford et al., 2019
 
 $P(x) = \prod_{i=1}^{n}(s_n | s1,...,s_{n-1})$
  
-* Learning to perform a single task can be expressed in a probabilistic framework as estimation of conditional distribution p(output|input). Since a general system should be able to perform many tasks, even for the same input, it should condition not only on the input but also on the task to be performed – i.e., it should model p(output | input, task). This has been formalized in multitask and meta learning settings. Though, task conditioning has been implemented at architectural level, recent work [McCann et al.,](https://arxiv.org/pdf/1806.08730) has shown that language provides a flexible way to specify tasks, inputs and outputs, all as a sequence of symbols. E.g., For example, a translation training example can be written as the sequence (translate to french, english text, french text)
+* Learning to perform a single task can be expressed in a probabilistic framework as estimation of conditional distribution p(output|input). Since a general system should be able to perform many tasks, even for the same input, it should condition not only on the input but also on the task to be performed – i.e., it should model p(output | input, task). This has been formalized in multitask and meta learning settings. Though, task conditioning has been implemented at architectural level, recent work [McCann et al.,](https://arxiv.org/pdf/1806.08730) has shown that language provides a flexible way to specify tasks, inputs and outputs, all as a sequence of symbols. E.g., For example, a translation training example can be written as the sequence (translate to French, English text, French text)
 * Language modelling is also able to learn the tasks without explicit supervision of which symbols are the outputs to be predicted.
 * Since the supervised objective is the same as unsupervised objective, but only evaluated on a subset of sequence, the global minimum of the unsupervised objective is also the global minimum of the supervised objective.
 * Preliminary experiments show that sufficiently large LMs are able to perform multi task learning but learning is much slower than in explicitly supervised approaches.
@@ -181,7 +181,7 @@ $P(x) = \prod_{i=1}^{n}(s_n | s1,...,s_{n-1})$
 * Removed Wikipedia docs due to overlapping training data with evaluation tasks
   
 **Input representation –**
-* [BPE - Byte-pair-encoding (Sennrich et al., Sennrich, 2015)](https://arxiv.org/pdf/1508.07909): Middle ground between word level LM & character level
+* BPE - Byte-pair-encoding (Sennrich et al., Sennrich, 2015)([Paper link](https://arxiv.org/pdf/1508.07909), [paper summary](https://github.com/Taaniya/research-paper-summaries/blob/main/NLP/tokenization.md#neural-machine-translation-of-rare-words-with-subword-units-2016)): Middle ground between word level LM & character level
 (https://huggingface.co/learn/llm-course/en/chapter6/5)
 * This tokenization algorithm effectively interpolates between word level inputs for frequent symbol sequences and character
 level inputs for infrequent symbol sequences
