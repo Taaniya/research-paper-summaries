@@ -5,6 +5,8 @@
 
 Sennrich et al., 2016
 
+Original paper link - https://aclanthology.org/P16-1162.pdf
+
 **Gist -**
 * This paper introduces a variant of Byte Pair Encoding for tokenization (word segmentation) as a capable mechanism for encoding open vocabularies in the context of Neural Machine translation application
 * This approach results in a compact vocabulary of variable-length sub word units
@@ -38,4 +40,3 @@ Sennrich et al., 2016
 * Llama uses a SentencePiece BPE tokenizer
 * Mistral models use byte-fallback BPE tokenizer
   
-Paper link - https://aclanthology.org/P16-1162.pdf
