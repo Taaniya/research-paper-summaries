@@ -30,7 +30,7 @@ Sennrich et al., 2016
 * Each merge operation results in a new symbol which represents a character ngram.
 * Frequent character n-grams (or whole words) are eventually merged into a single symbol
 * The final symbol vocabulary size is equal to the size of the initial vocabulary, plus the no. of merge operations
-* **No. of merge operations is the only hyperparameter in this algorithm**
+* **No. of merge operations** is the only hyperparameter in this algorithm
 * Major advantage of sub word units is that the symbol sequences are still interpretable as sub word units, and that the neural network can generalize to translate and produce new words (unseen at the time) on the basis of these sub word units
 
 ### Applications
