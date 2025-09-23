@@ -20,7 +20,7 @@ Sennrich et al., 2016
     * Cognates and loanwords - Cognates and loanwords with a common origin can differ in regular ways between languages, so that character-level translation rules are sufficient. Example - claustrophobia (English), Klaustrophobie (German)
     * Morphologically complex words - Words containing multiple morphemes, for instance formed via compounding, affixation, or inflection, may be translatable by translating the morphemes separately. Example: solar system (English), Sonnensystem (Sonne + System) (German)
 
-### Byte Pair Encoding (BPE) –** 
+### Byte Pair Encoding (BPE) – 
 * Byte Pair Encoding (BPE), basically is a simple data compression technique that iteratively replaces the most frequent pair of bytes in a sequence with a single, unused byte.
 * This paper adapts this algorithm for word segmentation. Instead of merging frequent pairs of bytes, the approach in this paper merges characters or character sequences.
 
