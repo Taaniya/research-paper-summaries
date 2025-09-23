@@ -1,7 +1,7 @@
 # Papers
 1. [Neural Machine Translation of rare words with subword units, ACL 2016]() 
 
-## NMT of rare words with subword units, 2016
+## Neural Machine Translation of rare words with subword units, 2016
 
 Sennrich et al., 2016
 
