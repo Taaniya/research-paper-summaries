@@ -33,4 +33,8 @@ Sennrich et al., 2016
 * **No. of merge operations is the only hyperparameter in this algorithm**
 * Major advantage of sub word units is that the symbol sequences are still interpretable as sub word units, and that the neural network can generalize to translate and produce new words (unseen at the time) on the basis of these sub word units
 
+### Applications
+* BPE tokenization is used in GPT family of models
+* Llama uses a SentencePiece BPE tokenizer
+* Mistral models use byte-fallback BPE tokenizer
 Paper link - https://aclanthology.org/P16-1162.pdf
