@@ -34,7 +34,7 @@ Original paper link - https://aclanthology.org/P16-1162.pdf
 * The final symbol vocabulary size is equal to the size of the initial vocabulary, plus the no. of merge operations
 * **No. of merge operations** is the only hyperparameter in this algorithm
 * Major advantage of sub-word units is that the symbol sequences are still interpretable as sub-word units, and that the neural network can generalize to translate and produce new words (unseen at the time) on the basis of these sub-word units
-* BPE segmentation requires $O(N^2)$ computational cost when it naively scan the pair of symbols in every iteration (Ref - (SentencePiece)[https://aclanthology.org/D18-2012.pdf])
+* BPE segmentation requires $O(N^2)$ computational cost when it naively scan the pair of symbols in every iteration (Ref - [SentencePiece](https://aclanthology.org/D18-2012.pdf))
 
 ### Applications
 * BPE tokenization is used in GPT family of models
