@@ -56,6 +56,13 @@ Taku Kudo, ACL 2018
 
 Paper link - https://aclanthology.org/P18-1007.pdf
 
+Other related papers -
+* [Distributional Properties of Subword Regularization – ACL, 2024](https://aclanthology.org/2024.emnlp-main.600.pdf)
+* [MaxMatch-Dropout: Subword Regularization for WordPiece - ACL, 2024](https://aclanthology.org/2022.coling-1.430.pdf)
+* [Fast WordPiece tokenization, Song et al., ACL 2021](https://aclanthology.org/2021.emnlp-main.160.pdf)
+* [BPE-dropout: Simple and Effective sub word regularization, ACL 2020](https://aclanthology.org/2020.acl-main.170.pdf)
+* [Sentence Piece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing, 2018](https://aclanthology.org/D18-2012.pdf)
+
 
 
 ## Neural Machine Translation of rare words with subword units, 2016
