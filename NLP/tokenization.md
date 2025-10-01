@@ -40,8 +40,8 @@ Taku Kudo, ACL 2018
 
   $x^* = argmax_{x \in S(x)}p(x)$
    * where, $S$ - set of segmentation candidates built from input sequence $X$.
-   * X -> source sequence for NMT
-   * Y -> target sequence for NMT
+   * $X$ -> source sequence for NMT
+   * $Y$ -> target sequence for NMT
    * $x^*$ is obtained with viterbi algorithm 
 
 * In real setting, vocab set is unknown and since joint optimization of vocab and their occurrence prob is intractable, it is found out through iterative algorithm.
