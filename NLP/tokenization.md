@@ -54,6 +54,7 @@ Taku Kudo, ACL 2018
 * Though both BPE and unigram model encodes input sentence into fewer bits (subword segments) with a certain data compression principle (BPE – dictionary, unigram – entropy), the unigram model is more flexible w.r.t its utility in subword regularization as it is based on probabilistic language model and can output multiple segments with their probabilities.
 
 
+Paper link - https://aclanthology.org/P18-1007.pdf
 
 
 
