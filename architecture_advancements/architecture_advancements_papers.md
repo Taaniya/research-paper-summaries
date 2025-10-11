@@ -272,6 +272,9 @@ Devlin et al., 2018
     * [SEP] – token inserted between 2 sentences to distinguish sentences in input token sequence
     * [CLS] – 1st token of every sequence. The final hidden vector corresponding to this token is used as aggregated sequence representation for classification tasks
 * Final embeddings for an input token sequence is a obtained by summing up 3 components – token embeddings, position embeddings and segment embeddings of the corresponding token
+* 2 components in BERT model output -
+    * last hidden state - hidden state representation of last layer for each token including the [CLS] token
+    * pooler output - last layer's hidden state representation corresponding to [CLS] token after processing with linear layer with tanh activation function using weights learnt during training on NSP during pre-training.
 
 **Pre-training –** 
 * 2 unsupervised tasks - Masked Language Modelling & Next Sentence Prediction
