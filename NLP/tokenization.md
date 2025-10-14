@@ -29,7 +29,7 @@ Paper link - https://aclanthology.org/2021.emnlp-main.160.pdf
 
 
 ## BPE-dropout: Simple and Effective sub word regularization
-ACL 2020
+Provilkov et al., ACL 2020
 
 Summary yet to be added!
 
