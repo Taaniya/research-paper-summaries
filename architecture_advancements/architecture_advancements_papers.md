@@ -1,10 +1,11 @@
 # Papers
 1. [RoFormer: Enhanced transformers with Rotary Position Embeddings, Su et al., Nov 2023](#roformer-enhanced-transformers-with-rotary-position-embeddings)
-2. [Flash Attention 2, 2023](#flash-attention-2-faster-attention-with-better-parallelism-and-work-partitioning)
-3. [Flash Attention 1, 2022](#flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness)
-4. [LoRA, 2021](#lora-low-rank-adaptation-of-large-language-models--2021)
-5. [BERT, 2018](#bert-pre-training-of-bidirectional-transformers-for-language-understanding)
-6. [Distilling knowledge in neural network – 2015](#distilling-knowledge-in-neural-network--2015)
+2. Efficient Memory Management for Large Language Model Serving with PagedAttention - Summary yet to be added!
+3. [Flash Attention 2, 2023](#flash-attention-2-faster-attention-with-better-parallelism-and-work-partitioning)
+4. [Flash Attention 1, 2022](#flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness)
+5. [LoRA, 2021](#lora-low-rank-adaptation-of-large-language-models--2021)
+6. [BERT, 2018](#bert-pre-training-of-bidirectional-transformers-for-language-understanding)
+7. [Distilling knowledge in neural network – 2015](#distilling-knowledge-in-neural-network--2015)
 
 ## RoFormer: Enhanced transformers with Rotary Position Embeddings
 Su et al., Nov 2023
@@ -151,6 +152,13 @@ $q_m^⊺k_n = (R_{Θ,m}^dW_qx_m)^⊺(R_{Θ,n}^dW_kx_n) = x^⊺W_qR_{Θ,n-m}^dW_k
 * https://www.youtube.com/watch?v=Ty-4FnfY5i8 - Polar and Euler forms of a complex number
 
 Paper link - https://arxiv.org/pdf/2104.09864
+
+## Efficient Memory Management for Large Language Model Serving with PagedAttention
+Kwon et al., SOSP 2023
+
+Paper link - https://arxiv.org/pdf/2309.06180
+
+TODO: Add paper summary
 
 
 ## Flash attention 2: Faster Attention with Better Parallelism and Work Partitioning
