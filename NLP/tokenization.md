@@ -13,7 +13,7 @@ Paper link - https://aclanthology.org/2024.emnlp-main.600.pdf
 
 
 ## MaxMatch-Dropout: Subword Regularization for WordPiece
-ACL, 2024
+Tatsuya Hiraoka COLING, 2022
 
 Summary yet to be added!
 
