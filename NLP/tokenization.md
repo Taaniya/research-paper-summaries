@@ -1,10 +1,11 @@
 # Papers
 1. [Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates (UnigramLM), ACL 2018](#subword-regularization-improving-neural-network-translation-models-with-multiple-subword-candidates)
 2. [Neural Machine Translation of rare words with subword units (BPE), ACL 2016](#neural-machine-translation-of-rare-words-with-subword-units-2016) 
-
+   
 
 
 ## Distributional Properties of Subword Regularization
+Cognetta et al., EMNLP 2024
 
 Summary yet to be added!
 
@@ -19,7 +20,6 @@ Summary yet to be added!
 https://aclanthology.org/2022.coling-1.430.pdf
 
 
-
 ## Fast WordPiece tokenization
 Song et al., ACL 2021 
 
@@ -31,6 +31,7 @@ Paper link - https://aclanthology.org/2021.emnlp-main.160.pdf
 ## BPE-dropout: Simple and Effective sub word regularization
 ACL 2020
 
+Summary yet to be added!
 
 Paper link - https://aclanthology.org/2020.acl-main.170.pdf
 
