@@ -340,3 +340,7 @@ Paper link - https://arxiv.org/pdf/1503.02531
 * https://keras.io/examples/keras_recipes/better_knowledge_distillation/
 * https://colab.research.google.com/github/patrickphatnguyen/Knowledge-Distillation-Keras/blob/master/Knowledge_Distillation_Notebook.ipynb
 * https://github.com/philschmid/knowledge-distillation-transformers-pytorch-sagemaker
+* Related paper with improvised approach - [Model Compression with Two-stage Multi-teacher Knowledge
+Distillation for Web Question Answering System, Yang et al., ACM 2020](https://arxiv.org/pdf/1910.08381)
+
+
