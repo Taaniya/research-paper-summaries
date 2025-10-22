@@ -26,6 +26,10 @@ Ni et al., ACL 2022
   - Training on web mined conversational input-response & question answering pairs
   - Contrastive learning on NLI pairs
 
+**Significance of using Spearman correlation coefficient in STS benchmark -**
+- In STS evaluation task, the embeddings are evluated by how well the their cosine similarity correlate with human annotated similarity scores using Spearman Correlation. 
+
+
 **References-**
 * Model Card - https://huggingface.co/sentence-transformers/sentence-t5-base 
 * Paper link - https://aclanthology.org/2022.findings-acl.146.pdf 
