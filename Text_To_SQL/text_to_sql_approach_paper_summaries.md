@@ -1,6 +1,6 @@
 # Papers
 1. [Solid-SQL: Enhanced Schema-linking based In-context Learning for Robust Text-to-SQL, Liu et al., ACL 2025](#solid-sql-enhanced-schema-linking-based-in-context-learning-for-robust-text-to-sql)
-2. [Knapsack schema linkning agent for LLM-based Text-To-SQL generation, Yuan et al., 2025](#)
+2. [Knapsack schema linkning agent for LLM-based Text-To-SQL generation, Yuan et al., 2025](#knapsack-schema-linkning-agent-for-llm-based-text-to-sql-generation)
 3. [RASL: Retrieval augmented schema linking for massive database Text-To-SQL, Eben et al., 2025](#rasl-retrieval-augmented-schema-linking-for-massive-database-text-to-sql)
 4. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, Gao et al 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
 5. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
