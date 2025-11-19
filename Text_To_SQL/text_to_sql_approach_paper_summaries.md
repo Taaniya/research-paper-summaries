@@ -1,5 +1,5 @@
 # Papers
-1. [RASL: Retrieval augmented schema linking for massive database Text-To-SQL, Eben et al., 2025]
+1. [RASL: Retrieval augmented schema linking for massive database Text-To-SQL, Eben et al., 2025](rasl-retrieval-augmented-schema-linking-for-massive-database-text-to-sql)
 2. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, Gao et al 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
 3. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
 4. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025](#practiq-a-practical-conversational-text-to-sql-dataset-with-ambiguous-and-unanswerable-queries)
