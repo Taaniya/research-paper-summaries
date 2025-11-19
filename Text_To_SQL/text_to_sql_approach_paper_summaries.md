@@ -1,11 +1,12 @@
 # Papers
 1. [Solid-SQL: Enhanced Schema-linking based In-context Learning for Robust Text-to-SQL, Liu et al., ACL 2025](#solid-sql-enhanced-schema-linking-based-in-context-learning-for-robust-text-to-sql)
-2. [RASL: Retrieval augmented schema linking for massive database Text-To-SQL, Eben et al., 2025](#rasl-retrieval-augmented-schema-linking-for-massive-database-text-to-sql)
-3. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, Gao et al 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
-4. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
-5. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025](#practiq-a-practical-conversational-text-to-sql-dataset-with-ambiguous-and-unanswerable-queries)
-6. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
-7. [Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql, Wang et al., ACL 2023](#know-what-i-dont-know--handling-ambiguous-and-unanswerable-questions-for-text-to-sql)
+2. [Knapsack schema linkning agent for LLM-based Text-To-SQL generation, Yuan et al., 2025](#)
+3. [RASL: Retrieval augmented schema linking for massive database Text-To-SQL, Eben et al., 2025](#rasl-retrieval-augmented-schema-linking-for-massive-database-text-to-sql)
+4. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, Gao et al 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
+5. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
+6. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025](#practiq-a-practical-conversational-text-to-sql-dataset-with-ambiguous-and-unanswerable-queries)
+7. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+8. [Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql, Wang et al., ACL 2023](#know-what-i-dont-know--handling-ambiguous-and-unanswerable-questions-for-text-to-sql)
 
 ## Solid-SQL: Enhanced Schema-linking based In-context Learning for Robust Text-to-SQL
 Liu et al., ACL 2025
@@ -14,6 +15,12 @@ This is work in progress.
 
 Paper link - https://aclanthology.org/2025.coling-main.654.pdf
 
+## Knapsack schema linkning agent for LLM-based Text-To-SQL generation
+Yuan et al., 2025
+
+This is work in progress.
+
+Paper link - https://openreview.net/notes/edits/attachment?id=Inqxiz6ucZ&name=pdf
 
 ## RASL: Retrieval augmented schema linking for massive database Text-To-SQL
 Eben et al., 2025 (Amazon)
