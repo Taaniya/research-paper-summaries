@@ -1,9 +1,18 @@
 # Papers
-1. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, Gao et al 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
-2. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
-3. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025](#practiq-a-practical-conversational-text-to-sql-dataset-with-ambiguous-and-unanswerable-queries)
-4. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
-5. [Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql, Wang et al., ACL 2023](#know-what-i-dont-know--handling-ambiguous-and-unanswerable-questions-for-text-to-sql)
+1. [RASL: Retrieval augmented schema linking for massive database Text-To-SQL, Eben et al., 2025]
+2. [XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL, Gao et al 2025](#xiyan-sql-a-multi-generator-ensemble-framework-for-text-to-sql)
+3. [MAC-SQL: A multi-agent collaborative framework for Text-To-SQL, Wang et al, ACL 2025](#mac-sql-a-multi-agent-collaborative-framework-for-text-to-sql)
+4. [Practiq - A Practical Conversational text-to-SQL dataset with Ambiguous and Unanswerable Queries, Dong et al., ACL 2025](#practiq-a-practical-conversational-text-to-sql-dataset-with-ambiguous-and-unanswerable-queries)
+5. [CodeS: Towards Building Open-source Language Models for Text-to-SQL, Li et al, ACM 2024](#codes-towards-building-open-source-language-models-for-text-to-sql)
+6. [Know what I don’t know – Handling ambiguous and unanswerable questions for text-to-sql, Wang et al., ACL 2023](#know-what-i-dont-know--handling-ambiguous-and-unanswerable-questions-for-text-to-sql)
+
+## RASL: Retrieval augmented schema linking for massive database Text-To-SQL
+Eben et al., 2025 (Amazon)
+
+This is work in progress.
+
+Paper link - https://arxiv.org/pdf/2507.23104
+
 
 ## XiYan-SQL: A multi-generator ensemble framework for Text-To-SQL
 
