@@ -45,7 +45,7 @@ Wang et al., 2022
   - Strategy to choose negative samples – in-batch negatives
   - Dataset used for general training (using contrastive training) –
 * Fine-tuning with labeled data – NLI (STS & linear probing tasks), MS-MARCO passage ranking dataset, NQ (Natural Questions) (MARCO and NQ for retrieval tasks)
-* Training method – contrastive training for initial training of the pre=trained encoder model, followed by further training on labelled dataModel architecture
+* Training method – contrastive training for initial training of the pre-trained encoder model, followed by further training on labelled dataModel architecture
 * Transformer encoder – bert-base-uncased, bert-large-uncased-word-masking
 * Evaluation – method, dataset, metrics
   - Methods –
