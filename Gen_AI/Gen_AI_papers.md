@@ -1,11 +1,36 @@
 # Papers
-1. [ToolLLM: Facilitating LLMs to use 1600 real-world APIs, ICLR 2024](#toolllm-facilitating-llms-to-use-1600-real-world-apis-iclr-2024)
-2. [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
-3. [Toolformer, NeurIPS 2023](#toolformer-2023)
-4. [QWEN, Alibaba, 2023 (WIP)](#qwen)
-5. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
-6. [GPT2 - Language Models are Multitask Learners, 2019](#gpt2---language-models-are-unsupervised-multitask-learners)
-7. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#gpt---improving-language-understanding-by-generative-pre-training)
+1. [Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation, Wang et al., ACL 2025](#knowledge-graph-retrieval-augmented-generation-for-llm-based-recommendation)
+2. [Generating Domain-Specific Knowledge Graphs from Large Language Models, Parovic et al., ACL 2025](#generating-domain-specific-knowledge-graphs-from-large-language-models)
+3. [Reflection on Knowledge Graph for Large Language Models Reasoning, Zhou et al., ACL 2025](#reflection-on-knowledge-graph-for-large-language-models-reasoning)
+4. [ToolLLM: Facilitating LLMs to use 1600 real-world APIs, ICLR 2024](#toolllm-facilitating-llms-to-use-1600-real-world-apis-iclr-2024)
+5. [What are tools anyway? A survey from Language Model Perspective, March 2024](#what-are-tools-anyway-a-survey-from-language-model-perspective)
+6. [Toolformer, NeurIPS 2023](#toolformer-2023)
+7. [QWEN, Alibaba, 2023 (WIP)](#qwen)
+8. [Can You Unpack That? Learning to Rewrite Questions-in-Context, EMNLP 2019](#can-you-unpack-that-learning-to-rewrite-questions-in-context)
+9. [GPT2 - Language Models are Multitask Learners, 2019](#gpt2---language-models-are-unsupervised-multitask-learners)
+10. [GPT - Improving Language Understanding by Genrative Pre-training, 2018](#gpt---improving-language-understanding-by-generative-pre-training)
+
+
+## Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation
+Wang et al., ACL 2025
+
+WIP
+
+Paper link - https://aclanthology.org/2025.acl-long.1317.pdf
+
+## Generating Domain-Specific Knowledge Graphs from Large Language Models
+Parovic et al., ACL 2025
+
+WIP
+
+Paper link - https://aclanthology.org/2025.findings-acl.602.pdf
+
+## Reflection on Knowledge Graph for Large Language Models Reasoning
+Zhou et al., ACL 2025
+
+WIP 
+
+Paper link - https://aclanthology.org/2025.findings-acl.1221.pdf
 
 ## What are tools anyway? A survey from Language Model Perspective 
 Wang et al, March 2024
