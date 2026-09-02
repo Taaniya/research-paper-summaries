@@ -232,7 +232,7 @@ Paper link - https://cdn.openai.com/research-covers/language-unsupervised/langua
   
 * where,
    * $k$ - size of the context window
-   * $P$ - conditional probability P is modeled using neural network with parameters \theta$
+   * $P$ - conditional probability P is modeled using neural network with parameters $\theta$
    * Parameters are trained using stochastic gradient descent
   
 * Output token generation -
