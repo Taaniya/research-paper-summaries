@@ -168,16 +168,20 @@ Tri Dao, July 2023
 * This paper proposes FlashAttention 2 (extending FlashAttention 1), to further speed up FLOPs involved in Transformers attention computation
 * Aims to further optimize attention computation which continues to be main bottleneck in scaling to longer sequences due to increased memory consumption
 
-#### Approach –
-* The current limitation in transformers architecture is identified to be due to inefficient work portioning between thread blocks and [warps of GPU](https://people.maths.ox.ac.uk/gilesm/old/pp10/lec2_2x2.pdf). A GPU warp is a group of 32 threads in a block of threads where all the threads in a warp execute the same task at the same time.
-* This causes poor utilization of GPU and unnecessary read-writes in shared memory
-* The approach optimizes work partitioning to tackle above limitations by-
-   * Reducing the non-matmul FLOPs – since GPUs are built to optimally process matrix multiplication operations, non-matmul FLOPs take longer to process despite being a small fraction of the total FLOPs.
-   * Parallelizing both forward and backward pass along the sequence length dimension, in addition to batch and number of heads dimension (to increase GPU utilization)
-   * Performing work partitioning between different warps of thread blocks even for a single block of attention computation – to reduce communication & shared memory read/writes
+#### Improvements made and their approach –
+* Reducing the non-matmul FLOPs – since GPUs are built to optimally process matrix multiplication operations, non-matmul FLOPs take longer to process despite being a small fraction of the total FLOPs.
+* Better parallelism -
+   * The first version of FlashAttention parallelizes over batch size and number of heads. We use 1 thread block to process one attention head, and there are overall (batch_size * number of heads) thread blocks. 
+   * However, in the case of long sequences (which usually means small batch sizes or a small number of heads, because your GPU runs out of memory if you keep batch sizes or head counts high). FlashAttention2 also parallelizes along the sequence length dimension, in addition to the batch and number-of-heads dimensions (to increase GPU utilization) and speedup computation.
+* The current limitation in transformers architecture is identified to be due to inefficient work portioning between thread blocks and [warps of GPU](https://people.maths.ox.ac.uk/gilesm/old/pp10/lec2_2x2.pdf). A GPU warp is a group of 32 threads in a block of threads where all the threads in a warp execute the same task at the same time. This inefficient work partitioning causes poor utilization of GPU and unnecessary read-writes in shared memory.
+* The approach optimizes work partitioning to tackle above limitations by -
+   * Performing work partitioning between different warps within each thread block to reduce amount of synchronization and communication between different warps, resulting in less shared memory reads/writes.
+   * For each block, FlashAttention splits K and V across 4 warps while keeping Q accessible by all warps. This is referred to as the “sliced-K” scheme. However, this is inefficient since all warps need to write their intermediate results out to shared memory, synchronize, then add up the intermediate results. These shared memory reads/writes slow down the forward pass in FlashAttention.
+   * In FlashAttention-2, it instead split Q across 4 warps while keeping K and V accessible by all warps. After each warp performs matrix multiply to get a slice of Q K^T, they just need to multiply with the shared slice of V to get their corresponding slice of the output. There is no need for communication between warps. The reduction in shared memory reads/writes yields speedup.
 
 
-Paper link - [FlashAttention2](https://tridao.me/publications/flash2/flash2.pdf)
+* Paper link - [FlashAttention2](https://tridao.me/publications/flash2/flash2.pdf)
+* [Paper summary - by Tri Dao](https://crfm.stanford.edu/2023/07/17/flash2.html)
 
 
 ## FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
